@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@config "../tailwind.config.ts";
+@source "../app/**/*.{ts,tsx}";
+@source "../components/**/*.{ts,tsx}";
+@source "../data/**/*.{ts,tsx}";
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #050816;
+  color: #ffffff;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(245, 184, 65, 0.32);
+}
+
+.grid-mask {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black, transparent 75%);
+}
+
+.site-shell,
+.site-shell-wide,
+.site-shell-narrow {
+  width: min(calc(100% - 2rem), var(--site-shell-width));
+  margin-inline: auto;
+}
+
+.site-shell {
+  --site-shell-width: 1480px;
+}
+
+.site-shell-wide {
+  --site-shell-width: 1680px;
+}
+
+.site-shell-narrow {
+  --site-shell-width: 1120px;
+}
+
+.section-y {
+  padding-block: 4.5rem;
+}
+
+/* Mobile-only horizontal snap carousel; md+ layouts (md:grid etc.) take over. */
+@media (max-width: 767px) {
+  .m-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+    padding-bottom: 0.75rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .m-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .m-carousel > * {
+    flex: 0 0 82%;
+    min-width: 0;
+    scroll-snap-align: center;
+  }
+}
+
+@media (min-width: 640px) {
+  .site-shell,
+  .site-shell-wide,
+  .site-shell-narrow {
+    width: min(calc(100% - 3rem), var(--site-shell-width));
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-shell,
+  .site-shell-wide,
+  .site-shell-narrow {
+    width: min(calc(100% - 4rem), var(--site-shell-width));
+  }
+
+  .section-y {
+    padding-block: 7.5rem;
+  }
+}
+
+.hero-surface {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(34, 211, 238, 0.09), transparent 28%),
+    radial-gradient(circle at 86% 18%, rgba(99, 102, 241, 0.12), transparent 30%),
+    linear-gradient(180deg, #050816 0%, #070b18 58%, #050816 100%);
+}
+
+.section-eyebrow {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: rgb(103 232 249);
+}
+
+.section-title {
+  font-size: clamp(2.1rem, 5vw, 4.15rem);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  color: white;
+}
+
+/* V3 launch refinement */
+.glass-panel {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.72), rgba(2, 6, 23, 0.58));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 28px 100px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(22px);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

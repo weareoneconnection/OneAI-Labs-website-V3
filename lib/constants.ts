@@ -1,0 +1,21 @@
+export const site = {
+  name: "OneAI Labs",
+  legalName: "ONEAI LABS SDN. BHD.",
+  registrationNo: "202601020394 (1682491-W)",
+  incorporatedOn: "18 May 2026",
+  jurisdiction: "Malaysia",
+  url: "https://www.oneai.network",
+  appUrl: process.env.NEXT_PUBLIC_APP_URL || "https://oneai-saas-web-production.up.railway.app",
+  apiUrl: process.env.NEXT_PUBLIC_API_URL || "https://oneai-saas-api-production.up.railway.app",
+  docsUrl: "https://oneai-saas-web-production.up.railway.app/docs",
+  pricingUrl: "https://oneai-saas-web-production.up.railway.app/pricing",
+  securityUrl: "https://oneai-saas-web-production.up.railway.app/security",
+  theOneUrl: "https://theone-eta.vercel.app/",
+  mirrorUrl: "https://onemirror-v1.vercel.app/",
+  studioUrl: "https://oneai-web-delta.vercel.app/",
+  videoUrl: "https://www.onevideo.studio/",
+  forgeUrl: "https://forge.oneai.network/",
+  waocUrl: "https://waoc.io",
+  email: "info@weareoneconnection.com",
+  contactFormEndpoint: "https://formspree.io/f/xojrozjo"
+};

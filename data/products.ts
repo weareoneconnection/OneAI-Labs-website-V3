@@ -1,11 +1,19 @@
 import { Anvil, BadgeCheck, Bot, Building2, Clapperboard, Eye, Layers3, LineChart, ShieldCheck, Target, Zap, type LucideIcon } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 
+// Maturity is assigned by an objective, checkable rule rather than by ambition:
+//   GA      — own domain, published SLA, paying customers
+//   Beta    — own domain, usable today, no SLA commitment
+//   Preview — still on a default platform domain, or no public surface yet
+// Nothing here may be labelled above what its evidence supports.
+export type ProductStage = "GA" | "Beta" | "Preview";
+
 export type Product = {
   name: string;
   tagline: string;
   description: string;
-  href: string;
+  href?: string;
+  stage: ProductStage;
   poweredBy: string;
   icon: LucideIcon;
 };
@@ -18,6 +26,7 @@ export const products: Record<Locale, Product[]> = {
       description: "Govern the AI lifecycle: versioned data, evaluated training, approved releases and audited runs.",
       href: "https://forge.oneai.network/",
       poweredBy: "Governance + lineage + approvals",
+      stage: "Beta",
       icon: Anvil
     },
     {
@@ -26,14 +35,15 @@ export const products: Record<Locale, Product[]> = {
       description: "A conversational AI entry point for users, teams and communities.",
       href: "https://t.me/WAOCOneAIBot",
       poweredBy: "Core Gateway + Task API",
+      stage: "Beta",
       icon: Bot
     },
     {
       name: "OneClaw",
       tagline: "Action & Execution Layer",
       description: "Turn AI outputs into workflows, reports, actions and API calls.",
-      href: "https://railway.com/project/4306e22c-cf4a-47eb-9207-56d430a22c20",
       poweredBy: "Task output + execution flow",
+      stage: "Preview",
       icon: Zap
     },
     {
@@ -42,6 +52,7 @@ export const products: Record<Locale, Product[]> = {
       description: "Turn one sentence into a scripted, voiced and publishable short drama.",
       href: "https://www.onevideo.studio/",
       poweredBy: "Drama beat engine + native-voice pipeline",
+      stage: "Beta",
       icon: Clapperboard
     },
     {
@@ -50,6 +61,7 @@ export const products: Record<Locale, Product[]> = {
       description: "Turn one intent into one coordinated system and execution layer.",
       href: "https://theone-eta.vercel.app/",
       poweredBy: "Agent OS + execution orchestration",
+      stage: "Preview",
       icon: Layers3
     },
     {
@@ -58,6 +70,7 @@ export const products: Record<Locale, Product[]> = {
       description: "Turn one belief, instinct or behavior into a shareable civilization-scale outcome.",
       href: "https://onemirror-v1.vercel.app/",
       poweredBy: "OneAI Core + Agent OS",
+      stage: "Preview",
       icon: Eye
     },
     {
@@ -66,6 +79,7 @@ export const products: Record<Locale, Product[]> = {
       description: "Market briefs, risk radar, strategy review and trading journal.",
       href: "https://oneaitradingbot.vercel.app/",
       poweredBy: "Market research + risk guard",
+      stage: "Preview",
       icon: LineChart
     },
     {
@@ -74,6 +88,7 @@ export const products: Record<Locale, Product[]> = {
       description: "Project reports, contract summaries, BOQ/BQ support, RFI/VO/claims and site records.",
       href: "https://on-ai-construction-os.vercel.app/",
       poweredBy: "Project intelligence workflows",
+      stage: "Preview",
       icon: Building2
     },
     {
@@ -82,6 +97,7 @@ export const products: Record<Locale, Product[]> = {
       description: "Turn goals into missions, missions into tasks, and tasks into coordinated execution.",
       href: "https://one-mission.vercel.app/",
       poweredBy: "Agent plans + campaign missions",
+      stage: "Preview",
       icon: Target
     },
     {
@@ -90,6 +106,7 @@ export const products: Record<Locale, Product[]> = {
       description: "Record contribution, verify work and build reputation profiles.",
       href: "https://onefield.vercel.app/",
       poweredBy: "Usage, identity and records",
+      stage: "Preview",
       icon: BadgeCheck
     }
   ],
@@ -100,6 +117,7 @@ export const products: Record<Locale, Product[]> = {
       description: "治理 AI 生命周期：数据版本、训练评估、发布审批与可审计的运行。",
       href: "https://forge.oneai.network/",
       poweredBy: "治理 + 血缘 + 审批",
+      stage: "Beta",
       icon: Anvil
     },
     {
@@ -108,14 +126,15 @@ export const products: Record<Locale, Product[]> = {
       description: "面向用户、团队和社区的对话式 AI 入口。",
       href: "https://t.me/WAOCOneAIBot",
       poweredBy: "Core 网关 + 任务 API",
+      stage: "Beta",
       icon: Bot
     },
     {
       name: "OneClaw",
       tagline: "动作与执行层",
       description: "把 AI 输出变成工作流、报告、动作和 API 调用。",
-      href: "https://railway.com/project/4306e22c-cf4a-47eb-9207-56d430a22c20",
       poweredBy: "任务输出 + 执行流",
+      stage: "Preview",
       icon: Zap
     },
     {
@@ -124,6 +143,7 @@ export const products: Record<Locale, Product[]> = {
       description: "一句话变成有剧本、有配音、可直接发布的短剧。",
       href: "https://www.onevideo.studio/",
       poweredBy: "剧情节拍引擎 + 原声演出管线",
+      stage: "Beta",
       icon: Clapperboard
     },
     {
@@ -132,6 +152,7 @@ export const products: Record<Locale, Product[]> = {
       description: "把一个意图变成一套协同系统和执行层。",
       href: "https://theone-eta.vercel.app/",
       poweredBy: "Agent OS + 执行编排",
+      stage: "Preview",
       icon: Layers3
     },
     {
@@ -140,6 +161,7 @@ export const products: Record<Locale, Product[]> = {
       description: "把一个信念、本能或行为，放大成可分享的文明级结果。",
       href: "https://onemirror-v1.vercel.app/",
       poweredBy: "OneAI Core + Agent OS",
+      stage: "Preview",
       icon: Eye
     },
     {
@@ -148,6 +170,7 @@ export const products: Record<Locale, Product[]> = {
       description: "市场简报、风险雷达、策略复盘和交易日志。",
       href: "https://oneaitradingbot.vercel.app/",
       poweredBy: "市场研究 + 风险守护",
+      stage: "Preview",
       icon: LineChart
     },
     {
@@ -156,6 +179,7 @@ export const products: Record<Locale, Product[]> = {
       description: "项目报告、合同摘要、BOQ/BQ 支持、RFI/VO/索赔与现场记录。",
       href: "https://on-ai-construction-os.vercel.app/",
       poweredBy: "项目智能工作流",
+      stage: "Preview",
       icon: Building2
     },
     {
@@ -164,6 +188,7 @@ export const products: Record<Locale, Product[]> = {
       description: "把目标变成任务书，任务书变成任务，任务变成协同执行。",
       href: "https://one-mission.vercel.app/",
       poweredBy: "智能体计划 + 战役任务",
+      stage: "Preview",
       icon: Target
     },
     {
@@ -172,6 +197,7 @@ export const products: Record<Locale, Product[]> = {
       description: "记录贡献、验证工作，构建声誉档案。",
       href: "https://onefield.vercel.app/",
       poweredBy: "用量、身份与记录",
+      stage: "Preview",
       icon: BadgeCheck
     }
   ]

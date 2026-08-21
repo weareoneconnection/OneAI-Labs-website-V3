@@ -39,7 +39,7 @@ const content: Record<Locale, {
         title: "OneAI Core Console",
         description: "API keys, customers, requests, usage, cost, routing policy and operator controls.",
         icon: CheckCircle2,
-        href: "https://oneai-saas-web-production.up.railway.app",
+        href: site.appUrl,
         cta: "Open Core",
         external: true,
         image: "/images/demos/core.jpg"
@@ -75,9 +75,9 @@ const content: Record<Locale, {
         title: "OneClaw Execution Flow",
         description: "Turns Core task outputs into execution workflows, reports and API actions.",
         icon: Workflow,
-        href: "https://railway.com/project/4306e22c-cf4a-47eb-9207-56d430a22c20",
-        cta: "View OneClaw",
-        external: true,
+        href: "/products",
+        cta: "See where OneClaw fits",
+        external: false,
         image: "/images/demos/studio.jpg"
       },
       {
@@ -107,7 +107,7 @@ const content: Record<Locale, {
         title: "OneAI Core 控制台",
         description: "API 密钥、客户、请求、用量、成本、路由策略和运营者控制。",
         icon: CheckCircle2,
-        href: "https://oneai-saas-web-production.up.railway.app",
+        href: site.appUrl,
         cta: "打开 Core",
         external: true,
         image: "/images/demos/core.jpg"
@@ -143,9 +143,9 @@ const content: Record<Locale, {
         title: "OneClaw 执行流",
         description: "把 Core 任务输出变成执行工作流、报告和 API 动作。",
         icon: Workflow,
-        href: "https://railway.com/project/4306e22c-cf4a-47eb-9207-56d430a22c20",
-        cta: "查看 OneClaw",
-        external: true,
+        href: "/products",
+        cta: "了解 OneClaw 的位置",
+        external: false,
         image: "/images/demos/studio.jpg"
       },
       {
@@ -168,7 +168,7 @@ export function DemoSection({ locale }: { locale: Locale }) {
     <section className="border-y border-white/10 bg-white/[0.025]">
       <div className="site-shell-wide section-y">
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
+          <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
             {t.eyebrow}
           </p>
 

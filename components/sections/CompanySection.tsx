@@ -42,7 +42,7 @@ export function CompanySection({ locale, showProfileLink = true }: { locale: Loc
   return (
     <section className="site-shell section-y">
       <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-5 sm:p-8 md:rounded-[2rem] md:p-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">{t.eyebrow}</p>
+        <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">{t.eyebrow}</p>
         <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">{t.heading}</h2>
         <p className="mt-5 max-w-4xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">{t.body1}</p>
         <p className="mt-4 max-w-4xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">{t.body2}</p>

@@ -59,7 +59,7 @@ export function CompanyProfileSection({ locale }: { locale: Locale }) {
           <div className="border-b border-white/10 bg-gradient-to-br from-white/[0.08] to-transparent p-5 sm:p-8 lg:p-10">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
               <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">{t.registryEyebrow}</p>
+                <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">{t.registryEyebrow}</p>
                 <h2 className="mt-4 break-words text-3xl font-semibold leading-tight text-white sm:text-5xl">{site.legalName}</h2>
                 <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
                   {t.registryBody}
@@ -103,7 +103,7 @@ export function CompanyProfileSection({ locale }: { locale: Locale }) {
         </div>
 
         <aside className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-5 sm:p-8 md:rounded-[2rem]">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">{t.contactEyebrow}</p>
+          <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">{t.contactEyebrow}</p>
           <h3 className="mt-4 text-2xl font-semibold leading-tight text-white">{t.contactHeading}</h3>
           <a href={`mailto:${site.email}`} className="mt-6 inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-center text-sm font-semibold text-oneai-bg transition hover:bg-oneai-gold">
             <Mail className="h-4 w-4 shrink-0" /> <span className="min-w-0 break-all">{site.email}</span>

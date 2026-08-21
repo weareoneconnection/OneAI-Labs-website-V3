@@ -68,7 +68,7 @@ export function DeveloperSection({ locale }: { locale: Locale }) {
     <section className="border-y border-white/10 bg-white/[0.025]">
       <div className="site-shell-wide grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16 lg:py-28">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">{t.eyebrow}</p>
+          <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">{t.eyebrow}</p>
           <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">{t.heading}</h2>
           <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.body}</p>
           <div className="mt-6 m-carousel gap-3 md:grid sm:grid-cols-2">

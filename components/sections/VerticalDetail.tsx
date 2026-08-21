@@ -29,7 +29,7 @@ export function VerticalDetail({ locale, content }: { locale: Locale; content: V
       <section className="border-y border-white/10 bg-white/[0.025]">
         <div className="site-shell-wide section-y">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
+            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
               {content.workflow.eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-5xl">
@@ -57,7 +57,7 @@ export function VerticalDetail({ locale, content }: { locale: Locale; content: V
       <section className="border-b border-white/10">
         <div className="site-shell-wide section-y">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
+            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
               {content.audience.eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-5xl">

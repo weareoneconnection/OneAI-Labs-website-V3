@@ -150,7 +150,7 @@ export default async function StudioPage({ params }: PageParams) {
         <div className="site-shell-wide section-y">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
+              <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
                 {t.section1.eyebrow}
               </p>
 
@@ -258,7 +258,7 @@ export default async function StudioPage({ params }: PageParams) {
       <section className="border-b border-white/10">
         <div className="site-shell-wide section-y">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
+            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
               {t.workflow.eyebrow}
             </p>
 
@@ -298,7 +298,7 @@ export default async function StudioPage({ params }: PageParams) {
         <div className="site-shell-wide section-y">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
+              <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
                 {t.fit.eyebrow}
               </p>
 

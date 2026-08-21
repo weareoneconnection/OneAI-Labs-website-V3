@@ -51,7 +51,7 @@ export function TheOneSection({ locale }: { locale: Locale }) {
               <span className="min-w-0 break-words">{t.badge}</span>
             </div>
 
-            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
+            <p className="mt-8 font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
               {t.eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-5xl">

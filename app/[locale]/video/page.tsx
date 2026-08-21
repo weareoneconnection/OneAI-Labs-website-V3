@@ -189,7 +189,7 @@ export default async function VideoPage({ params }: PageParams) {
         <div className="site-shell-wide section-y">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
+              <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
                 {t.intro.eyebrow}
               </p>
 
@@ -296,7 +296,7 @@ export default async function VideoPage({ params }: PageParams) {
       <section className="border-b border-white/10">
         <div className="site-shell-wide section-y">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
+            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
               {t.capabilities.eyebrow}
             </p>
 
@@ -335,7 +335,7 @@ export default async function VideoPage({ params }: PageParams) {
           </div>
 
           <div className="mt-12 rounded-3xl border border-white/10 bg-white/[0.025] p-5 sm:p-8 md:rounded-[2rem]">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:tracking-[0.3em]">
+            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:tracking-[0.3em]">
               {t.capabilities.genresLabel}
             </p>
 
@@ -360,7 +360,7 @@ export default async function VideoPage({ params }: PageParams) {
       <section className="border-b border-white/10 bg-white/[0.025]">
         <div className="site-shell-wide section-y">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
+            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
               {t.workflow.eyebrow}
             </p>
 
@@ -394,7 +394,7 @@ export default async function VideoPage({ params }: PageParams) {
         <div className="site-shell-wide section-y">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
+              <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
                 {t.fit.eyebrow}
               </p>
 

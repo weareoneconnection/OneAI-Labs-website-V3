@@ -1,4 +1,4 @@
-import { Anvil, BrainCircuit, Database, Layers3, Network, Sparkles, Workflow, Zap } from "lucide-react";
+import { Anvil, BrainCircuit, Database, Layers3, Network, Workflow, Zap } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 
 const copy = {
@@ -49,16 +49,17 @@ export function OperatingSystemMap({ locale, compact = false }: { locale: Locale
       <div className="absolute inset-x-[12%] top-[13%] h-[72%] rounded-[50%] bg-cyan-400/[0.05] blur-[80px]" />
       <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(155deg,rgba(15,23,42,.86),rgba(2,6,23,.72))] p-4 shadow-[0_30px_120px_rgba(0,0,0,.45)] backdrop-blur-xl sm:p-6">
         <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-4">
-          <div className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500 sm:text-xs">
+          <div className="inline-flex items-center gap-2 font-mono-accent text-[10px] uppercase tracking-[0.18em] text-slate-500 sm:text-xs">
             <Network className="h-4 w-4 text-cyan-300" /> {t.top}
           </div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-cyan-200 sm:text-[10px]">
-            <Sparkles className="h-3.5 w-3.5" /> {t.feedback}
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-3 py-1.5 font-mono-accent text-[9px] uppercase tracking-[0.16em] text-cyan-200 sm:text-[10px]">
+            <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-cyan-300" aria-hidden />
+            {t.feedback}
           </div>
         </div>
 
         <div className="relative py-5 sm:py-7">
-          <div className="pointer-events-none absolute inset-x-[10%] top-1/2 hidden h-px bg-gradient-to-r from-transparent via-cyan-300/30 to-transparent lg:block" />
+          <div className="flow-line pointer-events-none absolute inset-x-[10%] top-1/2 hidden h-px bg-gradient-to-r from-transparent via-cyan-300/30 to-transparent lg:block" />
           <div className="pointer-events-none absolute bottom-[10%] left-1/2 top-[10%] hidden w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-indigo-300/25 to-transparent lg:block" />
 
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1.18fr_1fr_1fr] lg:items-center">
@@ -92,7 +93,7 @@ export function OperatingSystemMap({ locale, compact = false }: { locale: Locale
         </div>
 
         <div className="border-t border-white/10 pt-4">
-          <div className="mb-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">{t.bottom}</div>
+          <div className="mb-3 font-mono-accent text-[10px] uppercase tracking-[0.18em] text-slate-500">{t.bottom}</div>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
             {t.outcomes.map((item) => (
               <div key={item} className="rounded-xl border border-white/[0.08] bg-white/[0.025] px-3 py-2.5 text-center text-[10px] font-medium uppercase tracking-[0.12em] text-slate-400 sm:text-xs">

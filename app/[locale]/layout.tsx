@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
@@ -12,6 +12,15 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter"
+});
+
+// A monospace accent for eyebrows, labels and figures. On an infrastructure product
+// these read as instrument output rather than marketing copy — which is the point.
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "700"],
+  variable: "--font-mono"
 });
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
@@ -97,7 +106,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={htmlLang(locale)} className={inter.variable}>
+    <html lang={htmlLang(locale)} className={`${inter.variable} ${mono.variable}`}>
       <body>
         <script
           type="application/ld+json"

@@ -111,13 +111,44 @@ body {
     linear-gradient(180deg, #050816 0%, #070b18 58%, #050816 100%);
 }
 
+/* Eyebrows, labels and figures are set in mono: on an infrastructure product they
+   should read as instrument output, not as marketing copy. */
 .section-eyebrow {
-  font-size: 0.75rem;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
   line-height: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
   color: rgb(103 232 249);
+}
+
+.font-mono-accent {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* One reveal, used everywhere, so motion stays consistent instead of each section
+   inventing its own. Reduced-motion users get the final state immediately. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .section-title {
@@ -146,5 +177,45 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* The operating map is the one place a little motion earns its keep: it shows that the
+   loop is a loop. Slow, single-axis, and disabled under reduced motion. */
+@keyframes oneai-flow {
+  0%   { transform: translateX(-100%); opacity: 0; }
+  12%  { opacity: 0.9; }
+  88%  { opacity: 0.9; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+.flow-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.flow-line::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 38%;
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.55), transparent);
+  animation: oneai-flow 5.5s linear infinite;
+}
+
+@keyframes oneai-pulse {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 1; }
+}
+
+.pulse-dot {
+  animation: oneai-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-line::after,
+  .pulse-dot {
+    animation: none;
   }
 }

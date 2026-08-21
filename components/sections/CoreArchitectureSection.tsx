@@ -75,7 +75,7 @@ export function CoreArchitectureSection({ locale }: { locale: Locale }) {
     <section className="site-shell-wide section-y">
       <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">{t.eyebrow}</p>
+          <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">{t.eyebrow}</p>
           <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">{t.heading}</h2>
           <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.body}</p>
           <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.04] p-5">

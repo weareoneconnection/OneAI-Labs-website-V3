@@ -50,7 +50,7 @@ export function StudioSection({ locale }: { locale: Locale }) {
       <div className="site-shell section-y">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
+            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
               {t.eyebrow}
             </p>
 

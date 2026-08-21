@@ -1,3 +1,7 @@
+// The product surfaces live on our own domains. Sub-paths are derived from appUrl so
+// they cannot drift apart from it the way five hand-written URLs previously did.
+const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://app.oneai.network";
+
 export const site = {
   name: "OneAI Labs",
   legalName: "ONEAI LABS SDN. BHD.",
@@ -5,11 +9,12 @@ export const site = {
   incorporatedOn: "18 May 2026",
   jurisdiction: "Malaysia",
   url: "https://www.oneai.network",
-  appUrl: process.env.NEXT_PUBLIC_APP_URL || "https://oneai-saas-web-production.up.railway.app",
+  appUrl,
+  // No api.oneai.network record exists yet; keep the platform host until one does.
   apiUrl: process.env.NEXT_PUBLIC_API_URL || "https://oneai-saas-api-production.up.railway.app",
-  docsUrl: "https://oneai-saas-web-production.up.railway.app/docs",
-  pricingUrl: "https://oneai-saas-web-production.up.railway.app/pricing",
-  securityUrl: "https://oneai-saas-web-production.up.railway.app/security",
+  docsUrl: `${appUrl}/docs`,
+  pricingUrl: `${appUrl}/pricing`,
+  securityUrl: `${appUrl}/security`,
   theOneUrl: "https://theone-eta.vercel.app/",
   mirrorUrl: "https://onemirror-v1.vercel.app/",
   studioUrl: "https://oneai-web-delta.vercel.app/",

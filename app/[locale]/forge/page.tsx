@@ -63,7 +63,7 @@ const content = {
       heading: "Control built for teams that answer for their AI.",
       items: [
         { title: "Lineage tracking", description: "Full artifact lineage across data, training and releases.", icon: GitBranch },
-        { title: "Dual-principal approval", description: "Optional second reviewer with separate credentials for controlled promotions.", icon: UserCheck },
+        { title: "Dual-principal approval", description: "A second principal with separate credentials must sign off. Not a setting — an invariant: the requester can never approve their own promotion.", icon: UserCheck },
         { title: "Audit evidence", description: "Every run produces records you can hand to support, security or compliance.", icon: ScrollText },
         { title: "Sandboxed engineering", description: "Isolated environments to build and test without touching production.", icon: FlaskConical },
         { title: "Release management", description: "Reviewable releases and controlled production traffic in one surface.", icon: Layers },
@@ -125,7 +125,7 @@ const content = {
       heading: "为要对自己的 AI 负责的团队而建。",
       items: [
         { title: "血缘追踪", description: "跨数据、训练和发布的完整产物血缘。", icon: GitBranch },
-        { title: "双主体审批", description: "可选第二审阅人，用独立凭证对晋级做受控签核。", icon: UserCheck },
+        { title: "双主体审批", description: "必须由持独立凭证的第二主体签核。这不是可配置项，而是不变量：申请人永远无法批准自己的晋级。", icon: UserCheck },
         { title: "审计证据", description: "每次运行生成的记录，可直接交给支持、安全或合规团队。", icon: ScrollText },
         { title: "沙箱工程", description: "隔离环境中构建与测试，不触碰生产。", icon: FlaskConical },
         { title: "发布管理", description: "可审阅的发布与受控的生产流量，收拢在同一个操作面。", icon: Layers },
@@ -179,7 +179,7 @@ export default async function ForgePage({ params }: PageParams) {
       <section className="border-y border-white/10 bg-white/[0.025]">
         <div className="site-shell-wide section-y">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
+            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
               {t.pillars.eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-5xl">
@@ -210,7 +210,7 @@ export default async function ForgePage({ params }: PageParams) {
       <section className="border-b border-white/10">
         <div className="site-shell-wide section-y">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
+            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
               {t.lifecycle.eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-5xl">
@@ -238,7 +238,7 @@ export default async function ForgePage({ params }: PageParams) {
       <section className="border-b border-white/10 bg-white/[0.025]">
         <div className="site-shell-wide section-y">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
+            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
               {t.capabilities.eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-5xl">
@@ -266,7 +266,7 @@ export default async function ForgePage({ params }: PageParams) {
       <section className="border-b border-white/10">
         <div className="site-shell-wide section-y">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
+            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
               {t.audience.eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-5xl">
@@ -289,7 +289,7 @@ export default async function ForgePage({ params }: PageParams) {
         <div className="site-shell-wide section-y">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
+              <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
                 {t.fit.eyebrow}
               </p>
               <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-5xl">

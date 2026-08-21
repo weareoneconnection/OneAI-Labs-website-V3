@@ -19,7 +19,7 @@ const content = {
     ],
     panelLabel: "Governed promotion",
     approval: "Dual-principal approval",
-    approvalNote: "Promotions can require a second reviewer with separate credentials, held in memory only.",
+    approvalNote: "A promotion always requires a second principal with separate credentials. Tokens are held in memory only and cleared on reload.",
     stages: ["Versioned data", "Evaluated training", "Reviewable release", "Production traffic"]
   },
   zh: {
@@ -37,7 +37,7 @@ const content = {
     ],
     panelLabel: "受治理的晋级",
     approval: "双主体审批",
-    approvalNote: "晋级可要求第二位审阅人用独立凭证签核，凭证仅驻留内存。",
+    approvalNote: "晋级始终需要第二主体用独立凭证签核。令牌仅驻留内存，刷新即清除。",
     stages: ["数据版本", "训练评估", "可审阅发布", "生产流量"]
   }
 } as const;
@@ -55,7 +55,7 @@ export function ForgeSection({ locale }: { locale: Locale }) {
               <span className="min-w-0 break-words">{t.badge}</span>
             </div>
 
-            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.24em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
+            <p className="mt-8 font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">
               {t.eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-5xl">

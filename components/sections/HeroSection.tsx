@@ -8,30 +8,30 @@ const content = {
   en: {
     badge: "AI infrastructure · capability systems · agent operations",
     headlineA: "From models to missions.",
-    headlineB: "One platform for real-world AI.",
-    body: "OneAI Labs brings model access, capability development, agent coordination, governed execution and persistent memory into one operating platform—built to move AI from isolated experiments into dependable products and workflows.",
+    headlineB: "One governed platform for real-world AI.",
+    body: "OneAI Labs brings model access, capability development, agent coordination and persistent memory into one operating platform — all of it governed, so AI moves from isolated experiments into products you can answer for.",
     primary: "Explore the platform",
     secondary: "Launch OneForge",
     demo: "Request a demo",
     proof: [
-      "Unified across the AI lifecycle",
-      "Human-governed by design",
-      "Built for production workflows"
+      "Every release has a named approver",
+      "Every run leaves an append-only record",
+      "Every promotion is reversible"
     ],
     rail: ["Access", "Build", "Coordinate", "Execute", "Learn"]
   },
   zh: {
     badge: "AI 基础设施 · 能力系统 · Agent 运营",
-    headlineA: "从模型走向任务，",
-    headlineB: "一个平台承载真实世界 AI。",
-    body: "OneAI Labs 将模型接入、能力开发、Agent 协同、受治理执行与长期记忆统一到同一运行平台，推动 AI 从孤立试验走向稳定、可运营的产品和工作流。",
+    headlineA: "从模型，到使命。",
+    headlineB: "一个受治理的平台，承载真实世界 AI。",
+    body: "OneAI Labs 将模型接入、能力开发、Agent 协同与长期记忆统一到同一运行平台——并且全程受治理，让 AI 从孤立试验走向你敢于负责的产品。",
     primary: "探索整个平台",
     secondary: "进入 OneForge",
     demo: "预约企业演示",
     proof: [
-      "覆盖完整 AI 生命周期",
-      "人类治理贯穿始终",
-      "面向生产工作流构建"
+      "每一次发布都有具名审批人",
+      "每一次运行都留下只增不改的记录",
+      "每一次晋级都可回退"
     ],
     rail: ["接入", "锻造", "协同", "执行", "学习"]
   }

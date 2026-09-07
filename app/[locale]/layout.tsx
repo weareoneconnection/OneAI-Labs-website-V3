@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       template: "%s | OneAI Labs"
     },
     description: rootDescription[locale],
-    keywords: ["OneAI Labs", "Commercial AI", "AI SaaS", "AI Agent OS", "OneAI Core", "TheOne", "Execution OS", "OneForge", "TheOne", "OneClaw", "OneField", "AI operating platform", "AI capability lifecycle", "enterprise AI", "AI agents", "OneVideo Studio", "Construction AI"],
+    keywords: ["OneAI Labs", "Commercial AI", "AI SaaS", "AI Agent Systems", "OneAI Core", "TheOne", "Execution OS", "OneForge", "TheOne", "OneClaw", "OneField", "AI operating platform", "AI capability lifecycle", "enterprise AI", "AI agents", "OneVideo Studio", "Construction AI"],
     metadataBase: new URL(site.url),
     verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
       ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }

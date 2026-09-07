@@ -16,7 +16,7 @@ const content = {
     inputText: "“I only care about winning.”",
     worldLabel: "World",
     worldText: "Hyper Competitive Order",
-    note: "The result feels like a verdict, not a quiz. That makes OneAI Mirror a fast, shareable proof of how Core and Agent OS can become a public product experience.",
+    note: "The result feels like a verdict, not a quiz. That makes OneAI Mirror a fast, shareable proof of how Core and Agent Systems can become a public product experience.",
     consequences: ["World type", "Verdict", "Shock line", "System consequences"]
   },
   zh: {
@@ -32,7 +32,7 @@ const content = {
     inputText: "「我只在乎赢。」",
     worldLabel: "世界",
     worldText: "超竞争秩序",
-    note: "结果读起来像一份判决，而不是一份问卷。这让 OneAI Mirror 成为 Core 与 Agent OS 走向大众产品体验的一个快速、可传播的证明。",
+    note: "结果读起来像一份判决，而不是一份问卷。这让 OneAI Mirror 成为 Core 与 Agent 系统走向大众产品体验的一个快速、可传播的证明。",
     consequences: ["世界类型", "判决", "冲击语", "系统性后果"]
   }
 } as const;

@@ -29,7 +29,7 @@ const content = {
       { title: "Mission Board", description: "Create missions and organize goals into clear work streams.", icon: Target },
       { title: "Task Breakdown", description: "Use AI to break goals into tasks, steps and execution plans.", icon: ListTodo },
       { title: "Coordination", description: "Coordinate contributors, small teams and community workflows.", icon: Users },
-      { title: "Execution Pipeline", description: "Connect missions to OneAI Agent OS and OneClaw execution flows.", icon: GitBranch }
+      { title: "Execution Pipeline", description: "Connect missions to OneAI Agent Systems and OneClaw execution flows.", icon: GitBranch }
     ],
     detail: {
       workflow: {
@@ -39,7 +39,7 @@ const content = {
           { label: "Declare", text: "State the goal as a mission: what done looks like, by when, and who cares." },
           { label: "Break down", text: "AI decomposes the mission into tasks, steps and owners you can adjust." },
           { label: "Coordinate", text: "Contributors claim tasks; progress and blockers stay visible on the board." },
-          { label: "Execute", text: "Tasks route into Agent OS and OneClaw flows, and completions report back to the mission." }
+          { label: "Execute", text: "Tasks route into Agent Systems and OneClaw flows, and completions report back to the mission." }
         ]
       },
       audience: {
@@ -70,7 +70,7 @@ const content = {
       { title: "任务看板", description: "创建任务书，把目标组织成清晰的工作流。", icon: Target },
       { title: "任务拆解", description: "用 AI 把目标拆解成任务、步骤和执行计划。", icon: ListTodo },
       { title: "协作编排", description: "协调贡献者、小团队和社区工作流。", icon: Users },
-      { title: "执行管线", description: "把任务书接入 OneAI Agent OS 和 OneClaw 执行流。", icon: GitBranch }
+      { title: "执行管线", description: "把任务书接入 OneAI Agent Systems 和 OneClaw 执行流。", icon: GitBranch }
     ],
     detail: {
       workflow: {
@@ -80,7 +80,7 @@ const content = {
           { label: "立项", text: "把目标写成任务书：完成的标准是什么、什么时候完成、谁在乎结果。" },
           { label: "拆解", text: "AI 把任务书分解为任务、步骤和负责人，你可以随时调整。" },
           { label: "协同", text: "贡献者认领任务，进度和阻塞在看板上始终可见。" },
-          { label: "执行", text: "任务流入 Agent OS 和 OneClaw 执行流，完成结果回报到任务书。" }
+          { label: "执行", text: "任务流入 Agent 系统和 OneClaw 执行流，完成结果回报到任务书。" }
         ]
       },
       audience: {

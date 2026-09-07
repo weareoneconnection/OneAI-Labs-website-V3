@@ -19,11 +19,11 @@ const content = {
       description: "The governance layer: versioned data, evaluated training, approved releases and audited runs."
     },
     agentOs: {
-      title: "OneAI Agent OS",
+      title: "OneAI Agent Systems",
       label: "Intelligence to interface to execution",
       description: "The execution layer: turns Core-powered intelligence into bots, workflows, actions and industry systems."
     },
-    banner: "Core makes AI commercial. Forge keeps it governed. Agent OS makes it operational. The product matrix makes it usable."
+    banner: "Core makes AI commercial. Forge keeps it governed. Agent Systems make it operational. The product matrix makes it usable."
   },
   zh: {
     eyebrow: "运营模式",
@@ -40,11 +40,11 @@ const content = {
       description: "治理层：数据版本、训练评估、发布审批与可审计的运行。"
     },
     agentOs: {
-      title: "OneAI Agent OS",
+      title: "OneAI Agent Systems",
       label: "从智能到界面，再到执行",
       description: "执行层：把 Core 驱动的智能变成机器人、工作流、动作和行业系统。"
     },
-    banner: "Core 让 AI 可商业化，Forge 让 AI 受治理，Agent OS 让 AI 可运转，产品矩阵让 AI 真正可用。"
+    banner: "Core 让 AI 可商业化，Forge 让 AI 受治理，Agent 系统让 AI 可运转，产品矩阵让 AI 真正可用。"
   }
 } as const;
 

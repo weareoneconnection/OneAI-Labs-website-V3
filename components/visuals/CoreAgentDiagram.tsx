@@ -40,7 +40,7 @@ export function CoreAgentDiagram() {
           <div className="rounded-2xl border border-oneai-gold/20 bg-oneai-gold/10 p-4">
             <div className="flex items-center gap-2 text-amber-100">
               <Zap className="h-5 w-5 text-oneai-gold" />
-              <span className="font-semibold">Agent OS</span>
+              <span className="font-semibold">Agent Systems</span>
             </div>
             <p className="mt-2 text-sm text-slate-300">Intelligence to interface to execution</p>
             <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-slate-300">

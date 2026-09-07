@@ -6,7 +6,7 @@ const content = {
   en: {
     eyebrow: "Product matrix",
     heading: "The OneAI Labs ecosystem, powered by OneAI Core.",
-    body: "Each product is a proof of the same company architecture: Core handles gateway, task intelligence, routing, policy and usage; Agent OS turns that foundation into user-facing workflows.",
+    body: "Each product is a proof of the same company architecture: Core handles gateway, task intelligence, routing, policy and usage; Agent Systems turn that foundation into user-facing workflows.",
     poweredByLabel: "Powered by",
     shippingTitle: "Shipping",
     shippingNote: "Own domain, usable today. Beta means no SLA commitment yet.",
@@ -17,7 +17,7 @@ const content = {
   zh: {
     eyebrow: "产品矩阵",
     heading: "由 OneAI Core 驱动的 OneAI Labs 生态。",
-    body: "每一款产品都是同一套公司架构的证明：Core 负责网关、任务智能、路由、策略和用量；Agent OS 把这层地基变成面向用户的工作流。",
+    body: "每一款产品都是同一套公司架构的证明：Core 负责网关、任务智能、路由、策略和用量；Agent 系统把这层地基变成面向用户的工作流。",
     poweredByLabel: "技术底座",
     shippingTitle: "已交付",
     shippingNote: "有自有域名、当下可用。Beta 表示尚未做出 SLA 承诺。",

@@ -66,13 +66,13 @@ const content = {
     },
     fit: {
       eyebrow: "Where it fits",
-      heading: "Studio sits between Core and Agent OS.",
-      body: "OneAI Core provides the commercial operating layer. OneAI Studio gives builders a workspace to shape outputs. OneAI Agent OS turns validated intent into action through OneAI, OneAI Bot and OneClaw.",
+      heading: "Studio sits between Core and Agent Systems.",
+      body: "OneAI Core provides the commercial operating layer. OneAI Studio gives builders a workspace to shape outputs. OneAI Agent Systems turns validated intent into action through OneAI, OneAI Bot and OneClaw.",
       coreLabel: "OneAI Core",
       coreText: "Commercialize AI APIs, usage, cost and product operations.",
       studioLabel: "OneAI Studio",
       studioText: "Structure, validate and export workflow-ready outputs.",
-      agentLabel: "OneAI Agent OS",
+      agentLabel: "OneAI Agent Systems",
       agentText: "Turn intent into plan, interface and execution."
     }
   },
@@ -115,13 +115,13 @@ const content = {
     },
     fit: {
       eyebrow: "所处位置",
-      heading: "Studio 位于 Core 和 Agent OS 之间。",
-      body: "OneAI Core 提供商业运营层。OneAI Studio 给开发者一个塑造输出的工作台。OneAI Agent OS 通过 OneAI、OneAI Bot 和 OneClaw 把验证过的意图变成行动。",
+      heading: "Studio 位于 Core 和 Agent 系统之间。",
+      body: "OneAI Core 提供商业运营层。OneAI Studio 给开发者一个塑造输出的工作台。OneAI Agent 系统通过 OneAI、OneAI Bot 和 OneClaw 把验证过的意图变成行动。",
       coreLabel: "OneAI Core",
       coreText: "把 AI API、用量、成本和产品运营商业化。",
       studioLabel: "OneAI Studio",
       studioText: "结构化、验证并导出即用型输出。",
-      agentLabel: "OneAI Agent OS",
+      agentLabel: "OneAI Agent Systems",
       agentText: "把意图变成计划、界面和执行。"
     }
   }

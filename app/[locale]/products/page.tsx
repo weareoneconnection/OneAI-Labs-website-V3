@@ -19,12 +19,12 @@ const hero = {
   en: {
     eyebrow: "Products",
     title: "The OneAI Labs product ecosystem",
-    description: "A growing family of AI products and vertical operating systems built on OneAI Core, Agent OS, OneAI Bot and OneClaw."
+    description: "A growing family of AI products and vertical operating systems built on OneAI Core, Agent Systems, OneAI Bot and OneClaw."
   },
   zh: {
     eyebrow: "产品",
     title: "OneAI Labs 产品生态",
-    description: "构建在 OneAI Core、Agent OS、OneAI Bot 和 OneClaw 之上、持续成长的 AI 产品与垂直操作系统家族。"
+    description: "构建在 OneAI Core、Agent 系统、OneAI Bot 和 OneClaw 之上、持续成长的 AI 产品与垂直操作系统家族。"
   }
 } as const;
 

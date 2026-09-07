@@ -8,7 +8,7 @@ const content = {
     eyebrow: "Company",
     heading: "Built by OneAI Labs",
     body1: "OneAI Labs builds commercial AI infrastructure and agent-powered products. Our flagship product, OneAI Core, provides the operating layer behind API access, task intelligence, routing, policy, usage, cost and product operations.",
-    body2: "On top of Core, we build Agent OS, OneAI Bot, OneClaw and vertical systems for trading, construction, missions and field reputation.",
+    body2: "On top of Core, we build Agent Systems, OneAI Bot, OneClaw and vertical systems for trading, construction, missions and field reputation.",
     facts: {
       legal: "Legal entity",
       regNo: "Registration no.",
@@ -23,7 +23,7 @@ const content = {
     eyebrow: "公司",
     heading: "由 OneAI Labs 打造",
     body1: "OneAI Labs 打造商业化 AI 基础设施与智能体产品。旗舰产品 OneAI Core 提供 API 访问、任务智能、路由、策略、用量、成本和产品运营背后的运营层。",
-    body2: "在 Core 之上，我们构建 Agent OS、OneAI Bot、OneClaw，以及面向交易、建筑、任务协作和声誉体系的垂直系统。",
+    body2: "在 Core 之上，我们构建 Agent 系统、OneAI Bot、OneClaw，以及面向交易、建筑、任务协作和声誉体系的垂直系统。",
     facts: {
       legal: "法律实体",
       regNo: "注册编号",

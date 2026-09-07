@@ -7,27 +7,27 @@ import { pageMetadata, type PageParams } from "@/lib/seo";
 
 const meta = {
   en: {
-    title: "OneAI Agent OS · Intelligence, Interface and Execution",
-    description: "OneAI Agent OS combines OneAI Intelligence, OneAI Bot and OneClaw to turn Core-powered task intelligence into real action."
+    title: "OneAI Agent Systems · Intelligence, Interface and Execution",
+    description: "OneAI Agent Systems combine OneAI Intelligence, OneAI Bot and OneClaw to turn Core-powered task intelligence into real action."
   },
   zh: {
-    title: "OneAI Agent OS · 智能、界面与执行",
-    description: "OneAI Agent OS 组合 OneAI Intelligence、OneAI Bot 与 OneClaw，把 Core 驱动的任务智能变成真实行动。"
+    title: "OneAI Agent 系统 · 智能、界面与执行",
+    description: "OneAI Agent 系统组合 OneAI Intelligence、OneAI Bot 与 OneClaw，把 Core 驱动的任务智能变成真实行动。"
   }
 };
 
 const hero = {
   en: {
-    eyebrow: "OneAI Agent OS",
+    eyebrow: "OneAI Agent Systems",
     title: "Intelligence, interface and execution on top of OneAI Core",
-    description: "OneAI Agent OS combines OneAI Intelligence, OneAI Bot and OneClaw to turn Core-powered task intelligence into action.",
-    ctaLabel: "Explore Agent OS"
+    description: "OneAI Agent Systems combine OneAI Intelligence, OneAI Bot and OneClaw to turn Core-powered task intelligence into action.",
+    ctaLabel: "Explore Agent Systems"
   },
   zh: {
-    eyebrow: "OneAI Agent OS",
+    eyebrow: "OneAI Agent Systems",
     title: "构建在 OneAI Core 之上的智能、界面与执行",
-    description: "OneAI Agent OS 组合 OneAI Intelligence、OneAI Bot 与 OneClaw，把 Core 驱动的任务智能变成行动。",
-    ctaLabel: "了解 Agent OS"
+    description: "OneAI Agent Systems 组合 OneAI Intelligence、OneAI Bot 与 OneClaw，把 Core 驱动的任务智能变成行动。",
+    ctaLabel: "了解 Agent 系统"
   }
 } as const;
 

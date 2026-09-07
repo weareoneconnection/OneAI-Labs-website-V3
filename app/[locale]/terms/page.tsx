@@ -41,7 +41,7 @@ const content: Record<"en" | "zh", { hero: { title: string; description: string 
       {
         heading: "3. Products and separate terms",
         paragraphs: [
-          "OneAI products — including OneAI Core, OneAI Agent OS, OneVideo Studio, OneAI Bot and the vertical operating systems — are separate services that run on their own domains and are governed by their own terms, pricing and policies. Nothing on this website constitutes an offer that overrides those product terms."
+          "OneAI products — including OneAI Core, OneAI Agent Systems, OneVideo Studio, OneAI Bot and the vertical operating systems — are separate services that run on their own domains and are governed by their own terms, pricing and policies. Nothing on this website constitutes an offer that overrides those product terms."
         ]
       },
       {
@@ -108,7 +108,7 @@ const content: Record<"en" | "zh", { hero: { title: string; description: string 
       {
         heading: "三、产品与独立条款",
         paragraphs: [
-          "OneAI 各产品——包括 OneAI Core、OneAI Agent OS、OneVideo Studio、OneAI Bot 和各垂直操作系统——是运行在各自域名上的独立服务，受其各自的条款、定价和政策约束。本网站的任何内容都不构成覆盖那些产品条款的要约。"
+          "OneAI 各产品——包括 OneAI Core、OneAI Agent Systems、OneVideo Studio、OneAI Bot 和各垂直操作系统——是运行在各自域名上的独立服务，受其各自的条款、定价和政策约束。本网站的任何内容都不构成覆盖那些产品条款的要约。"
         ]
       },
       {

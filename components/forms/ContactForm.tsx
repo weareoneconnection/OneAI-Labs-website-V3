@@ -11,7 +11,7 @@ const content = {
       { name: "name", label: "Name", type: "text", placeholder: "Your name", required: true },
       { name: "email", label: "Email", type: "email", placeholder: "you@example.com", required: true },
       { name: "company", label: "Company / Project", type: "text", placeholder: "Company or project name", required: false },
-      { name: "interest", label: "Interested in", type: "text", placeholder: "Core / Agent OS / Studio / OneVideo / Trading", required: true }
+      { name: "interest", label: "Interested in", type: "text", placeholder: "Core / Agent Systems / Studio / OneVideo / Trading", required: true }
     ],
     message: "Message",
     messagePlaceholder: "What do you want to build?",
@@ -28,7 +28,7 @@ const content = {
       { name: "name", label: "姓名", type: "text", placeholder: "您的姓名", required: true },
       { name: "email", label: "邮箱", type: "email", placeholder: "you@example.com", required: true },
       { name: "company", label: "公司 / 项目", type: "text", placeholder: "公司或项目名称", required: false },
-      { name: "interest", label: "感兴趣的产品", type: "text", placeholder: "Core / Agent OS / Studio / OneVideo / Trading", required: true }
+      { name: "interest", label: "感兴趣的产品", type: "text", placeholder: "Core / Agent Systems / Studio / OneVideo / Trading", required: true }
     ],
     message: "需求描述",
     messagePlaceholder: "您想构建什么？",

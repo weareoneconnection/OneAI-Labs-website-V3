@@ -5,9 +5,9 @@ import type { Locale } from "@/lib/i18n";
 
 const content = {
   en: {
-    eyebrow: "Agent OS",
-    heading: "Agent OS turns Core infrastructure into product experience.",
-    body: "Most AI tools stop at answers. OneAI Agent OS connects intelligence, interface and execution so OneAI products can move from intent to plan, from plan to action, and from action to result.",
+    eyebrow: "Agent Systems",
+    heading: "Agent Systems turns Core infrastructure into product experience.",
+    body: "Most AI tools stop at answers. OneAI Agent Systems connects intelligence, interface and execution so OneAI products can move from intent to plan, from plan to action, and from action to result.",
     cards: [
       { title: "OneAI Intelligence", description: "Turns goals and context into structured plans powered by Core task contracts.", icon: BrainCircuit },
       { title: "OneAI Bot", description: "The conversational interface that brings Core-powered intelligence to users and communities.", icon: Bot },
@@ -15,9 +15,9 @@ const content = {
     ]
   },
   zh: {
-    eyebrow: "Agent OS",
-    heading: "Agent OS 把 Core 基础设施变成产品体验。",
-    body: "大多数 AI 工具止步于答案。OneAI Agent OS 把智能、界面和执行连接起来，让 OneAI 产品从意图走到计划、从计划走到行动、从行动走到结果。",
+    eyebrow: "Agent Systems",
+    heading: "Agent Systems 把 Core 基础设施变成产品体验。",
+    body: "大多数 AI 工具止步于答案。OneAI Agent Systems 把智能、界面和执行连接起来，让 OneAI 产品从意图走到计划、从计划走到行动、从行动走到结果。",
     cards: [
       { title: "OneAI Intelligence", description: "基于 Core 任务契约，把目标和上下文变成结构化计划。", icon: BrainCircuit },
       { title: "OneAI Bot", description: "对话式界面，把 Core 驱动的智能带给用户和社区。", icon: Bot },

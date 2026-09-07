@@ -106,7 +106,7 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          {["OneAI Core", "Agent OS", "Studio", "OneVideo", "TheOne"].map((item) => (
+          {["OneAI Core", "Agent Systems", "Studio", "OneVideo", "TheOne"].map((item) => (
             <div
               key={item}
               style={{

@@ -10,7 +10,7 @@ const routes = [
   "/studio",
   "/video",
   "/products",
-  "/use-cases",
+  "/industries",
   "/developers",
   "/pricing",
   "/company",

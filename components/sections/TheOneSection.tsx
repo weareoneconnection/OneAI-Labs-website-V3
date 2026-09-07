@@ -8,9 +8,9 @@ const content = {
     badge: "Execution OS",
     eyebrow: "TheOne",
     heading: "One intent. One system. One execution layer.",
-    body: "TheOne is the orchestration shell for turning AI intent into coordinated execution, connecting Core infrastructure, Agent OS intelligence and product workflows into one operating surface.",
+    body: "TheOne is the orchestration shell for turning AI intent into coordinated execution, connecting Core infrastructure, Agent Systems intelligence and product workflows into one operating surface.",
     openTheOne: "Open TheOne",
-    exploreAgentOs: "Explore Agent OS",
+    exploreAgentOs: "Explore Agent Systems",
     shellLabel: "Orchestration Shell",
     shellHeading: "Launch the full execution surface.",
     layers: [
@@ -24,9 +24,9 @@ const content = {
     badge: "执行 OS",
     eyebrow: "TheOne",
     heading: "一个意图，一套系统，一个执行层。",
-    body: "TheOne 是把 AI 意图变成协同执行的编排壳层，把 Core 基础设施、Agent OS 智能和产品工作流连接成一个操作面。",
+    body: "TheOne 是把 AI 意图变成协同执行的编排壳层，把 Core 基础设施、Agent 系统智能和产品工作流连接成一个操作面。",
     openTheOne: "打开 TheOne",
-    exploreAgentOs: "了解 Agent OS",
+    exploreAgentOs: "了解 Agent 系统",
     shellLabel: "编排壳层",
     shellHeading: "启动完整的执行操作面。",
     layers: [

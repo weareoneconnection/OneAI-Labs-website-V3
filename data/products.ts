@@ -60,7 +60,7 @@ export const products: Record<Locale, Product[]> = {
       tagline: "Execution OS & Orchestration Shell",
       description: "Turn one intent into one coordinated system and execution layer.",
       href: "https://theone-eta.vercel.app/",
-      poweredBy: "Agent OS + execution orchestration",
+      poweredBy: "Agent Systems + execution orchestration",
       stage: "Preview",
       icon: Layers3
     },
@@ -69,7 +69,7 @@ export const products: Record<Locale, Product[]> = {
       tagline: "Civilization Mirror & Belief Simulation",
       description: "Turn one belief, instinct or behavior into a shareable civilization-scale outcome.",
       href: "https://onemirror-v1.vercel.app/",
-      poweredBy: "OneAI Core + Agent OS",
+      poweredBy: "OneAI Core + Agent Systems",
       stage: "Preview",
       icon: Eye
     },
@@ -160,7 +160,7 @@ export const products: Record<Locale, Product[]> = {
       tagline: "执行 OS 与编排壳层",
       description: "把一个意图变成一套协同系统和执行层。",
       href: "https://theone-eta.vercel.app/",
-      poweredBy: "Agent OS + 执行编排",
+      poweredBy: "Agent 系统 + 执行编排",
       stage: "Preview",
       icon: Layers3
     },
@@ -169,7 +169,7 @@ export const products: Record<Locale, Product[]> = {
       tagline: "文明镜像与信念模拟",
       description: "把一个信念、本能或行为，放大成可分享的文明级结果。",
       href: "https://onemirror-v1.vercel.app/",
-      poweredBy: "OneAI Core + Agent OS",
+      poweredBy: "OneAI Core + Agent Systems",
       stage: "Preview",
       icon: Eye
     },

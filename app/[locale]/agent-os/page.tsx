@@ -1,6 +1,5 @@
 import { PageHero } from "@/components/sections/PageHero";
 import { AgentOSSection } from "@/components/sections/AgentOSSection";
-import { ProductMatrixSection } from "@/components/sections/ProductMatrixSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { localePath } from "@/lib/i18n";
 import { pageMetadata, type PageParams } from "@/lib/seo";
@@ -44,7 +43,6 @@ export default async function AgentOSPage({ params }: PageParams) {
     <>
       <PageHero eyebrow={t.eyebrow} title={t.title} description={t.description} ctaHref={localePath(locale, "/contact")} ctaLabel={t.ctaLabel} />
       <AgentOSSection locale={locale} />
-      <ProductMatrixSection locale={locale} />
       <FinalCTASection locale={locale} />
     </>
   );

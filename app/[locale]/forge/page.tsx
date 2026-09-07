@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 
 import { PageHero } from "@/components/sections/PageHero";
-import { ProductMatrixSection } from "@/components/sections/ProductMatrixSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { site } from "@/lib/constants";
 import { localePath } from "@/lib/i18n";
@@ -353,8 +352,6 @@ export default async function ForgePage({ params }: PageParams) {
           </div>
         </div>
       </section>
-
-      <ProductMatrixSection locale={locale} />
       <FinalCTASection locale={locale} />
     </>
   );

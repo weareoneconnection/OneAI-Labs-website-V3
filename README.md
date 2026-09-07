@@ -31,6 +31,25 @@ npm run build
 npm run start
 ```
 
+## Why `dev` and `build` pass `--webpack`
+
+Turbopack derives its chunk names from the absolute project path and then slices
+that string by byte offset. When the path contains non-ASCII characters the slice
+can land inside a multi-byte character and Turbopack panics:
+
+```txt
+start byte index 9 is not a char boundary; it is inside '核'
+```
+
+This checkout currently lives under a directory with Chinese characters, which
+triggers the panic on both `next dev` and `next build`. The webpack builder has no
+such assumption, so `dev` and `build` pin `--webpack` and both work as they are.
+
+The real fix is to move the checkout to a path with no non-ASCII characters. Once
+that happens, drop `--webpack` from both scripts — Turbopack is meaningfully
+faster, and `npm run dev:turbopack` is kept so the panic can be re-checked without
+editing the scripts.
+
 ## Configure Links
 
 Edit `lib/constants.ts`:

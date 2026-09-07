@@ -1,6 +1,7 @@
 import { AlertTriangle, BarChart3, Boxes, MessageSquareWarning, Puzzle, WalletCards } from "lucide-react";
 import { FeatureCard } from "@/components/cards/FeatureCard";
 import type { Locale } from "@/lib/i18n";
+import { SectionIndex } from "@/components/sections/SectionIndex";
 
 const content = {
   en: {
@@ -31,13 +32,13 @@ const content = {
   }
 } as const;
 
-export function ProblemSection({ locale }: { locale: Locale }) {
+export function ProblemSection({ locale, index }: { locale: Locale; index?: number }) {
   const t = content[locale];
 
   return (
     <section className="site-shell section-y">
       <div className="max-w-3xl">
-        <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-gold sm:text-sm sm:tracking-[0.3em]">{t.eyebrow}</p>
+        <SectionIndex index={index} label={t.eyebrow} />
         <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">{t.heading}</h2>
         <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.body}</p>
       </div>

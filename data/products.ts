@@ -1,4 +1,4 @@
-import { Anvil, BadgeCheck, Bot, Building2, Clapperboard, Eye, Layers3, LineChart, ShieldCheck, Target, Zap, type LucideIcon } from "lucide-react";
+import { Anvil, BadgeCheck, Bot, Boxes, Building2, Clapperboard, Eye, Layers3, LineChart, ShieldCheck, Target, Zap, type LucideIcon } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 
 // Maturity is assigned by an objective, checkable rule rather than by ambition:
@@ -84,12 +84,21 @@ export const products: Record<Locale, Product[]> = {
     },
     {
       name: "OneAI Construction OS",
-      tagline: "Project, Cost, Contract and Site Intelligence",
-      description: "Project reports, contract summaries, BOQ/BQ support, RFI/VO/claims and site records.",
-      href: "https://on-ai-construction-os.vercel.app/",
-      poweredBy: "Project intelligence workflows",
-      stage: "Preview",
+      tagline: "The operating system for construction intelligence",
+      description: "Document intelligence, project knowledge, RFI / NCR / inspection workflows, construction agents, governance and audit.",
+      href: "https://www.oneaiconstruction.com/en/products/construction-os",
+      poweredBy: "Core routing + Forge governance",
+      stage: "Beta",
       icon: Building2
+    },
+    {
+      name: "OneAI Construction Twin",
+      tagline: "A living AI representation of your project",
+      description: "IFC / BIM ingestion, 4D schedule, twin entities, an evidence graph, risk intelligence and forecast simulation.",
+      href: "https://www.oneaiconstruction.com/en/products/construction-twin",
+      poweredBy: "Project world model + OneField evidence",
+      stage: "Beta",
+      icon: Boxes
     },
     {
       name: "OneMission",
@@ -175,12 +184,21 @@ export const products: Record<Locale, Product[]> = {
     },
     {
       name: "OneAI Construction OS",
-      tagline: "项目、成本、合同与现场智能",
-      description: "项目报告、合同摘要、BOQ/BQ 支持、RFI/VO/索赔与现场记录。",
-      href: "https://on-ai-construction-os.vercel.app/",
-      poweredBy: "项目智能工作流",
-      stage: "Preview",
+      tagline: "建筑智能的操作系统",
+      description: "文档智能、项目知识、RFI / NCR / 验收工作流、建筑 Agent、治理与审计。",
+      href: "https://www.oneaiconstruction.com/zh/products/construction-os",
+      poweredBy: "Core 路由 + Forge 治理",
+      stage: "Beta",
       icon: Building2
+    },
+    {
+      name: "OneAI Construction Twin",
+      tagline: "你的项目的活体 AI 映射",
+      description: "IFC / BIM 摄取、4D 进度、孪生实体、证据图谱、风险智能与预测模拟。",
+      href: "https://www.oneaiconstruction.com/zh/products/construction-twin",
+      poweredBy: "项目世界模型 + OneField 证据",
+      stage: "Beta",
+      icon: Boxes
     },
     {
       name: "OneMission",

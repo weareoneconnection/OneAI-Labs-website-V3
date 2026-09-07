@@ -1,6 +1,7 @@
 import { Fingerprint, KeyRound, LineChart, LockKeyhole, ShieldCheck } from "lucide-react";
 import { site } from "@/lib/constants";
 import type { Locale } from "@/lib/i18n";
+import { SectionIndex } from "@/components/sections/SectionIndex";
 
 const content = {
   en: {
@@ -35,7 +36,7 @@ const content = {
   }
 } as const;
 
-export function SecuritySection({ locale }: { locale: Locale }) {
+export function SecuritySection({ locale, index }: { locale: Locale; index?: number }) {
   const t = content[locale];
 
   return (
@@ -43,7 +44,7 @@ export function SecuritySection({ locale }: { locale: Locale }) {
       <div className="site-shell-wide section-y">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">{t.eyebrow}</p>
+            <SectionIndex index={index} label={t.eyebrow} />
             <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">{t.heading}</h2>
             <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.body}</p>
             <div className="mt-8">

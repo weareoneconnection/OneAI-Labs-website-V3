@@ -2,6 +2,7 @@ import { coreFeatures } from "@/data/products";
 import { FeatureCard } from "@/components/cards/FeatureCard";
 import { DashboardMockup } from "@/components/visuals/DashboardMockup";
 import type { Locale } from "@/lib/i18n";
+import { SectionIndex } from "@/components/sections/SectionIndex";
 
 const content = {
   en: {
@@ -18,7 +19,7 @@ const content = {
   }
 } as const;
 
-export function OneAICoreSection({ locale }: { locale: Locale }) {
+export function OneAICoreSection({ locale, index }: { locale: Locale; index?: number }) {
   const t = content[locale];
 
   return (
@@ -27,7 +28,7 @@ export function OneAICoreSection({ locale }: { locale: Locale }) {
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <DashboardMockup />
           <div>
-            <p className="font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">{t.eyebrow}</p>
+            <SectionIndex index={index} label={t.eyebrow} />
             <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-5xl">{t.heading}</h2>
             <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.body}</p>
             <div className="mt-8 rounded-2xl border border-oneai-gold/20 bg-oneai-gold/10 p-5 text-base leading-7 text-amber-100">{t.banner}</div>

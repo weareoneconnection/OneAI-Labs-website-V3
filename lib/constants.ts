@@ -19,7 +19,15 @@ export const site = {
   studioUrl: "https://oneai-web-delta.vercel.app/",
   videoUrl: "https://www.onevideo.studio/",
   forgeUrl: "https://forge.oneai.network/",
+  // OneAI Construction runs as its own brand and its own site. The Labs site
+  // introduces it and hands off; it does not restate the product copy.
+  constructionUrl: "https://www.oneaiconstruction.com",
   waocUrl: "https://waoc.io",
   email: "info@weareoneconnection.com",
   contactFormEndpoint: "https://formspree.io/f/xojrozjo"
 };
+
+/** A product page on the OneAI Construction site, in the reader's own language. */
+export function constructionProductUrl(locale: "en" | "zh", slug: "construction-os" | "construction-twin") {
+  return `${site.constructionUrl}/${locale}/products/${slug}`;
+}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Anvil, ArrowRight, BrainCircuit, Database, Layers3, Zap, type LucideIcon } from "lucide-react";
 import { localePath, type Locale } from "@/lib/i18n";
 import { Reveal } from "@/components/motion/Reveal";
+import { SectionIndex } from "@/components/sections/SectionIndex";
 
 // The architecture diagram lives in the hero. Repeating it one screen later told the
 // reader nothing new; this section breaks the same five systems into what each one
@@ -51,7 +52,7 @@ const content = {
   }
 } as const;
 
-export function PlatformStackSection({ locale }: { locale: Locale }) {
+export function PlatformStackSection({ locale, index }: { locale: Locale; index?: number }) {
   const t = content[locale];
 
   return (
@@ -60,7 +61,7 @@ export function PlatformStackSection({ locale }: { locale: Locale }) {
         <Reveal>
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="section-eyebrow">{t.eyebrow}</p>
+              <SectionIndex index={index} label={t.eyebrow} />
               <h2 className="section-title mt-4">{t.heading}</h2>
             </div>
             <div className="lg:pb-1">

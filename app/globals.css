@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./flagship.css";
 
 @config "../tailwind.config.ts";
 @source "../app/**/*.{ts,tsx}";

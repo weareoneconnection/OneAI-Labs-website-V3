@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Locale } from "@/lib/i18n";
+import { SectionIndex } from "@/components/sections/SectionIndex";
 
 /**
  * Figures, not adjectives.
@@ -77,7 +78,7 @@ function Stat({ value, suffix, label, note, animate }: {
   );
 }
 
-export function ProofStripSection({ locale }: { locale: Locale }) {
+export function ProofStripSection({ locale, index }: { locale: Locale; index?: number }) {
   const t = content[locale];
   const ref = useRef<HTMLDivElement>(null);
   const [animate, setAnimate] = useState(false);
@@ -107,7 +108,7 @@ export function ProofStripSection({ locale }: { locale: Locale }) {
     <section className="border-b border-white/10 bg-white/[0.02]">
       <div ref={ref} className="site-shell-wide py-14 lg:py-16">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-          <p className="section-eyebrow">{t.eyebrow}</p>
+          <SectionIndex index={index} label={t.eyebrow} />
           <p className="max-w-xl text-xs leading-5 text-slate-500">{t.source}</p>
         </div>
         <div className="mt-9 grid gap-9 sm:grid-cols-3 sm:gap-6">

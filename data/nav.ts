@@ -88,7 +88,39 @@ export const navEntries: NavEntry[] = [
       }
     ]
   },
-  { label: { en: "Industries", zh: "行业" }, href: "/industries" },
+  {
+    // Solutions answers "what do you need"; Platform answers "what do we have".
+    // Both routes into the business live here — the two industries where a product
+    // already exists, and the two engagements that start as an assessment — so a
+    // reader picks by their own problem rather than by our internal taxonomy.
+    label: { en: "Solutions", zh: "解决方案" },
+    items: [
+      {
+        section: { en: "By industry", zh: "按行业" },
+        label: { en: "Built world", zh: "建成环境" },
+        href: "/industries",
+        hint: { en: "Construction and infrastructure — product available today", zh: "建筑与基础设施——产品已上线" }
+      },
+      {
+        section: { en: "By industry", zh: "按行业" },
+        label: { en: "Creative production", zh: "创意生产" },
+        href: "/video",
+        hint: { en: "Short drama and serialised video — product available today", zh: "短剧与连载视频——产品已上线" }
+      },
+      {
+        section: { en: "By need", zh: "按需求" },
+        label: { en: "AI agent development", zh: "AI 智能体开发" },
+        href: "/solutions/agents",
+        hint: { en: "Assessment first — we scope before we build", zh: "评估先行——先厘清，再动工" }
+      },
+      {
+        section: { en: "By need", zh: "按需求" },
+        label: { en: "Enterprise AI training", zh: "企业 AI 训练" },
+        href: "/solutions/training",
+        hint: { en: "Assessment first — baseline before GPU", zh: "评估先行——先有基线，再上 GPU" }
+      }
+    ]
+  },
   { label: { en: "Developers", zh: "开发者" }, href: "/developers" },
   {
     label: { en: "Company", zh: "公司" },

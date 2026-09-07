@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/sections/HeroSection";
+import { EntryLanes } from "@/components/sections/EntryLanes";
 import { ProofStripSection } from "@/components/sections/ProofStripSection";
 import { PlatformStackSection } from "@/components/sections/PlatformStackSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
@@ -10,6 +11,9 @@ import { SecuritySection } from "@/components/sections/SecuritySection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import type { PageParams } from "@/lib/seo";
 
+// The lanes sit between the hero and the numbered argument on purpose: the hero
+// says who we are, the lanes let a reader say who they are, and only then does the
+// case for the platform begin.
 // Sections are numbered 01-08 so the homepage reads as one argument in sequence.
 // The hero opens it and the closing CTA lands it, so neither takes an index.
 // Construction sits at 06: the platform has been described and proven by 05, so
@@ -19,6 +23,7 @@ export default async function HomePage({ params }: PageParams) {
   return (
     <>
       <HeroSection locale={locale} />
+      <EntryLanes locale={locale} />
       <ProofStripSection locale={locale} index={1} />
       <PlatformStackSection locale={locale} index={2} />
       <ProblemSection locale={locale} index={3} />

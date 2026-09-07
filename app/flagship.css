@@ -671,3 +671,170 @@
   .oa-tw-tag,
   .oa-tw-tag-delta { display: none; }
 }
+
+/* --------------------------------------------------------- mission graph */
+
+/*
+ * What an agent engagement produces: a mission with named agents, and a ledger
+ * where every step it took is recorded and sealed.
+ *
+ * This sits on the agent-development page as a sample deliverable rather than as
+ * decoration. We cannot promise delivery capacity yet, so what the page can honestly
+ * show is the standard — this is the shape of the artefact an engagement ends with.
+ */
+
+@keyframes oa-mg-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+.oa-mg {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  min-height: 610px;
+  border: 1px solid var(--oa-line-strong);
+  background: #070a18;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.26);
+}
+
+.oa-mg-main { border-right: 1px solid var(--oa-line); }
+
+.oa-mg-head {
+  height: 43px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--oa-line);
+  color: var(--oa-dim);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+}
+
+.oa-mg-canvas {
+  position: relative;
+  height: 566px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.oa-mg-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 214, 245, 0.22);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15), rgba(7, 10, 24, 0.96) 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 80px rgba(37, 99, 235, 0.1);
+}
+
+.oa-mg-core strong { margin-top: 8px; font-size: 11px; font-weight: 560; letter-spacing: 0.12em; }
+.oa-mg-core span { margin-top: 5px; color: var(--oa-dim); font-size: 8px; }
+
+.oa-mg-node {
+  position: absolute;
+  z-index: 3;
+  min-width: 128px;
+  padding: 9px 11px;
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 0 8px;
+  align-content: center;
+  border: 1px solid var(--oa-line);
+  background: rgba(7, 10, 24, 0.93);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+  animation: oa-mg-float 4s ease-in-out infinite;
+}
+
+.oa-mg-node i {
+  grid-row: 1 / 3;
+  align-self: center;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(0, 214, 245, 0.5);
+  box-shadow: 0 0 10px rgba(0, 214, 245, 0.6);
+}
+
+.oa-mg-node strong { font-size: 9px; font-weight: 560; letter-spacing: 0.1em; }
+.oa-mg-node span { margin-top: 3px; color: var(--oa-dimmer); font-size: 8px; }
+.oa-mg-node[data-role="evidence"] i { background: #9fffcf; box-shadow: 0 0 10px #9fffcf; }
+
+.oa-mg-node-0 { left: 7%; top: 13%; }
+.oa-mg-node-1 { right: 8%; top: 9%; }
+.oa-mg-node-2 { right: 3%; top: 47%; }
+.oa-mg-node-3 { right: 15%; bottom: 10%; }
+.oa-mg-node-4 { left: 10%; bottom: 12%; }
+
+.oa-mg-links { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; }
+.oa-mg-links path {
+  fill: none;
+  stroke: rgba(63, 123, 216, 0.24);
+  stroke-width: 1;
+  stroke-dasharray: 3 6;
+  vector-effect: non-scaling-stroke;
+}
+
+.oa-mg-side { display: flex; flex-direction: column; }
+
+.oa-mg-side-head {
+  height: 43px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--oa-line);
+  color: var(--oa-dim);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.oa-mg-row {
+  min-height: 57px;
+  padding: 0 13px;
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+  font-size: 8px;
+}
+
+.oa-mg-row > span { color: var(--oa-dimmer); font-family: var(--font-mono), ui-monospace, monospace; }
+.oa-mg-row b { color: #8b9aa7; font-weight: 520; font-family: var(--font-mono), ui-monospace, monospace; }
+.oa-mg-row em { color: #8aa89a; font-size: 7px; font-style: normal; }
+
+.oa-mg-hash {
+  margin: auto 14px 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--oa-line);
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.04), transparent);
+}
+
+.oa-mg-hash span { color: var(--oa-dimmer); font-size: 7px; letter-spacing: 0.13em; }
+.oa-mg-hash strong { margin-top: 8px; font-family: var(--font-mono), ui-monospace, monospace; font-size: 17px; font-weight: 420; letter-spacing: 0.04em; }
+.oa-mg-hash small { margin-top: 6px; color: var(--oa-dimmer); font-size: 7px; }
+
+@media (max-width: 1100px) {
+  .oa-mg { grid-template-columns: 1fr; }
+  .oa-mg-main { border-right: 0; border-bottom: 1px solid var(--oa-line); }
+}
+
+@media (max-width: 760px) {
+  .oa-mg-canvas { height: 440px; }
+  .oa-mg-node { min-width: 96px; padding: 7px 9px; }
+  .oa-mg-node span { display: none; }
+  .oa-mg-core { width: 124px; height: 124px; }
+}

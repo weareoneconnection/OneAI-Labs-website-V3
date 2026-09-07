@@ -11,6 +11,8 @@ const routes = [
   "/video",
   "/products",
   "/industries",
+  "/solutions/agents",
+  "/solutions/training",
   "/developers",
   "/pricing",
   "/company",

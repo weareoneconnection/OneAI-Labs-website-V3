@@ -20,8 +20,26 @@ function renamed(pathname: string): string | null {
   return zh ? `/zh${target}` : target;
 }
 
+// The marketing site moved from oneai.network to oneailabs.ai. Both were answering
+// 200 with identical content and neither pointed at the other, which is the state
+// search engines resolve by picking one and treating the other as duplicate — so
+// the old host now hands its weight over permanently instead of competing.
+//
+// Matched on the bare host so oneai.network and www.oneai.network both move. The
+// product subdomains (app., api.) are separate deployments and never reach this
+// middleware; a stray match would be wrong, so they are excluded explicitly.
+const RETIRED_HOSTS = new Set(["oneai.network", "www.oneai.network"]);
+const CANONICAL_ORIGIN = "https://www.oneailabs.ai";
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  const host = request.headers.get("host")?.split(":")[0].toLowerCase();
+  if (host && RETIRED_HOSTS.has(host)) {
+    // Path and query are preserved so a deep link keeps its destination and the
+    // redirect passes ranking signals for that page rather than for the home page.
+    return NextResponse.redirect(`${CANONICAL_ORIGIN}${pathname}${request.nextUrl.search}`, 308);
+  }
 
   const moved = renamed(pathname);
   if (moved) {

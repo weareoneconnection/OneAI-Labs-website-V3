@@ -8,7 +8,15 @@ export const site = {
   registrationNo: "202601020394 (1682491-W)",
   incorporatedOn: "18 May 2026",
   jurisdiction: "Malaysia",
-  url: "https://www.oneai.network",
+  // The corporate site is oneailabs.ai. This one value feeds metadataBase, every
+  // canonical and og:url, the sitemap (including its hreflang alternates), the
+  // robots.txt sitemap pointer and the Organization JSON-LD — so while it said
+  // oneai.network, oneailabs.ai was serving pages that told search engines the
+  // real address was somewhere else, and asking to be dropped from the index.
+  //
+  // The product surfaces keep their own subdomains below; only the marketing site
+  // moved.
+  url: "https://www.oneailabs.ai",
   appUrl,
   apiUrl: process.env.NEXT_PUBLIC_API_URL || "https://api.oneai.network",
   docsUrl: `${appUrl}/docs`,

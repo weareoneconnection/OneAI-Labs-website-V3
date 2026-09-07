@@ -1,8 +1,9 @@
-import { Eye, GitBranch, ShieldCheck } from "lucide-react";
+import { Eye, FileText, GitBranch, KeyRound, ShieldCheck, UserRoundCheck } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { SolutionDetail, type SolutionContent } from "@/components/sections/SolutionDetail";
 import { MissionGraph } from "@/components/visuals/MissionGraph";
+import { site } from "@/lib/constants";
 import { localePath } from "@/lib/i18n";
 import { pageMetadata, type PageParams } from "@/lib/seo";
 
@@ -76,11 +77,20 @@ const content: Record<"en" | "zh", SolutionContent> = {
       { label: "A verdict you can act on", text: "Viable, viable with conditions, or not worth building. You get the reasoning either way, and you own it." },
       { label: "A pilot, only if viable", text: "Scope, boundaries and success criteria agreed in writing before any build starts." }
     ],
+    deliveryEyebrow: "Who does the work",
+    deliveryHeading: `Founder-led, which is why we run ${site.concurrentEngagements} at a time.`,
+    deliveryBody: `Engagements are led by the founder directly rather than handed to an account team, so the person who designed this stack is the person on your project. That is a real constraint, and we would rather state it than queue you behind something.`,
+    delivery: [
+      { title: "One principal, start to finish", text: "The same person runs the assessment, the design and the build. Nothing is re-explained to a delivery team that was not in the room.", icon: UserRoundCheck },
+      { title: "Permissions designed first", text: "You get the authority model in writing — what the agent may touch, what needs approval, and what it may never do.", icon: KeyRound },
+      { title: "The agent, and its ledger", text: "Not just a working agent: the audit configuration, the rollback path and the integration that puts it inside your system.", icon: ShieldCheck },
+      { title: "Handover, not dependency", text: "Documentation and a walkthrough so your team can run it. If you would rather we kept operating it, that is a separate agreement, agreed up front.", icon: FileText }
+    ],
     limitsTitle: "What we are not saying",
     limits: [
-      "We are not claiming delivery capacity we have not built. Engagements start as assessments, and we take on a small number at a time.",
+      `${site.concurrentEngagements} engagements at a time is a real ceiling, not a scarcity tactic. If they are all running, we will tell you when rather than take a deposit.`,
       "We have no customer case studies to show you yet. Everything on this page is our own system and our own standard, labelled as such.",
-      "If the honest answer is that you do not need an agent, that is the answer you will get."
+      "If the honest answer is that you do not need an agent, that is the answer you will get — even though it is the smaller engagement."
     ],
     ctaHeading: "Tell us what you want an agent to be responsible for.",
     ctaBody: "The more concrete the scenario, the more useful the assessment. A real task with a real owner beats a category.",
@@ -121,11 +131,20 @@ const content: Record<"en" | "zh", SolutionContent> = {
       { label: "一个能据以行动的结论", text: "可行、有条件可行，或者不值得做。无论哪种，推理过程都给你，而且归你。" },
       { label: "可行才谈试点", text: "范围、边界和验收标准都白纸黑字写清楚，再开始动工。" }
     ],
+    deliveryEyebrow: "谁来做这件事",
+    deliveryHeading: `创始人亲自带，所以同期只做 ${site.concurrentEngagements} 个。`,
+    deliveryBody: `项目由创始人直接负责，不转交客户经理——设计这套系统的人，就是坐在你项目上的人。这是一个真实的产能上限，我们宁可说清楚，也不想让你排在别的项目后面。`,
+    delivery: [
+      { title: "一个人负责到底", text: "评估、设计、施工是同一个人。不会有任何东西需要向一个当时不在场的交付团队重新解释一遍。", icon: UserRoundCheck },
+      { title: "权限先设计出来", text: "你会拿到白纸黑字的权限模型：智能体能碰什么、什么必须审批、什么永远不许做。", icon: KeyRound },
+      { title: "交付的不只是智能体", text: "还包括审计配置、回滚路径，以及把它接进你现有系统的那部分集成。", icon: ShieldCheck },
+      { title: "交接，而不是依赖", text: "给文档和一次完整讲解，让你的团队自己能跑。如果你更希望由我们继续运维，那是另一份约定，事先谈清楚。", icon: FileText }
+    ],
     limitsTitle: "我们没有在说什么",
     limits: [
-      "我们没有在宣称还不具备的交付产能。合作从评估开始，同期只推进少量。",
+      `同期 ${site.concurrentEngagements} 个是真实的上限，不是饥饿营销。如果都占满了，我们会告诉你大概什么时候能排上，而不是先收一笔定金。`,
       "我们目前还没有可展示的客户案例。本页所有内容都是我们自己的系统和自己的标准，并如实标注。",
-      "如果诚实的结论是你并不需要一个智能体，你会得到的就是这个结论。"
+      "如果诚实的结论是你并不需要一个智能体，你会得到的就是这个结论——哪怕那是一单更小的生意。"
     ],
     ctaHeading: "告诉我们，你想让智能体对什么负责。",
     ctaBody: "场景越具体，评估越有用。一个有明确负责人的真实任务，胜过一个笼统的品类。",

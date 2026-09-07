@@ -23,6 +23,11 @@ export const site = {
   // introduces it and hands off; it does not restate the product copy.
   constructionUrl: "https://www.oneaiconstruction.com",
   waocUrl: "https://waoc.io",
+  // Engagements are led by the founder directly rather than handed to an account
+  // team, which caps how many can run at once. Stated on the service pages as the
+  // reason we are selective — a limit that comes from how the work is done is a
+  // promise, while the same limit unexplained reads as an apology.
+  concurrentEngagements: 2,
   email: "info@weareoneconnection.com",
   contactFormEndpoint: "https://formspree.io/f/xojrozjo"
 };

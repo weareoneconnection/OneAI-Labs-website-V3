@@ -1,8 +1,9 @@
-import { RotateCcw, ScrollText, ShieldCheck } from "lucide-react";
+import { FileText, GaugeCircle, RotateCcw, ScrollText, ShieldCheck, UserRoundCheck } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { SolutionDetail, type SolutionContent } from "@/components/sections/SolutionDetail";
 import { ForgeControlRoom } from "@/components/visuals/ForgeControlRoom";
+import { site } from "@/lib/constants";
 import { localePath } from "@/lib/i18n";
 import { pageMetadata, type PageParams } from "@/lib/seo";
 
@@ -76,9 +77,18 @@ const content: Record<"en" | "zh", SolutionContent> = {
       { label: "A verdict you can act on", text: "Train, do not train, or do something else first. With the reasoning, so your own team can check it." },
       { label: "A pilot, only if viable", text: "Evaluation criteria and the release gate agreed in writing before any GPU is allocated." }
     ],
+    deliveryEyebrow: "Who does the work",
+    deliveryHeading: `Founder-led, which is why we run ${site.concurrentEngagements} at a time.`,
+    deliveryBody: `Engagements are led by the founder directly rather than handed to an account team, so the person who built this evaluation stack is the person running yours. That is a real constraint, and we would rather state it than queue you behind something.`,
+    delivery: [
+      { title: "One principal, start to finish", text: "The same person reviews the data, sets the evaluation and reads the result. Nothing is re-explained to a delivery team that was not in the room.", icon: UserRoundCheck },
+      { title: "A baseline you can check", text: "You get the measured baseline and the evaluation set before training starts, so the verdict afterwards is not ours to argue.", icon: GaugeCircle },
+      { title: "The artefact, and its gate", text: "Not just weights: the lineage, the release gate configuration, the rollback path and the audit record of the run.", icon: ShieldCheck },
+      { title: "Handover, not dependency", text: "Documentation and a walkthrough so your team can retrain and re-evaluate. Continued operation by us is a separate agreement, agreed up front.", icon: FileText }
+    ],
     limitsTitle: "What we are not saying",
     limits: [
-      "We are not claiming delivery capacity we have not built. Engagements start as assessments, and we take on a small number at a time.",
+      `${site.concurrentEngagements} engagements at a time is a real ceiling, not a scarcity tactic. If they are all running, we will tell you when rather than take a deposit.`,
       "The run shown above is our own model, not a customer's. We have no customer training case studies to show you yet, and will not imply otherwise.",
       "If the assessment says prompting or retrieval is the right answer, that is the answer you will get — even though it is the smaller engagement."
     ],
@@ -121,9 +131,18 @@ const content: Record<"en" | "zh", SolutionContent> = {
       { label: "一个能据以行动的结论", text: "训、不训，或者先做别的。附上推理过程，让你自己的团队可以复核。" },
       { label: "可行才谈试点", text: "评测标准和发布门禁白纸黑字写清楚，然后才分配 GPU。" }
     ],
+    deliveryEyebrow: "谁来做这件事",
+    deliveryHeading: `创始人亲自带，所以同期只做 ${site.concurrentEngagements} 个。`,
+    deliveryBody: `项目由创始人直接负责，不转交客户经理——搭出这套评测体系的人，就是跑你这一次的人。这是一个真实的产能上限，我们宁可说清楚，也不想让你排在别的项目后面。`,
+    delivery: [
+      { title: "一个人负责到底", text: "看数据、定评测、读结果是同一个人。不会有任何东西需要向一个当时不在场的交付团队重新解释一遍。", icon: UserRoundCheck },
+      { title: "基线你自己能核", text: "训练开始之前，实测基线和评测集就交给你——这样事后的结论不是我们说了算。", icon: GaugeCircle },
+      { title: "交付的不只是权重", text: "还包括血缘、发布门禁配置、回滚路径，以及这次运行的完整审计记录。", icon: ShieldCheck },
+      { title: "交接，而不是依赖", text: "给文档和一次完整讲解，让你的团队自己能重训、能复评。由我们继续运维是另一份约定，事先谈清楚。", icon: FileText }
+    ],
     limitsTitle: "我们没有在说什么",
     limits: [
-      "我们没有在宣称还不具备的交付产能。合作从评估开始，同期只推进少量。",
+      `同期 ${site.concurrentEngagements} 个是真实的上限，不是饥饿营销。如果都占满了，我们会告诉你大概什么时候能排上，而不是先收一笔定金。`,
       "上面那次运行用的是我们自己的模型，不是客户的。我们目前没有客户训练案例可展示，也不会做任何暗示。",
       "如果评估的结论是提示词或检索才是对的答案，你得到的就是这个答案——哪怕那是一单更小的生意。"
     ],

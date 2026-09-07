@@ -14,7 +14,6 @@ const content = {
     rights: "All rights reserved.",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
-    tagline: "One Intelligence · Infinite Possibilities",
     links: [
       ["Core", "/core"],
       ["Forge", "/forge"],
@@ -39,7 +38,6 @@ const content = {
     rights: "保留所有权利。",
     privacy: "隐私政策",
     terms: "使用条款",
-    tagline: "一份智能 · 无限可能",
     links: [
       ["Core", "/core"],
       ["Forge", "/forge"],
@@ -67,7 +65,6 @@ export function Footer({ locale }: { locale: Locale }) {
             <LogoMark className="h-10 w-10 shrink-0" />
             <div>
               <div className="text-lg font-semibold">OneAI Labs</div>
-              <div className="text-xs text-slate-500">{t.tagline}</div>
             </div>
           </div>
           <p className="mt-4 max-w-md text-sm leading-6 text-slate-400">{t.blurb}</p>

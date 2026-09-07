@@ -36,7 +36,7 @@ const content = {
     hero: {
       eyebrow: "OneVideo Studio",
       title: "The AI short-drama operating system",
-      description: "From one idea to a publishable hit. OneVideo Studio writes the script, structures the shots, performs the dialogue and delivers a finished episode ready for the feed.",
+      description: "From one idea to a publishable episode. OneVideo Studio writes the script, structures the shots, performs the dialogue and delivers a finished episode ready for the feed.",
       ctaLabel: "Open OneVideo Studio"
     },
     intro: {

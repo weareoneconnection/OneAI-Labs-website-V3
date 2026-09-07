@@ -4,6 +4,11 @@ import { localePath, type Locale } from "@/lib/i18n";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionIndex } from "@/components/sections/SectionIndex";
 
+// The heading says layers, not systems, and architecture, not production loop: the
+// architecture is settled, but TheOne, OneClaw and OneField are still Preview in
+// products.ts. Claiming a live five-system loop here would be the exact gap between
+// claim and evidence the rest of this page argues against.
+//
 // The architecture diagram lives in the hero. Repeating it one screen later told the
 // reader nothing new; this section breaks the same five systems into what each one
 // actually owns, and absorbs the governed-loop material that used to be its own screen.
@@ -18,7 +23,7 @@ const systems: { key: string; icon: LucideIcon; tone: string }[] = [
 const content = {
   en: {
     eyebrow: "The OneAI operating architecture",
-    heading: "Five systems. One production loop.",
+    heading: "Five layers. One operating architecture.",
     body: "Each system owns one responsibility and no more. Plans, approvals, proofs and results move between them through explicit contracts — so automation can grow without the control plane blurring.",
     cta: "Explore all platform systems",
     owns: "Owns",
@@ -31,11 +36,11 @@ const content = {
       field: { name: "OneField", owns: "Memory, contribution records, evidence", off: "Evidence for the next release" }
     },
     loopTitle: "The loop closes here",
-    loopBody: "Production outcomes return to OneForge as evidence. The next release is decided by what actually happened, not by what was expected to happen."
+    loopBody: "Production outcomes are designed to return to OneForge as evidence, so the next release is decided by what actually happened rather than by what was expected to happen. Maturity is per system: see the stage on each product."
   },
   zh: {
     eyebrow: "OneAI 运行架构",
-    heading: "五大系统，一个生产闭环。",
+    heading: "五个层次，一套运行架构。",
     body: "每个系统只拥有一项职责，不多也不少。计划、审批、证据与结果通过明确契约在系统间流转——让自动化持续扩大，而控制平面不会因此模糊。",
     cta: "查看全部平台系统",
     owns: "负责",
@@ -48,7 +53,7 @@ const content = {
       field: { name: "OneField", owns: "记忆、贡献记录、证据", off: "下一次发布所需的证据" }
     },
     loopTitle: "闭环在这里合上",
-    loopBody: "生产结果作为证据回到 OneForge。下一次发布由真实发生的事情决定，而不是由预期决定。"
+    loopBody: "架构设计上，生产结果会作为证据回到 OneForge，让下一次发布由真实发生的事情决定，而不是由预期决定。各系统成熟度不同，请以每个产品标注的阶段为准。"
   }
 } as const;
 

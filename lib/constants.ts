@@ -22,7 +22,7 @@ export const site = {
   docsUrl: `${appUrl}/docs`,
   pricingUrl: `${appUrl}/pricing`,
   securityUrl: `${appUrl}/security`,
-  theOneUrl: "https://theone-eta.vercel.app/",
+  theOneUrl: "https://www.the1os.io/",
   mirrorUrl: "https://onemirror-v1.vercel.app/",
   studioUrl: "https://oneai-web-delta.vercel.app/",
   videoUrl: "https://www.onevideo.studio/",

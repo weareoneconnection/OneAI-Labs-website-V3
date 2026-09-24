@@ -43,9 +43,9 @@ export const products: Record<Locale, Product[]> = {
     {
       name: "OneForge",
       tagline: "AI Capability Control Plane",
-      description: "Govern the AI lifecycle: versioned data, evaluated training, approved releases and audited runs.",
+      description: "One governed kernel, three factories — Model, Agent and Evolution — where nothing reaches production without evaluation, approval and a rollback path.",
       href: "https://forge.oneai.network/",
-      poweredBy: "Governance + lineage + approvals",
+      poweredBy: "Governed kernel + Model, Agent & Evolution factories",
       stage: "Beta",
       tier: "flagship",
       icon: Anvil
@@ -157,9 +157,9 @@ export const products: Record<Locale, Product[]> = {
     {
       name: "OneForge",
       tagline: "AI 能力控制平面",
-      description: "治理 AI 生命周期：数据版本、训练评估、发布审批与可审计的运行。",
+      description: "一个受治理的内核，三条能力线——Model、Agent 与 Evolution——没有评测、审批和回滚路径，任何东西都进不了生产。",
       href: "https://forge.oneai.network/",
-      poweredBy: "治理 + 血缘 + 审批",
+      poweredBy: "受治理内核 + Model / Agent / Evolution 三条能力线",
       stage: "Beta",
       tier: "flagship",
       icon: Anvil

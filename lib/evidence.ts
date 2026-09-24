@@ -22,11 +22,14 @@ export type EvidenceSummary = {
   live: boolean;
 };
 
+// Hand-checked after a production database reset — the pre-reset figures (941 audit
+// records, 37/11 approved/rejected, 34 rollbacks) no longer reflect what's actually
+// in OneForge's database and would be a stale claim, not a fallback.
 const STATIC_SNAPSHOT: EvidenceSummary = {
-  auditTotal: 941,
-  approved: 37,
-  rejected: 11,
-  rollbacks: 34,
+  auditTotal: 368,
+  approved: 9,
+  rejected: 0,
+  rollbacks: 9,
   asOf: "2026-09-24",
   live: false
 };

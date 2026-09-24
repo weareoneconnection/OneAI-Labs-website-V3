@@ -41,8 +41,8 @@ const content = {
     },
     record: {
       eyebrow: "What one record actually looks like",
-      heading: "The 941 above aren't a marketing number. Here is one of them.",
-      body: "This is a real training run from OneForge's control plane, not a staged example. The candidate scored below the production baseline. The gate rejected it. Production never changed.",
+      heading: "The figures above aren't a marketing number. Here's a real one from our history.",
+      body: "This is a real training run from OneForge's control plane, not a staged example. The candidate scored below the production baseline. The gate rejected it. Production never changed. It predates a database reset, so it will not always match whatever the live count above happens to show right now — the counter is real either way.",
       runId: "RUN / QWEN3-8B",
       candidateLabel: "Candidate",
       candidateNote: "assistant-v6",
@@ -86,8 +86,8 @@ const content = {
     },
     record: {
       eyebrow: "一条记录实际长什么样",
-      heading: "上面的 941 不是一个营销数字。这是其中一条。",
-      body: "这是 OneForge 控制平面里一次真实的训练运行，不是摆拍出来的例子。候选得分低于生产基线，门禁将其驳回，线上版本自始至终没有改变。",
+      heading: "上面的数字不是营销数字。这是我们历史上真实的一条。",
+      body: "这是 OneForge 控制平面里一次真实的训练运行，不是摆拍出来的例子。候选得分低于生产基线，门禁将其驳回，线上版本自始至终没有改变。这条记录早于一次数据库重置，所以不一定总能对上上面实时计数器此刻显示的数字——但计数器本身是真实的。",
       runId: "运行 / QWEN3-8B",
       candidateLabel: "候选",
       candidateNote: "assistant-v6",

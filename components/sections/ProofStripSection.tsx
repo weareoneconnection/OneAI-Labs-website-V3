@@ -17,18 +17,18 @@ const content = {
     eyebrow: "Measured, not claimed",
     source: "From OneForge's own control plane — every figure below is a query away.",
     stats: [
-      { value: 941, label: "Audit records", note: "Append-only. Nothing edited, nothing deleted." },
-      { value: 37, suffix: " / 11", label: "Approved / rejected", note: "A gate that never rejects is not a gate." },
-      { value: 34, label: "Rollbacks executed", note: "Reversibility proven, not promised." }
+      { value: 368, label: "Audit records", note: "Append-only. Nothing edited, nothing deleted." },
+      { value: 9, suffix: " / 0", label: "Approved / rejected", note: "A gate that never rejects is not a gate." },
+      { value: 9, label: "Rollbacks executed", note: "Reversibility proven, not promised." }
     ]
   },
   zh: {
     eyebrow: "实测，而非声称",
     source: "数据来自 OneForge 自身控制平面——下面每一个数字都可以当场查询验证。",
     stats: [
-      { value: 941, label: "条审计记录", note: "只增不改。没有编辑，没有删除。" },
-      { value: 37, suffix: " / 11", label: "次审批通过 / 驳回", note: "从不驳回的门禁不是门禁。" },
-      { value: 34, label: "次真实回滚", note: "可回退是被证明的，不是被承诺的。" }
+      { value: 368, label: "条审计记录", note: "只增不改。没有编辑，没有删除。" },
+      { value: 9, suffix: " / 0", label: "次审批通过 / 驳回", note: "从不驳回的门禁不是门禁。" },
+      { value: 9, label: "次真实回滚", note: "可回退是被证明的，不是被承诺的。" }
     ]
   }
 } as const;

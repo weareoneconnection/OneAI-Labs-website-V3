@@ -60,9 +60,9 @@ export const products: Record<Locale, Product[]> = {
     {
       name: "OneForge",
       tagline: "AI Capability Control Plane",
-      description: "One governed kernel, three factories — Model, Agent and Evolution — where nothing reaches production without evaluation, approval and a rollback path.",
+      description: "One governed control plane, three factories — Model, Agent and Evolution — where nothing reaches production without evaluation, approval and a rollback path.",
       href: "https://forge.oneai.network/",
-      poweredBy: "Governed kernel + Model, Agent & Evolution factories",
+      poweredBy: "Governed control plane + Model, Agent & Evolution factories",
       capabilities: ["Capabilities", "Evaluation", "Release", "Rollback"],
       stage: "Beta",
       tier: "flagship",
@@ -190,9 +190,9 @@ export const products: Record<Locale, Product[]> = {
     {
       name: "OneForge",
       tagline: "AI 能力控制平面",
-      description: "一个受治理的内核，三条能力线——Model、Agent 与 Evolution——没有评测、审批和回滚路径，任何东西都进不了生产。",
+      description: "一个受治理的控制平面，三条能力线——Model、Agent 与 Evolution——没有评测、审批和回滚路径，任何东西都进不了生产。",
       href: "https://forge.oneai.network/",
-      poweredBy: "受治理内核 + Model / Agent / Evolution 三条能力线",
+      poweredBy: "受治理控制平面 + Model / Agent / Evolution 三条能力线",
       capabilities: ["能力", "评测", "发布", "回滚"],
       stage: "Beta",
       tier: "flagship",

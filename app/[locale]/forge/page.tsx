@@ -52,9 +52,9 @@ const content = {
       ]
     },
     lines: {
-      eyebrow: "One kernel, three capability lines",
+      eyebrow: "One control plane, three capability lines",
       heading: "OneForge doesn't just govern models. It governs a factory for each kind of capability.",
-      body: "Version, evaluation, approval, canary, rollback, audit and tenant isolation live in one kernel. Model, Agent and Evolution are three factories that register into it — not three separate products with three separate release paths.",
+      body: "Version, evaluation, approval, canary, rollback, audit and tenant isolation live in one control plane. Model, Agent and Evolution are three factories that register into it — not three separate products with three separate release paths.",
       items: [
         {
           title: "Model factory",
@@ -107,7 +107,7 @@ const content = {
       body: "Every milestone below can only be Verified, Implemented — pending acceptance, or Planned. Code existing is not evidence; a milestone only moves up when a specific environment produces a repeatable trace, log, hash or drill report.",
       levels: [
         { level: "M0", title: "Execution truth baseline", text: "Real and simulated execution stay permanently distinguishable.", status: "verified", current: false },
-        { level: "M1", title: "Single-machine real release", text: "Proves the governance kernel itself: real training, independent evaluation, second-principal approval, shadow, canary and rollback all traced.", status: "verified", current: false },
+        { level: "M1", title: "Single-machine real release", text: "Proves the governance control plane itself: real training, independent evaluation, second-principal approval, shadow, canary and rollback all traced.", status: "verified", current: false },
         { level: "M2", title: "External GPU & isolated execution", text: "Real vLLM inference, AWS two-node T4 training and a governed cloud GPU release have passed; EFA and gVisor isolation are still open.", status: "partial", current: true },
         { level: "M3", title: "High availability & disaster recovery", text: "HA, backup and budget code exists; 30-day SLO observation and drilled recovery are not yet accepted.", status: "pending", current: false },
         { level: "M4", title: "First fully-real evolution gain loop", text: "The loop runs end to end and correctly rejects weak candidates — its best real score, 0.5417, still hasn't cleared its own 0.6 gate.", status: "pending", current: false },
@@ -158,9 +158,9 @@ const content = {
       ]
     },
     lines: {
-      eyebrow: "一个内核，三条能力线",
+      eyebrow: "一个控制平面，三条能力线",
       heading: "OneForge 治理的不只是模型，是每一类能力各自的工厂。",
-      body: "版本、评测、审批、灰度、回滚、审计与租户隔离都活在同一个内核里。Model、Agent 与 Evolution 是三条注册进内核的能力线——不是三个各自有发布路径的独立产品。",
+      body: "版本、评测、审批、灰度、回滚、审计与租户隔离都活在同一个控制平面里。Model、Agent 与 Evolution 是三条注册进控制平面的能力线——不是三个各自有发布路径的独立产品。",
       items: [
         {
           title: "模型工厂",
@@ -213,7 +213,7 @@ const content = {
       body: "下面每一项里程碑只能标注已验证、已实现待验收，或已规划三种状态之一。代码存在不等于证据成立——只有在指定环境里留下可重复的 Trace、日志、哈希或演练报告，里程碑才会升级。",
       levels: [
         { level: "M0", title: "执行真相基线", text: "真实执行与模拟执行永久可区分。", status: "verified", current: false },
-        { level: "M1", title: "单机真实模型发布", text: "证明治理内核本身成立：真实训练、独立评测、第二人审批、Shadow、Canary 与回滚全部留痕。", status: "verified", current: false },
+        { level: "M1", title: "单机真实模型发布", text: "证明治理控制平面本身成立：真实训练、独立评测、第二人审批、Shadow、Canary 与回滚全部留痕。", status: "verified", current: false },
         { level: "M2", title: "外部 GPU 与隔离执行", text: "真实 vLLM 推理、AWS 双节点 T4 训练与一次受治理的云端 GPU 发布已通过；EFA 与 gVisor 隔离仍待验收。", status: "partial", current: true },
         { level: "M3", title: "高可用与灾难恢复", text: "高可用、备份与预算相关代码已存在；30 天 SLO 观测与真实恢复演练尚未验收。", status: "pending", current: false },
         { level: "M4", title: "首个全真实 Evolution 收益闭环", text: "闭环已端到端跑通，并正确拒绝了不合格候选——但目前最好的真实成绩 0.5417，仍没过自己 0.6 的门禁。", status: "pending", current: false },

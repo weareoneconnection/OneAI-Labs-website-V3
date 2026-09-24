@@ -6,26 +6,26 @@ import { pageMetadata, type PageParams } from "@/lib/seo";
 
 const meta = {
   en: {
-    title: "OneAI Agent Systems · Intelligence, Interface and Execution",
-    description: "OneAI Agent Systems combine OneAI Intelligence, OneAI Bot and OneClaw to turn Core-powered task intelligence into real action."
+    title: "OneAI Agent Systems · Plan, Execute and Prove",
+    description: "OneAI Agent Systems combine TheOne, OneClaw and OneField to turn Core-powered intelligence into governed, verifiable action."
   },
   zh: {
-    title: "OneAI Agent 系统 · 智能、界面与执行",
-    description: "OneAI Agent 系统组合 OneAI Intelligence、OneAI Bot 与 OneClaw，把 Core 驱动的任务智能变成真实行动。"
+    title: "OneAI Agent 系统 · 规划、执行与留证",
+    description: "OneAI Agent 系统组合 TheOne、OneClaw 与 OneField，把 Core 驱动的智能变成受治理、可验证的行动。"
   }
 };
 
 const hero = {
   en: {
     eyebrow: "OneAI Agent Systems",
-    title: "Intelligence, interface and execution on top of OneAI Core",
-    description: "OneAI Agent Systems combine OneAI Intelligence, OneAI Bot and OneClaw to turn Core-powered task intelligence into action.",
+    title: "The agent layer above OneAI Core: plan, execute, prove",
+    description: "OneAI Agent Systems combine TheOne, OneClaw and OneField to turn Core-powered intelligence into governed, verifiable action.",
     ctaLabel: "Explore Agent Systems"
   },
   zh: {
     eyebrow: "OneAI Agent Systems",
-    title: "构建在 OneAI Core 之上的智能、界面与执行",
-    description: "OneAI Agent Systems 组合 OneAI Intelligence、OneAI Bot 与 OneClaw，把 Core 驱动的任务智能变成行动。",
+    title: "OneAI Core 之上的 Agent 层：规划、执行、留证",
+    description: "OneAI Agent Systems 组合 TheOne、OneClaw 与 OneField，把 Core 驱动的智能变成受治理、可验证的行动。",
     ctaLabel: "了解 Agent 系统"
   }
 } as const;

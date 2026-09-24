@@ -1,9 +1,9 @@
-import { ArrowRight, Bot, BrainCircuit, MousePointerClick, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, BrainCircuit, Cpu, MousePointerClick, Sparkles, Zap } from "lucide-react";
 
 const nodes = [
   { label: "Human Intent", icon: MousePointerClick },
   { label: "OneAI", icon: BrainCircuit },
-  { label: "OneAI Bot", icon: Bot },
+  { label: "TheOne", icon: Cpu },
   { label: "OneClaw", icon: Zap },
   { label: "Result", icon: Sparkles }
 ];

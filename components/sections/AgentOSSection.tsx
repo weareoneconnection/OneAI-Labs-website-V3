@@ -1,28 +1,31 @@
-import { Bot, BrainCircuit, Zap } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, BadgeCheck, Cpu, Zap } from "lucide-react";
 import { AgentFlowDiagram } from "@/components/visuals/AgentFlowDiagram";
 import { FeatureCard } from "@/components/cards/FeatureCard";
-import type { Locale } from "@/lib/i18n";
+import { localePath, type Locale } from "@/lib/i18n";
 
 const content = {
   en: {
     eyebrow: "Agent Systems",
-    heading: "Agent Systems turns Core infrastructure into product experience.",
-    body: "Most AI tools stop at answers. OneAI Agent Systems connects intelligence, interface and execution so OneAI products can move from intent to plan, from plan to action, and from action to result.",
+    heading: "Plan with TheOne. Execute with OneClaw. Prove it with OneField.",
+    body: "Most AI tools stop at answers. OneAI Agent Systems connects intelligence, governed planning and execution so OneAI products can move from intent to plan, from plan to action, and from action to evidence.",
     cards: [
-      { title: "OneAI Intelligence", description: "Turns goals and context into structured plans powered by Core task contracts.", icon: BrainCircuit },
-      { title: "OneAI Bot", description: "The conversational interface that brings Core-powered intelligence to users and communities.", icon: Bot },
-      { title: "OneClaw", description: "The execution layer that turns structured outputs into workflows, reports and API actions.", icon: Zap }
-    ]
+      { title: "TheOne", description: "The governed agent kernel: turns a goal into a policy-aware plan and execution contract.", icon: Cpu, href: "/theone" },
+      { title: "OneClaw", description: "The execution layer that turns an approved plan into workflows, reports and API actions.", icon: Zap, href: undefined },
+      { title: "OneField", description: "The evidence layer: memory, contribution records and proof behind every action agents take.", icon: BadgeCheck, href: "/field" }
+    ],
+    goDeeper: "Go deeper on TheOne"
   },
   zh: {
     eyebrow: "Agent Systems",
-    heading: "Agent Systems 把 Core 基础设施变成产品体验。",
-    body: "大多数 AI 工具止步于答案。OneAI Agent Systems 把智能、界面和执行连接起来，让 OneAI 产品从意图走到计划、从计划走到行动、从行动走到结果。",
+    heading: "用 TheOne 规划，用 OneClaw 执行，用 OneField 留证。",
+    body: "大多数 AI 工具止步于答案。OneAI Agent Systems 把智能、受治理的规划和执行连接起来，让 OneAI 产品从意图走到计划、从计划走到行动、从行动走到证据。",
     cards: [
-      { title: "OneAI Intelligence", description: "基于 Core 任务契约，把目标和上下文变成结构化计划。", icon: BrainCircuit },
-      { title: "OneAI Bot", description: "对话式界面，把 Core 驱动的智能带给用户和社区。", icon: Bot },
-      { title: "OneClaw", description: "执行层，把结构化输出变成工作流、报告和 API 动作。", icon: Zap }
-    ]
+      { title: "TheOne", description: "受治理的 Agent 内核：把目标转化为符合策略的计划与执行契约。", icon: Cpu, href: "/theone" },
+      { title: "OneClaw", description: "执行层，把已批准的计划变成工作流、报告和 API 动作。", icon: Zap, href: undefined },
+      { title: "OneField", description: "证据层：记忆、贡献记录，以及 Agent 每一次行动背后的证明。", icon: BadgeCheck, href: "/field" }
+    ],
+    goDeeper: "深入了解 TheOne"
   }
 } as const;
 
@@ -40,8 +43,19 @@ export function AgentOSSection({ locale }: { locale: Locale }) {
         <AgentFlowDiagram />
       </div>
       <div className="mt-12 m-carousel gap-4 md:grid md:grid-cols-3">
-        {t.cards.map((card) => <FeatureCard key={card.title} {...card} />)}
+        {t.cards.map((card) =>
+          card.href ? (
+            <Link key={card.title} href={localePath(locale, card.href)} className="group block">
+              <FeatureCard title={card.title} description={card.description} icon={card.icon} />
+            </Link>
+          ) : (
+            <FeatureCard key={card.title} title={card.title} description={card.description} icon={card.icon} />
+          )
+        )}
       </div>
+      <Link href={localePath(locale, "/theone")} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-oneai-cyan transition hover:text-cyan-200">
+        {t.goDeeper} <ArrowUpRight className="h-4 w-4" />
+      </Link>
     </section>
   );
 }

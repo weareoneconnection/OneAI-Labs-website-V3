@@ -18,6 +18,7 @@ const content = {
         links: [
           ["OneAI Core", "/core"],
           ["OneForge", "/forge"],
+          ["TheOne", "/theone"],
           ["Agent Systems", "/agent-os"],
           ["Studio", "/studio"],
           ["Pricing", "/pricing"]
@@ -63,6 +64,7 @@ const content = {
         links: [
           ["OneAI Core", "/core"],
           ["OneForge", "/forge"],
+          ["TheOne", "/theone"],
           ["Agent 系统", "/agent-os"],
           ["Studio", "/studio"],
           ["定价", "/pricing"]

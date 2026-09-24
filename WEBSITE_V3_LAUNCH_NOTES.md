@@ -47,6 +47,20 @@ The phrase “Build, govern and continuously evolve AI” remains useful as a ca
 - NEXT_PUBLIC_GA_ID
 - NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 
+## Live evidence (optional)
+`/evidence` shows a hand-checked static snapshot until both of these are set, then
+switches to a live read from OneForge's control plane — see `lib/evidence.ts`.
+- `ONEFORGE_API_URL` — OneForge's API base URL (not the web app on forge.oneai.network)
+- `ONEFORGE_SERVICE_TOKEN` — a service token for a low-privilege reporting account,
+  issued from OneForge with `python scripts/issue_service_token.py --email
+  website@oneforge.local --org <org> --days 90`. Server-only: never expose this to
+  the browser or prefix it with NEXT_PUBLIC_.
+
+Requires OneForge to ship `GET /public/evidence-summary`, returning
+`{ audit_total, approved, rejected, rollbacks, as_of }` — this endpoint does not exist
+yet. Existing OneForge routes (`/governance/audit`, `/dashboard`) return raw recent
+records or per-org counts, not the aggregate figures this page needs.
+
 ## Pre-launch validation
 ```bash
 npm ci

@@ -4,6 +4,7 @@ import { ArrowUpRight, Ban, CheckCircle2, RotateCcw, ScrollText, XCircle } from 
 import { PageHero } from "@/components/sections/PageHero";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { site } from "@/lib/constants";
+import { getEvidenceSummary } from "@/lib/evidence";
 import { localePath } from "@/lib/i18n";
 import { pageMetadata, type PageParams } from "@/lib/seo";
 
@@ -29,10 +30,13 @@ const content = {
     snapshot: {
       eyebrow: "Snapshot, not a live feed",
       note: "These are point-in-time figures from OneForge's control plane, refreshed by hand — not a real-time API connection. Building a genuinely live feed is real engineering work, tracked separately from this page, and we would rather show an honest snapshot than a fake ticker.",
+      liveEyebrow: "Connected to OneForge",
+      liveNote: "This figure was read directly from OneForge's control plane for this request, not typed in by hand.",
+      asOfLabel: "As of",
       stats: [
-        { value: "941", label: "Audit records", note: "Append-only. Nothing edited, nothing deleted." },
-        { value: "37 / 11", label: "Approved / rejected", note: "A gate that never rejects is not a gate." },
-        { value: "34", label: "Rollbacks executed", note: "Reversibility proven, not promised." }
+        { label: "Audit records", note: "Append-only. Nothing edited, nothing deleted." },
+        { label: "Approved / rejected", note: "A gate that never rejects is not a gate." },
+        { label: "Rollbacks executed", note: "Reversibility proven, not promised." }
       ]
     },
     record: {
@@ -71,10 +75,13 @@ const content = {
     snapshot: {
       eyebrow: "这是快照，不是实时数据流",
       note: "下面是 OneForge 控制平面在某个时间点的数字，靠人工刷新——不是接了实时 API。做一个真正实时的数据流是真实的工程工作，会单独跟踪，不在这个页面里；比起一个假的实时滚动条，我们更愿意给一份诚实的快照。",
+      liveEyebrow: "已接入 OneForge",
+      liveNote: "这个数字是本次请求时直接从 OneForge 控制平面读取的，不是人工填写的。",
+      asOfLabel: "数据截至",
       stats: [
-        { value: "941", label: "条审计记录", note: "只增不改。没有编辑，没有删除。" },
-        { value: "37 / 11", label: "次审批通过 / 驳回", note: "从不驳回的门禁不是门禁。" },
-        { value: "34", label: "次真实回滚", note: "可回退是被证明的，不是被承诺的。" }
+        { label: "条审计记录", note: "只增不改。没有编辑，没有删除。" },
+        { label: "次审批通过 / 驳回", note: "从不驳回的门禁不是门禁。" },
+        { label: "次真实回滚", note: "可回退是被证明的，不是被承诺的。" }
       ]
     },
     record: {
@@ -120,6 +127,12 @@ export async function generateMetadata({ params }: PageParams) {
 export default async function EvidencePage({ params }: PageParams) {
   const { locale } = await params;
   const t = content[locale];
+  const evidence = await getEvidenceSummary();
+  const values = [
+    String(evidence.auditTotal),
+    `${evidence.approved} / ${evidence.rejected}`,
+    String(evidence.rollbacks)
+  ];
 
   return (
     <>
@@ -133,18 +146,21 @@ export default async function EvidencePage({ params }: PageParams) {
 
       <section className="border-b border-white/10 bg-white/[0.025]">
         <div className="site-shell-wide section-y">
-          <div className="flex items-start gap-3 rounded-2xl border border-oneai-gold/20 bg-oneai-gold/[0.06] p-4 text-sm leading-6 text-amber-100/90">
-            <ScrollText className="mt-0.5 h-5 w-5 shrink-0 text-oneai-gold" />
+          <div className={`flex items-start gap-3 rounded-2xl border p-4 text-sm leading-6 ${evidence.live ? "border-emerald-300/20 bg-emerald-300/[0.06] text-emerald-100/90" : "border-oneai-gold/20 bg-oneai-gold/[0.06] text-amber-100/90"}`}>
+            <ScrollText className={`mt-0.5 h-5 w-5 shrink-0 ${evidence.live ? "text-emerald-300" : "text-oneai-gold"}`} />
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-oneai-gold">{t.snapshot.eyebrow}</p>
-              <p className="mt-2">{t.snapshot.note}</p>
+              <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${evidence.live ? "text-emerald-300" : "text-oneai-gold"}`}>
+                {evidence.live ? t.snapshot.liveEyebrow : t.snapshot.eyebrow}
+              </p>
+              <p className="mt-2">{evidence.live ? t.snapshot.liveNote : t.snapshot.note}</p>
+              <p className="mt-2 text-xs text-slate-500">{t.snapshot.asOfLabel}: {evidence.asOf}</p>
             </div>
           </div>
 
           <div className="mt-10 grid gap-9 sm:grid-cols-3 sm:gap-6">
-            {t.snapshot.stats.map((stat) => (
+            {t.snapshot.stats.map((stat, index) => (
               <div key={stat.label} className="min-w-0">
-                <div className="font-mono-accent text-4xl font-medium leading-none text-white sm:text-5xl">{stat.value}</div>
+                <div className="font-mono-accent text-4xl font-medium leading-none text-white sm:text-5xl">{values[index]}</div>
                 <div className="mt-3 text-sm font-semibold text-cyan-200">{stat.label}</div>
                 <p className="mt-1.5 text-sm leading-6 text-slate-500">{stat.note}</p>
               </div>

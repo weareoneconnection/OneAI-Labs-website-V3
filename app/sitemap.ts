@@ -7,6 +7,7 @@ const routes = [
   "/core",
   "/forge",
   "/agent-os",
+  "/theone",
   "/studio",
   "/video",
   "/products",

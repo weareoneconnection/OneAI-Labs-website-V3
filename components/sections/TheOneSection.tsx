@@ -1,44 +1,45 @@
-import { ArrowRight, Command, Layers3, Route, Workflow } from "lucide-react";
+import { ArrowRight, Compass, Cpu, Route, ShieldCheck, Workflow } from "lucide-react";
 import Link from "next/link";
 import { site } from "@/lib/constants";
 import { localePath, type Locale } from "@/lib/i18n";
+import { SectionIndex } from "@/components/sections/SectionIndex";
 
 const content = {
   en: {
-    badge: "Execution OS",
+    badge: "Governed Agent Kernel",
     eyebrow: "TheOne",
-    heading: "One intent. One system. One execution layer.",
-    body: "TheOne is the orchestration shell for turning AI intent into coordinated execution, connecting Core infrastructure, Agent Systems intelligence and product workflows into one operating surface.",
+    heading: "One agent that understands, acts, verifies, and learns.",
+    body: "TheOne is OneAI Labs' persistent root intelligence: a governed, verifiable agent kernel that turns human intent into audited action, and every verified outcome into experience it acts on next time.",
     openTheOne: "Open TheOne",
-    exploreAgentOs: "Explore Agent Systems",
-    shellLabel: "Orchestration Shell",
-    shellHeading: "Launch the full execution surface.",
+    exploreAgentOs: "See how it's built",
+    shellLabel: "The core loop",
+    shellHeading: "Every run follows the same governed cycle.",
     layers: [
-      { label: "Intent", text: "Start from one clear user direction.", icon: Command },
-      { label: "System", text: "Shape that direction into an operating surface.", icon: Layers3 },
-      { label: "Execution", text: "Route work into coordinated actions and workflows.", icon: Workflow }
+      { label: "Understand", text: "Turn a goal into a policy-aware plan and execution contract.", icon: Compass },
+      { label: "Act", text: "Execute through governed tools, sub-agents and connected systems.", icon: Workflow },
+      { label: "Verify", text: "Check proof, cost and quality before a result is accepted.", icon: ShieldCheck }
     ],
-    note: "TheOne sits above individual product demos: it shows how OneAI Labs can move from intelligence to shell, from shell to workflow, and from workflow to execution."
+    note: "Nothing here is a demo shell over a chatbot: identity, state, policy, approval and proof are enforced by a kernel, not a prompt."
   },
   zh: {
-    badge: "执行 OS",
+    badge: "受治理的 Agent 内核",
     eyebrow: "TheOne",
-    heading: "一个意图，一套系统，一个执行层。",
-    body: "TheOne 是把 AI 意图变成协同执行的编排壳层，把 Core 基础设施、Agent 系统智能和产品工作流连接成一个操作面。",
+    heading: "一个智能体，理解、行动、验证、进化。",
+    body: "TheOne 是 OneAI Labs 的持续根智能体：一个受治理、可验证的 Agent 内核，把人的目标变成有审计记录的行动，并把每一次验证过的结果，沉淀成下一次做得更好的经验。",
     openTheOne: "打开 TheOne",
-    exploreAgentOs: "了解 Agent 系统",
-    shellLabel: "编排壳层",
-    shellHeading: "启动完整的执行操作面。",
+    exploreAgentOs: "了解它如何构建",
+    shellLabel: "核心闭环",
+    shellHeading: "每一次运行都遵循同一个受治理的循环。",
     layers: [
-      { label: "意图", text: "从一个清晰的用户方向开始。", icon: Command },
-      { label: "系统", text: "把方向塑造成一个操作面。", icon: Layers3 },
-      { label: "执行", text: "把工作路由为协同的动作与工作流。", icon: Workflow }
+      { label: "理解", text: "把目标转化为符合策略的计划与执行契约。", icon: Compass },
+      { label: "行动", text: "通过受治理的工具、子智能体和连接系统执行。", icon: Workflow },
+      { label: "验证", text: "在结果被接受前，核对证据、成本与质量。", icon: ShieldCheck }
     ],
-    note: "TheOne 位于单个产品演示之上：它展示了 OneAI Labs 如何从智能走到壳层、从壳层走到工作流、从工作流走到执行。"
+    note: "这不是套在聊天机器人外面的演示壳层：身份、状态、策略、审批与证据由内核强制执行，而不是靠提示词约定。"
   }
 } as const;
 
-export function TheOneSection({ locale }: { locale: Locale }) {
+export function TheOneSection({ locale, index }: { locale: Locale; index?: number }) {
   const t = content[locale];
 
   return (
@@ -51,9 +52,9 @@ export function TheOneSection({ locale }: { locale: Locale }) {
               <span className="min-w-0 break-words">{t.badge}</span>
             </div>
 
-            <p className="mt-8 font-mono-accent text-[0.7rem] font-medium uppercase tracking-[0.22em] text-oneai-cyan sm:text-sm sm:tracking-[0.3em]">
-              {t.eyebrow}
-            </p>
+            <div className="mt-8">
+              <SectionIndex index={index} label={t.eyebrow} />
+            </div>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-5xl">
               {t.heading}
             </h2>
@@ -71,7 +72,7 @@ export function TheOneSection({ locale }: { locale: Locale }) {
                 {t.openTheOne} <ArrowRight className="h-4 w-4" />
               </a>
               <Link
-                href={localePath(locale, "/agent-os")}
+                href={localePath(locale, "/theone")}
                 className="inline-flex w-full items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-oneai-cyan/60 sm:w-auto"
               >
                 {t.exploreAgentOs}
@@ -91,7 +92,7 @@ export function TheOneSection({ locale }: { locale: Locale }) {
                   </h3>
                 </div>
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-oneai-cyan/20 bg-oneai-cyan/10 text-oneai-cyan">
-                  <Command className="h-6 w-6" />
+                  <Cpu className="h-6 w-6" />
                 </div>
               </div>
 

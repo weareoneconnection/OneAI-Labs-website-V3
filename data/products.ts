@@ -1,4 +1,4 @@
-import { Anvil, BadgeCheck, Bot, Boxes, Clapperboard, Eye, Layers3, LineChart, Network, ShieldCheck, Target, Zap, type LucideIcon } from "lucide-react";
+import { Anvil, BadgeCheck, Bot, Boxes, Clapperboard, Cpu, Eye, LineChart, Network, ShieldCheck, Target, Zap, type LucideIcon } from "lucide-react";
 import { site } from "@/lib/constants";
 import type { Locale } from "@/lib/i18n";
 
@@ -51,6 +51,16 @@ export const products: Record<Locale, Product[]> = {
       icon: Anvil
     },
     {
+      name: "TheOne",
+      tagline: "Governed Agent Kernel",
+      description: "OneAI Labs' persistent root intelligence: a governed, verifiable agent kernel that plans, acts, verifies and remembers, turning every proven run into experience it acts on next time.",
+      href: "https://www.the1os.io/",
+      poweredBy: "Trusted Kernel + Verification + Experience",
+      stage: "Preview",
+      tier: "flagship",
+      icon: Cpu
+    },
+    {
       name: "OneAI Bot",
       tagline: "AI Assistant Interface",
       description: "A conversational AI entry point for users, teams and communities.",
@@ -78,16 +88,6 @@ export const products: Record<Locale, Product[]> = {
       stage: "Beta",
       tier: "flagship",
       icon: Clapperboard
-    },
-    {
-      name: "TheOne",
-      tagline: "Execution OS & Orchestration Shell",
-      description: "Turn one intent into one coordinated system and execution layer.",
-      href: "https://www.the1os.io/",
-      poweredBy: "Agent Systems + execution orchestration",
-      stage: "Preview",
-      tier: "labs",
-      icon: Layers3
     },
     {
       name: "OneAI Mirror",
@@ -165,6 +165,16 @@ export const products: Record<Locale, Product[]> = {
       icon: Anvil
     },
     {
+      name: "TheOne",
+      tagline: "受治理的 Agent 内核",
+      description: "OneAI Labs 的持续根智能体：一个受治理、可验证的 Agent 内核，负责规划、行动、验证与记忆，并把每一次经过验证的运行沉淀成下一次做得更好的经验。",
+      href: "https://www.the1os.io/",
+      poweredBy: "受信内核 + 验证 + 经验沉淀",
+      stage: "Preview",
+      tier: "flagship",
+      icon: Cpu
+    },
+    {
       name: "OneAI Bot",
       tagline: "AI 助手界面",
       description: "面向用户、团队和社区的对话式 AI 入口。",
@@ -192,16 +202,6 @@ export const products: Record<Locale, Product[]> = {
       stage: "Beta",
       tier: "flagship",
       icon: Clapperboard
-    },
-    {
-      name: "TheOne",
-      tagline: "执行 OS 与编排壳层",
-      description: "把一个意图变成一套协同系统和执行层。",
-      href: "https://www.the1os.io/",
-      poweredBy: "Agent 系统 + 执行编排",
-      stage: "Preview",
-      tier: "labs",
-      icon: Layers3
     },
     {
       name: "OneAI Mirror",

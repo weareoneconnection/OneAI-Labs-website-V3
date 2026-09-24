@@ -5,7 +5,7 @@ import { ProductCard } from "@/components/cards/ProductCard";
 import { localePath, type Locale } from "@/lib/i18n";
 
 /**
- * Four flagships, then everything else.
+ * Five flagships, then everything else.
  *
  * The previous version split by maturity, which gave eleven products the same
  * visual weight and let a Telegram bot sit beside the governed control plane. A
@@ -15,14 +15,16 @@ import { localePath, type Locale } from "@/lib/i18n";
  * Tier and stage are deliberately separate. Tier is our editorial choice about what
  * matters; stage stays on every card and is still assigned by the evidence rule in
  * products.ts. That is why a Beta product can appear under Labs — its badge still
- * says Beta, and nothing is quietly demoted or promoted by being grouped.
+ * says Beta, and nothing is quietly demoted or promoted by being grouped. TheOne is
+ * flagship on editorial weight alone: its own domain is still an invite-only login,
+ * so its stage badge stays Preview until that evidence changes.
  */
 
 const content = {
   en: {
-    flagshipEyebrow: "The four that matter",
-    flagshipHeading: "One platform, one lifecycle, two applied businesses.",
-    flagshipBody: "Core is what everything runs on. Forge is how capabilities are allowed into production. Construction and OneVideo are the two industries where we build and operate a product ourselves.",
+    flagshipEyebrow: "The five that matter",
+    flagshipHeading: "One platform, one governed kernel, two applied businesses.",
+    flagshipBody: "Core is what everything runs on. Forge is how capabilities are allowed into production. TheOne is the governed agent kernel that turns intent into verified action. Construction and OneVideo are the two industries where we build and operate a product ourselves.",
     labsEyebrow: "Labs",
     labsHeading: "Everything else, on the same stack.",
     labsBody: "Smaller surfaces and early explorations. They share the platform below them, and each still carries the stage its evidence supports — grouping here is about focus, not about demoting anything.",
@@ -32,9 +34,9 @@ const content = {
     coreLink: "Read about the platform"
   },
   zh: {
-    flagshipEyebrow: "真正要紧的四个",
-    flagshipHeading: "一个平台，一条生命周期，两门落地生意。",
-    flagshipBody: "Core 是所有东西运行的底座。Forge 决定什么样的能力才被允许进入生产。Construction 和 OneVideo 是我们自己建设并运营产品的两个行业。",
+    flagshipEyebrow: "真正要紧的五个",
+    flagshipHeading: "一个平台，一个受治理的内核，两门落地生意。",
+    flagshipBody: "Core 是所有东西运行的底座。Forge 决定什么样的能力才被允许进入生产。TheOne 是把意图变成经过验证的行动的受治理 Agent 内核。Construction 和 OneVideo 是我们自己建设并运营产品的两个行业。",
     labsEyebrow: "Labs",
     labsHeading: "其余的，跑在同一套技术栈上。",
     labsBody: "更小的入口和早期探索。它们共用下面这套平台，并且各自仍标注着证据支持的阶段——这里的分组关乎重心，不代表降级。",
@@ -60,11 +62,13 @@ export function ProductHierarchy({ locale }: { locale: Locale }) {
           <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.flagshipBody}</p>
         </div>
 
-        {/* Two across, not three: a flagship should not be the size of a Labs card. */}
+        {/* Two across, not three: a flagship should not be the size of a Labs card.
+            Five is odd, so the last card spans both columns instead of leaving a gap. */}
         <div className="mt-12 grid gap-4 lg:grid-cols-2">
-          {flagships.map((product) => {
+          {flagships.map((product, index) => {
             const Icon = product.icon;
             const external = product.href?.startsWith("http");
+            const spansFull = index === flagships.length - 1 && flagships.length % 2 === 1;
             const inner = (
               <>
                 <div className="flex items-start justify-between gap-4">
@@ -100,8 +104,7 @@ export function ProductHierarchy({ locale }: { locale: Locale }) {
               </>
             );
 
-            const className =
-              "group flex h-full min-w-0 flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-oneai-gold/40 hover:bg-white/[0.06] sm:p-8";
+            const className = `group flex h-full min-w-0 flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-oneai-gold/40 hover:bg-white/[0.06] sm:p-8${spansFull ? " lg:col-span-2" : ""}`;
 
             return external ? (
               <a key={product.name} href={product.href} target="_blank" rel="noopener noreferrer" className={className}>

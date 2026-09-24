@@ -50,16 +50,22 @@ The phrase “Build, govern and continuously evolve AI” remains useful as a ca
 ## Live evidence (optional)
 `/evidence` shows a hand-checked static snapshot until both of these are set, then
 switches to a live read from OneForge's control plane — see `lib/evidence.ts`.
-- `ONEFORGE_API_URL` — OneForge's API base URL (not the web app on forge.oneai.network)
+- `ONEFORGE_API_URL` — OneForge's API base URL, without a path (e.g.
+  `https://api.forge.oneai.network`) — not the web app on forge.oneai.network
 - `ONEFORGE_SERVICE_TOKEN` — a service token for a low-privilege reporting account,
   issued from OneForge with `python scripts/issue_service_token.py --email
   website@oneforge.local --org <org> --days 90`. Server-only: never expose this to
   the browser or prefix it with NEXT_PUBLIC_.
 
-Requires OneForge to ship `GET /public/evidence-summary`, returning
-`{ audit_total, approved, rejected, rollbacks, as_of }` — this endpoint does not exist
-yet. Existing OneForge routes (`/governance/audit`, `/dashboard`) return raw recent
-records or per-org counts, not the aggregate figures this page needs.
+The endpoint itself — `GET /api/v1/public/evidence-summary`, returning
+`{ audit_total, approved, rejected, rollbacks, as_of }` — now exists in the OneForge
+repo (`apps/api/app/api/routes/public.py`, registered in `main.py`, covered by
+`apps/api/tests/test_public_evidence.py`, all passing). It still needs to be deployed
+to production before a service token issued against prod will have anything to call.
+Two remaining steps, both outside this repo and requiring production access this
+session does not have:
+1. Deploy the OneForge change (build + push, same as any other OneForge release).
+2. Issue a production service token and set the two env vars above in Vercel.
 
 ## Pre-launch validation
 ```bash

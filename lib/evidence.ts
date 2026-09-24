@@ -1,8 +1,10 @@
 /**
  * Live evidence, with a static fallback that is never allowed to look live.
  *
- * OneForge does not yet expose a public summary endpoint — only authenticated routes
- * that return raw recent records, not aggregate counts. Until ONEFORGE_API_URL and
+ * OneForge now has a scoped endpoint for this — GET /api/v1/public/evidence-summary,
+ * added in OneTrainer-v4.0 (apps/api/app/api/routes/public.py) and covered by
+ * apps/api/tests/test_public_evidence.py — but it still needs to be deployed, and a
+ * service token still needs to be issued and set here. Until ONEFORGE_API_URL and
  * ONEFORGE_SERVICE_TOKEN are set (see WEBSITE_V3_LAUNCH_NOTES.md), this silently
  * returns the same hand-checked snapshot already on the homepage. No network call is
  * attempted without both values, and any failure — timeout, non-200, malformed body —
@@ -48,7 +50,7 @@ export async function getEvidenceSummary(): Promise<EvidenceSummary> {
   if (!apiUrl || !token) return STATIC_SNAPSHOT;
 
   try {
-    const res = await fetch(`${apiUrl.replace(/\/$/, "")}/public/evidence-summary`, {
+    const res = await fetch(`${apiUrl.replace(/\/$/, "")}/api/v1/public/evidence-summary`, {
       headers: { Authorization: `Bearer ${token}` },
       // Five-minute cache: this figure does not need to be second-fresh, and OneForge's
       // control plane should not get a request per page view.

@@ -16,6 +16,7 @@ const content = {
       {
         heading: "Platform",
         links: [
+          ["Platform overview", "/platform"],
           ["OneAI Core", "/core"],
           ["OneForge", "/forge"],
           ["TheOne", "/theone"],
@@ -36,8 +37,12 @@ const content = {
         ]
       },
       {
-        heading: "Developers",
-        links: [["Developers", "/developers"]]
+        heading: "Trust",
+        links: [
+          ["Evidence", "/evidence"],
+          ["Trust Center", "/trust"],
+          ["Developers", "/developers"]
+        ]
       },
       {
         heading: "Company",
@@ -62,6 +67,7 @@ const content = {
       {
         heading: "平台",
         links: [
+          ["平台总览", "/platform"],
           ["OneAI Core", "/core"],
           ["OneForge", "/forge"],
           ["TheOne", "/theone"],
@@ -82,8 +88,12 @@ const content = {
         ]
       },
       {
-        heading: "开发者",
-        links: [["开发者文档", "/developers"]]
+        heading: "信任",
+        links: [
+          ["Evidence 证据", "/evidence"],
+          ["Trust Center", "/trust"],
+          ["开发者文档", "/developers"]
+        ]
       },
       {
         heading: "公司",
@@ -130,7 +140,7 @@ export function Footer({ locale }: { locale: Locale }) {
               {column.heading === "Platform" || column.heading === "平台" ? (
                 <a href={site.appUrl} className="text-sm text-slate-400 hover:text-white">{t.openCore}</a>
               ) : null}
-              {column.heading === "Developers" || column.heading === "开发者" ? (
+              {column.heading === "Trust" || column.heading === "信任" ? (
                 <>
                   <a href={site.docsUrl} className="text-sm text-slate-400 hover:text-white">{t.docs}</a>
                   <a href={site.apiUrl} className="break-all text-sm text-slate-400 hover:text-white">{site.apiUrl.replace("https://", "")}</a>

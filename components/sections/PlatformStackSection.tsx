@@ -71,7 +71,7 @@ export function PlatformStackSection({ locale, index }: { locale: Locale; index?
             </div>
             <div className="lg:pb-1">
               <p className="max-w-3xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.body}</p>
-              <Link href={localePath(locale, "/products")} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan-200 transition hover:text-white">
+              <Link href={localePath(locale, "/platform")} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan-200 transition hover:text-white">
                 {t.cta} <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

@@ -36,7 +36,7 @@ export const site = {
   // reason we are selective — a limit that comes from how the work is done is a
   // promise, while the same limit unexplained reads as an apology.
   concurrentEngagements: 2,
-  email: "info@weareoneconnection.com",
+  email: "hello@oneailabs.ai",
   contactFormEndpoint: "https://formspree.io/f/xojrozjo"
 };
 

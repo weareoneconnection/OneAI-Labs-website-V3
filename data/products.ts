@@ -15,6 +15,18 @@ export type ProductStage = "GA" | "Beta" | "Preview";
 // so a Beta product listed under Labs still reads Beta.
 export type ProductTier = "flagship" | "labs";
 
+// Role is architectural, not editorial: which part of the company this product is.
+// It answers a different question than tier or stage —
+//   platform — one of the five systems the whole company runs on
+//   applied  — a business built on top of the platform, in one industry
+//   labs     — a smaller surface or early exploration
+// A product's role does not change with its maturity: TheOne is "platform" whether
+// its stage badge says Preview or GA, because the role describes what it is, not how
+// finished it is. Conflating the two was the exact confusion "Four flagships" caused —
+// OneClaw and OneField read as also-rans next to Core and Forge, when architecturally
+// they are the same kind of thing.
+export type ProductRole = "platform" | "applied" | "labs";
+
 export type Product = {
   name: string;
   tagline: string;
@@ -22,7 +34,10 @@ export type Product = {
   href?: string;
   stage: ProductStage;
   tier: ProductTier;
+  role: ProductRole;
   poweredBy: string;
+  /** Short capability words, shown only for role: "platform" products. */
+  capabilities?: string[];
   /** For a flagship that is more than one product on one domain. */
   includes?: string[];
   icon: LucideIcon;
@@ -36,8 +51,10 @@ export const products: Record<Locale, Product[]> = {
       description: "Model access, routing, cost guards, API keys, usage tracking and billing-ready operations behind one commercial API.",
       href: site.appUrl,
       poweredBy: "The layer every product below runs on",
+      capabilities: ["Model access", "Routing", "Usage", "Cost"],
       stage: "Beta",
       tier: "flagship",
+      role: "platform",
       icon: Network
     },
     {
@@ -46,8 +63,10 @@ export const products: Record<Locale, Product[]> = {
       description: "One governed kernel, three factories — Model, Agent and Evolution — where nothing reaches production without evaluation, approval and a rollback path.",
       href: "https://forge.oneai.network/",
       poweredBy: "Governed kernel + Model, Agent & Evolution factories",
+      capabilities: ["Capabilities", "Evaluation", "Release", "Rollback"],
       stage: "Beta",
       tier: "flagship",
+      role: "platform",
       icon: Anvil
     },
     {
@@ -56,58 +75,34 @@ export const products: Record<Locale, Product[]> = {
       description: "OneAI Labs' persistent root intelligence: a governed, verifiable agent kernel that plans, acts, verifies and remembers, turning every proven run into experience it acts on next time.",
       href: "https://www.the1os.io/",
       poweredBy: "Trusted Kernel + Verification + Experience",
+      capabilities: ["Planning", "Reasoning", "Coordination"],
       stage: "Preview",
       tier: "flagship",
+      role: "platform",
       icon: Cpu
-    },
-    {
-      name: "OneAI Bot",
-      tagline: "AI Assistant Interface",
-      description: "A conversational AI entry point for users, teams and communities.",
-      href: "https://t.me/WAOCOneAIBot",
-      poweredBy: "Core Gateway + Task API",
-      stage: "Beta",
-      tier: "labs",
-      icon: Bot
     },
     {
       name: "OneClaw",
       tagline: "Action & Execution Layer",
       description: "Turn AI outputs into workflows, reports, actions and API calls.",
       poweredBy: "Task output + execution flow",
+      capabilities: ["Tools", "Actions", "Execution"],
       stage: "Preview",
       tier: "labs",
+      role: "platform",
       icon: Zap
     },
     {
-      name: "OneVideo Studio",
-      tagline: "AI Short-Drama Operating System",
-      description: "Turn one sentence into a scripted, voiced and publishable short drama.",
-      href: "https://www.onevideo.studio/",
-      poweredBy: "Drama beat engine + native-voice pipeline",
-      stage: "Beta",
-      tier: "flagship",
-      icon: Clapperboard
-    },
-    {
-      name: "OneAI Mirror",
-      tagline: "Civilization Mirror & Belief Simulation",
-      description: "Turn one belief, instinct or behavior into a shareable civilization-scale outcome.",
-      href: "https://onemirror-v1.vercel.app/",
-      poweredBy: "OneAI Core + Agent Systems",
+      name: "OneField",
+      tagline: "Proof of Contribution & Reputation",
+      description: "Record contribution, verify work and build reputation profiles.",
+      href: "https://onefield.vercel.app/",
+      poweredBy: "Usage, identity and records",
+      capabilities: ["Evidence", "Memory", "Outcomes"],
       stage: "Preview",
       tier: "labs",
-      icon: Eye
-    },
-    {
-      name: "OneAI Trading OS",
-      tagline: "AI Market Research, Risk & Discipline Tools",
-      description: "Market briefs, risk radar, strategy review and trading journal.",
-      href: "https://oneaitradingbot.vercel.app/",
-      poweredBy: "Market research + risk guard",
-      stage: "Preview",
-      tier: "labs",
-      icon: LineChart
+      role: "platform",
+      icon: BadgeCheck
     },
     {
       // One business on one domain. Splitting it into two cards made the largest
@@ -119,8 +114,53 @@ export const products: Record<Locale, Product[]> = {
       poweredBy: "Core routing + Forge governance + OneField evidence",
       stage: "Beta",
       tier: "flagship",
+      role: "applied",
       includes: ["Construction OS", "Construction Twin"],
       icon: Boxes
+    },
+    {
+      name: "OneVideo Studio",
+      tagline: "AI Short-Drama Operating System",
+      description: "Turn one sentence into a scripted, voiced and publishable short drama.",
+      href: "https://www.onevideo.studio/",
+      poweredBy: "Drama beat engine + native-voice pipeline",
+      stage: "Beta",
+      tier: "flagship",
+      role: "applied",
+      icon: Clapperboard
+    },
+    {
+      name: "OneAI Bot",
+      tagline: "AI Assistant Interface",
+      description: "A conversational AI entry point for users, teams and communities.",
+      href: "https://t.me/WAOCOneAIBot",
+      poweredBy: "Core Gateway + Task API",
+      stage: "Beta",
+      tier: "labs",
+      role: "labs",
+      icon: Bot
+    },
+    {
+      name: "OneAI Mirror",
+      tagline: "Civilization Mirror & Belief Simulation",
+      description: "Turn one belief, instinct or behavior into a shareable civilization-scale outcome.",
+      href: "https://onemirror-v1.vercel.app/",
+      poweredBy: "OneAI Core + Agent Systems",
+      stage: "Preview",
+      tier: "labs",
+      role: "labs",
+      icon: Eye
+    },
+    {
+      name: "OneAI Trading OS",
+      tagline: "AI Market Research, Risk & Discipline Tools",
+      description: "Market briefs, risk radar, strategy review and trading journal.",
+      href: "https://oneaitradingbot.vercel.app/",
+      poweredBy: "Market research + risk guard",
+      stage: "Preview",
+      tier: "labs",
+      role: "labs",
+      icon: LineChart
     },
     {
       name: "OneMission",
@@ -130,17 +170,8 @@ export const products: Record<Locale, Product[]> = {
       poweredBy: "Agent plans + campaign missions",
       stage: "Preview",
       tier: "labs",
+      role: "labs",
       icon: Target
-    },
-    {
-      name: "OneField",
-      tagline: "Proof of Contribution & Reputation",
-      description: "Record contribution, verify work and build reputation profiles.",
-      href: "https://onefield.vercel.app/",
-      poweredBy: "Usage, identity and records",
-      stage: "Preview",
-      tier: "labs",
-      icon: BadgeCheck
     }
   ],
   zh: [
@@ -150,8 +181,10 @@ export const products: Record<Locale, Product[]> = {
       description: "模型接入、路由、成本护栏、API 密钥、用量追踪与可计费运营，收在同一个商业 API 之下。",
       href: site.appUrl,
       poweredBy: "下面每一个产品都跑在这一层上",
+      capabilities: ["模型接入", "路由", "用量", "成本"],
       stage: "Beta",
       tier: "flagship",
+      role: "platform",
       icon: Network
     },
     {
@@ -160,8 +193,10 @@ export const products: Record<Locale, Product[]> = {
       description: "一个受治理的内核，三条能力线——Model、Agent 与 Evolution——没有评测、审批和回滚路径，任何东西都进不了生产。",
       href: "https://forge.oneai.network/",
       poweredBy: "受治理内核 + Model / Agent / Evolution 三条能力线",
+      capabilities: ["能力", "评测", "发布", "回滚"],
       stage: "Beta",
       tier: "flagship",
+      role: "platform",
       icon: Anvil
     },
     {
@@ -170,28 +205,46 @@ export const products: Record<Locale, Product[]> = {
       description: "OneAI Labs 的持续根智能体：一个受治理、可验证的 Agent 内核，负责规划、行动、验证与记忆，并把每一次经过验证的运行沉淀成下一次做得更好的经验。",
       href: "https://www.the1os.io/",
       poweredBy: "受信内核 + 验证 + 经验沉淀",
+      capabilities: ["规划", "推理", "协同"],
       stage: "Preview",
       tier: "flagship",
+      role: "platform",
       icon: Cpu
-    },
-    {
-      name: "OneAI Bot",
-      tagline: "AI 助手界面",
-      description: "面向用户、团队和社区的对话式 AI 入口。",
-      href: "https://t.me/WAOCOneAIBot",
-      poweredBy: "Core 网关 + 任务 API",
-      stage: "Beta",
-      tier: "labs",
-      icon: Bot
     },
     {
       name: "OneClaw",
       tagline: "动作与执行层",
       description: "把 AI 输出变成工作流、报告、动作和 API 调用。",
       poweredBy: "任务输出 + 执行流",
+      capabilities: ["工具", "动作", "执行"],
       stage: "Preview",
       tier: "labs",
+      role: "platform",
       icon: Zap
+    },
+    {
+      name: "OneField",
+      tagline: "贡献证明与声誉",
+      description: "记录贡献、验证工作，构建声誉档案。",
+      href: "https://onefield.vercel.app/",
+      poweredBy: "用量、身份与记录",
+      capabilities: ["证据", "记忆", "结果"],
+      stage: "Preview",
+      tier: "labs",
+      role: "platform",
+      icon: BadgeCheck
+    },
+    {
+      name: "OneAI Construction",
+      tagline: "面向建成环境的智能",
+      description: "Construction OS 负责文档、项目知识与 RFI / NCR 工作流；Construction Twin 负责 BIM、4D 进度、风险与证据。独立品牌，独立域名。",
+      href: site.constructionUrl,
+      poweredBy: "Core 路由 + Forge 治理 + OneField 证据",
+      stage: "Beta",
+      tier: "flagship",
+      role: "applied",
+      includes: ["Construction OS", "Construction Twin"],
+      icon: Boxes
     },
     {
       name: "OneVideo Studio",
@@ -201,7 +254,19 @@ export const products: Record<Locale, Product[]> = {
       poweredBy: "剧情节拍引擎 + 原声演出管线",
       stage: "Beta",
       tier: "flagship",
+      role: "applied",
       icon: Clapperboard
+    },
+    {
+      name: "OneAI Bot",
+      tagline: "AI 助手界面",
+      description: "面向用户、团队和社区的对话式 AI 入口。",
+      href: "https://t.me/WAOCOneAIBot",
+      poweredBy: "Core 网关 + 任务 API",
+      stage: "Beta",
+      tier: "labs",
+      role: "labs",
+      icon: Bot
     },
     {
       name: "OneAI Mirror",
@@ -211,6 +276,7 @@ export const products: Record<Locale, Product[]> = {
       poweredBy: "OneAI Core + Agent Systems",
       stage: "Preview",
       tier: "labs",
+      role: "labs",
       icon: Eye
     },
     {
@@ -221,18 +287,8 @@ export const products: Record<Locale, Product[]> = {
       poweredBy: "市场研究 + 风险守护",
       stage: "Preview",
       tier: "labs",
+      role: "labs",
       icon: LineChart
-    },
-    {
-      name: "OneAI Construction",
-      tagline: "面向建成环境的智能",
-      description: "Construction OS 负责文档、项目知识与 RFI / NCR 工作流；Construction Twin 负责 BIM、4D 进度、风险与证据。独立品牌，独立域名。",
-      href: site.constructionUrl,
-      poweredBy: "Core 路由 + Forge 治理 + OneField 证据",
-      stage: "Beta",
-      tier: "flagship",
-      includes: ["Construction OS", "Construction Twin"],
-      icon: Boxes
     },
     {
       name: "OneMission",
@@ -242,17 +298,8 @@ export const products: Record<Locale, Product[]> = {
       poweredBy: "智能体计划 + 战役任务",
       stage: "Preview",
       tier: "labs",
+      role: "labs",
       icon: Target
-    },
-    {
-      name: "OneField",
-      tagline: "贡献证明与声誉",
-      description: "记录贡献、验证工作，构建声誉档案。",
-      href: "https://onefield.vercel.app/",
-      poweredBy: "用量、身份与记录",
-      stage: "Preview",
-      tier: "labs",
-      icon: BadgeCheck
     }
   ]
 };

@@ -18,9 +18,9 @@ const content = {
     badge: "AI infrastructure · capability systems · agent operations",
     lines: ["FROM MODELS", "TO MISSIONS."],
     body: "OneAI Labs brings model access, capability development, agent coordination and persistent memory into one operating platform — all of it governed, so AI moves from isolated experiments into products you can answer for.",
-    primary: "Explore the platform",
-    secondary: "Launch OneForge",
-    demo: "Request a demo",
+    primary: "Start Building",
+    secondary: "Explore Platform",
+    demo: "Talk to OneAI",
     proof: [
       "Every release has a named approver",
       "Every run leaves an append-only record",
@@ -31,9 +31,9 @@ const content = {
     badge: "AI 基础设施 · 能力系统 · Agent 运营",
     lines: ["从模型", "到使命。"],
     body: "OneAI Labs 将模型接入、能力开发、Agent 协同与长期记忆统一到同一运行平台——并且全程受治理，让 AI 从孤立试验走向你敢于负责的产品。",
-    primary: "探索整个平台",
-    secondary: "进入 OneForge",
-    demo: "预约企业演示",
+    primary: "开始构建",
+    secondary: "探索平台",
+    demo: "联系 OneAI",
     proof: [
       "每一次发布都有具名审批人",
       "每一次运行都留下只增不改的记录",
@@ -79,12 +79,12 @@ export function HeroSection({ locale }: { locale: Locale }) {
             <p className="text-sm leading-7 text-slate-400 sm:text-base">{t.body}</p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link href={localePath(locale, "/products")} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-100">
+              <a href={site.appUrl} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-100">
                 {t.primary} <ArrowRight className="h-4 w-4" />
-              </Link>
-              <a href={site.forgeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/[0.07] px-6 py-3.5 text-sm font-semibold text-cyan-100 transition hover:-translate-y-0.5 hover:border-cyan-200/60 hover:bg-cyan-300/10">
-                {t.secondary} <PlayCircle className="h-4 w-4" />
               </a>
+              <Link href={localePath(locale, "/platform")} className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/[0.07] px-6 py-3.5 text-sm font-semibold text-cyan-100 transition hover:-translate-y-0.5 hover:border-cyan-200/60 hover:bg-cyan-300/10">
+                {t.secondary} <PlayCircle className="h-4 w-4" />
+              </Link>
               <Link href={localePath(locale, "/contact")} className="inline-flex items-center justify-center rounded-full border border-white/12 px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.04]">
                 {t.demo}
               </Link>

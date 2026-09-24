@@ -4,6 +4,7 @@ import { localePath, locales } from "@/lib/i18n";
 
 const routes = [
   "/",
+  "/platform",
   "/core",
   "/forge",
   "/agent-os",
@@ -11,6 +12,8 @@ const routes = [
   "/studio",
   "/video",
   "/products",
+  "/evidence",
+  "/trust",
   "/industries",
   "/solutions/agents",
   "/solutions/training",

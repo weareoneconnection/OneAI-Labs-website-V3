@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Ban, CheckCircle2, RotateCcw, ScrollText, XCircle } from "lucide-react";
+import { Activity, ArrowUpRight, Ban, CheckCircle2, Database, RotateCcw, ScrollText, ShieldCheck, XCircle } from "lucide-react";
 
 import { PageHero } from "@/components/sections/PageHero";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
@@ -11,11 +11,11 @@ import { pageMetadata, type PageParams } from "@/lib/seo";
 const meta = {
   en: {
     title: "Evidence · What OneAI Labs Can Show, Not Just Claim",
-    description: "The audit figures behind OneAI Labs' governance claims, taken from OneForge's own control plane — including a real run a governance gate rejected."
+    description: "How OneAI Labs separates durable execution, independent verification, shared evidence and controlled evolution — with an honest OneForge control-plane snapshot."
   },
   zh: {
     title: "证据 · OneAI Labs 能出示的东西，而不只是声称",
-    description: "OneAI Labs 治理主张背后的审计数字，取自 OneForge 自身的控制平面——包括一次被治理门禁驳回的真实运行。"
+    description: "OneAI Labs 如何分离持久执行、独立验证、共享证据与受控进化，并提供诚实的 OneForge 控制平面快照。"
   }
 };
 
@@ -37,6 +37,17 @@ const content = {
         { label: "Audit records", note: "Append-only. Nothing edited, nothing deleted." },
         { label: "Approved / rejected", note: "A gate that never rejects is not a gate." },
         { label: "Rollbacks executed", note: "Reversibility proven, not promised." }
+      ]
+    },
+    domains: {
+      eyebrow: "Platform evidence model",
+      title: "Every layer proves a different fact.",
+      body: "A single green dashboard cannot prove an agent system. OneMission proves durable work state, the verifier proves outcomes independently, OneField preserves scoped evidence, and OneForge proves what was allowed to reach production.",
+      items: [
+        { title: "Durable execution", body: "Mission, task, lease, retry and approval history belongs to OneMission.", href: "/mission" },
+        { title: "Independent verification", body: "Signed verifier results are kept separate from the actor that produced the work.", href: "/agent-os" },
+        { title: "Shared reality", body: "Tenant-scoped context, consent and receipts converge in OneField.", href: "/field" },
+        { title: "Controlled evolution", body: "Evaluations, release gates, canaries and rollback history belong to OneForge.", href: "/forge" }
       ]
     },
     record: {
@@ -82,6 +93,17 @@ const content = {
         { label: "条审计记录", note: "只增不改。没有编辑，没有删除。" },
         { label: "次审批通过 / 驳回", note: "从不驳回的门禁不是门禁。" },
         { label: "次真实回滚", note: "可回退是被证明的，不是被承诺的。" }
+      ]
+    },
+    domains: {
+      eyebrow: "平台证据模型",
+      title: "每一层证明不同的事实。",
+      body: "一个全绿仪表盘不足以证明 Agent 系统可靠。OneMission 证明工作状态可持久，独立 Verifier 证明结果，OneField 保存受范围约束的证据，OneForge 证明什么被允许进入生产。",
+      items: [
+        { title: "持久执行", body: "Mission、任务、租约、重试与审批历史归 OneMission 管理。", href: "/mission" },
+        { title: "独立验证", body: "签名验证结果与产生工作的执行者彼此独立。", href: "/agent-os" },
+        { title: "共享现实", body: "租户隔离的上下文、授权和回执汇聚于 OneField。", href: "/field" },
+        { title: "受控进化", body: "评测、发布门禁、灰度和回滚历史归 OneForge 管理。", href: "/forge" }
       ]
     },
     record: {
@@ -165,6 +187,29 @@ export default async function EvidencePage({ params }: PageParams) {
                 <p className="mt-1.5 text-sm leading-6 text-slate-500">{stat.note}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10">
+        <div className="site-shell-wide section-y">
+          <div className="max-w-3xl">
+            <p className="section-eyebrow">{t.domains.eyebrow}</p>
+            <h2 className="section-title mt-4">{t.domains.title}</h2>
+            <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.domains.body}</p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {t.domains.items.map((item, index) => {
+              const Icon = [Activity, ShieldCheck, Database, RotateCcw][index];
+              return (
+                <Link key={item.title} href={localePath(locale, item.href)} className="group rounded-3xl border border-white/10 bg-white/[0.025] p-6 transition hover:border-oneai-cyan/35 hover:bg-white/[0.045]">
+                  <Icon className="h-6 w-6 text-oneai-cyan" />
+                  <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">{item.body}</p>
+                  <ArrowUpRight className="mt-5 h-4 w-4 text-slate-500 transition group-hover:text-oneai-cyan" />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

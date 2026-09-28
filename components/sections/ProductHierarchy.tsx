@@ -9,9 +9,9 @@ import { localePath, type Locale } from "@/lib/i18n";
  *
  * "Four flagships, then everything else" conflated two different questions: how much
  * editorial weight does this get, and what kind of thing is this. That put OneClaw and
- * OneField — two of the five systems the whole company runs on — in the same bucket as
+ * OneField — two of the six systems the whole company runs on — in the same bucket as
  * a Telegram bot, because their stage badge still reads Preview. Role fixes that: the
- * five platform systems are grouped together regardless of maturity, each carrying its
+ * six platform systems are grouped together regardless of maturity, each carrying its
  * own honest stage badge so nothing is quietly promoted. Applied Businesses and Labs
  * keep the previous visual treatment — this only changes what "flagship" used to hide.
  */
@@ -19,8 +19,8 @@ import { localePath, type Locale } from "@/lib/i18n";
 const content = {
   en: {
     platformEyebrow: "The operating architecture",
-    platformHeading: "Five systems. One governed platform.",
-    platformBody: "Role and maturity are independent on purpose. All five below are core platform systems — what a reader should remember the company by — regardless of which stage badge they currently carry. See how they connect on the platform page.",
+    platformHeading: "Six systems. One governed platform.",
+    platformBody: "Role and maturity are independent on purpose. All six below are core platform systems — including OneMission's durable work runtime — regardless of which stage badge they currently carry.",
     platformLink: "See the full architecture",
     roleLabel: "Role",
     roleValue: "Core platform system",
@@ -39,8 +39,8 @@ const content = {
   },
   zh: {
     platformEyebrow: "运行架构",
-    platformHeading: "五个系统，一个受治理的平台。",
-    platformBody: "角色和成熟度是两个独立的维度。下面五个都是核心平台系统——是读者应该记住这家公司的地方——不论它们当前的阶段徽章是什么。它们如何连接，见平台页面。",
+    platformHeading: "六个系统，一个受治理的平台。",
+    platformBody: "角色和成熟度是两个独立的维度。下面六个都是核心平台系统，其中包括 OneMission 的持久工作运行时——不论它们当前的阶段徽章是什么。",
     platformLink: "查看完整架构",
     roleLabel: "角色",
     roleValue: "核心平台系统",

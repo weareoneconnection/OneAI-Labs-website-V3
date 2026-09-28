@@ -14,6 +14,7 @@ export function pageMetadata(
 ): Metadata {
   const { title, description } = meta[locale];
   const canonical = localePath(locale, path);
+  const socialImage = `${site.url}${localePath(locale, "/opengraph-image")}`;
 
   return {
     title,
@@ -30,12 +31,14 @@ export function pageMetadata(
       description,
       url: `${site.url}${canonical}`,
       siteName: site.name,
-      type: "website"
+      type: "website",
+      images: [{ url: socialImage, width: 1200, height: 630, alt: site.name }]
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | ${site.name}`,
-      description
+      description,
+      images: [socialImage]
     }
   };
 }

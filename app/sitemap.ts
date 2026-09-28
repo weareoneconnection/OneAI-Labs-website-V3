@@ -29,11 +29,13 @@ const routes = [
   "/terms"
 ];
 
+const CONTENT_UPDATED_AT = new Date("2026-09-28T00:00:00.000Z");
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.flatMap((route) =>
     locales.map((locale) => ({
       url: `${site.url}${localePath(locale, route) === "/" ? "" : localePath(locale, route)}`,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED_AT,
       changeFrequency: "weekly" as const,
       priority: route === "/" ? 1 : 0.7,
       alternates: {

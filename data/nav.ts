@@ -1,7 +1,8 @@
 import type { Locale } from "@/lib/i18n";
 
 /**
- * Five entries, because a reader can hold five things and cannot hold ten.
+ * Five top-level entries keep the platform understandable without hiding the
+ * systems that own distinct production responsibilities.
  *
  * The previous navigation listed every surface at equal weight — Core, Forge,
  * Agent OS, Studio, Video, Products, Use Cases, Developers, Pricing, Company —
@@ -46,12 +47,27 @@ export const navEntries: NavEntry[] = [
         hint: { en: "The governed capability lifecycle", zh: "受治理的能力生命周期" }
       },
       {
-        // The nav label the page now uses too. The /agent-os URL is unchanged:
-        // renaming it needs a redirect and a check that nothing external says
-        // "Agent OS" first.
         label: { en: "Agent Systems", zh: "Agent 系统" },
         href: "/agent-os",
-        hint: { en: "TheOne, OneClaw and OneField — plan, execute, prove", zh: "TheOne、OneClaw 与 OneField——规划、执行、留证" }
+        hint: { en: "TheOne, OneMission, OneClaw and OneField — govern, persist, execute, prove", zh: "TheOne、OneMission、OneClaw 与 OneField——治理、持久、执行、留证" }
+      },
+      {
+        section: { en: "Agent runtime", zh: "Agent 运行时" },
+        label: { en: "TheOne", zh: "TheOne" },
+        href: "/theone",
+        hint: { en: "Goals, authority and governed decisions", zh: "目标、权限与受治理决策" }
+      },
+      {
+        section: { en: "Agent runtime", zh: "Agent 运行时" },
+        label: { en: "OneMission", zh: "OneMission" },
+        href: "/mission",
+        hint: { en: "Durable tasks, leases, recovery and approvals", zh: "持久任务、租约、恢复与审批" }
+      },
+      {
+        section: { en: "Shared reality", zh: "共享现实" },
+        label: { en: "OneField", zh: "OneField" },
+        href: "/field",
+        hint: { en: "Tenant-scoped context, consent and evidence", zh: "租户隔离的上下文、授权与证据" }
       },
       {
         label: { en: "Studio", zh: "Studio" },

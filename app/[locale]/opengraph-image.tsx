@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "OneAI Labs — Commercial AI Infrastructure & Agent Product Ecosystem";
+// Localized routes inherit the locale layout's canonical metadata base.
+export const alt = "OneAI Labs — Governed AI Operating Platform for Real Work";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -98,15 +99,15 @@ export default function OpengraphImage() {
               maxWidth: 900
             }}
           >
-            Commercial AI Infrastructure & Agent Products
+            From Intelligence to Verified Outcomes
           </div>
           <div style={{ color: "#94A3B8", fontSize: 28, marginTop: 24, maxWidth: 860 }}>
-            OneAI Core is the operating layer behind the OneAI product ecosystem.
+            Governed agents, durable missions, real-world execution and independent verification.
           </div>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          {["OneAI Core", "OneForge", "TheOne", "OneAI Construction", "OneVideo Studio"].map((item) => (
+          {["OneAI Core", "OneForge", "TheOne", "OneMission", "OneField"].map((item) => (
             <div
               key={item}
               style={{

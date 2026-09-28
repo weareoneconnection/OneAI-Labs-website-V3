@@ -17,7 +17,7 @@ export type ProductTier = "flagship" | "labs";
 
 // Role is architectural, not editorial: which part of the company this product is.
 // It answers a different question than tier or stage —
-//   platform — one of the five systems the whole company runs on
+//   platform — one of the six systems the whole company runs on
 //   applied  — a business built on top of the platform, in one industry
 //   labs     — a smaller surface or early exploration
 // A product's role does not change with its maturity: TheOne is "platform" whether
@@ -71,15 +71,27 @@ export const products: Record<Locale, Product[]> = {
     },
     {
       name: "TheOne",
-      tagline: "Governed Agent Kernel",
-      description: "OneAI Labs' persistent root intelligence: a governed, verifiable agent kernel that plans, acts, verifies and remembers, turning every proven run into experience it acts on next time.",
-      href: "https://www.the1os.io/",
-      poweredBy: "Trusted Kernel + Verification + Experience",
-      capabilities: ["Planning", "Reasoning", "Coordination"],
-      stage: "Preview",
+      tagline: "Governed Agent OS",
+      description: "Persistent root intelligence for goals, authority, governed computers, independent verification, experience and controlled evolution.",
+      href: site.theOneUrl,
+      poweredBy: "Authority + Sentinel + Governed Computer + Experience",
+      capabilities: ["Goals", "Authority", "Verification", "Evolution"],
+      stage: "Beta",
       tier: "flagship",
       role: "platform",
       icon: Cpu
+    },
+    {
+      name: "OneMission",
+      tagline: "Durable Mission & Work Runtime",
+      description: "Turns governed plans into durable task graphs, assignments, leases, retries, approvals and verified completion across humans and agents.",
+      href: site.oneMissionUrl,
+      poweredBy: "PostgreSQL task graph + durable orchestrator + signed service API",
+      capabilities: ["Task graphs", "Assignment", "Recovery", "Approval"],
+      stage: "Preview",
+      tier: "flagship",
+      role: "platform",
+      icon: Target
     },
     {
       name: "OneClaw",
@@ -94,13 +106,13 @@ export const products: Record<Locale, Product[]> = {
     },
     {
       name: "OneField",
-      tagline: "Proof of Contribution & Reputation",
-      description: "Record contribution, verify work and build reputation profiles.",
-      href: "https://onefield.vercel.app/",
-      poweredBy: "Usage, identity and records",
-      capabilities: ["Evidence", "Memory", "Outcomes"],
-      stage: "Preview",
-      tier: "labs",
+      tagline: "Trusted Shared Reality Layer",
+      description: "Tenant-scoped evidence, consent, context and verifier-linked records that give every One system a shared, auditable view of reality.",
+      href: site.oneFieldUrl,
+      poweredBy: "Tenant isolation + consent + context packs + verifier evidence",
+      capabilities: ["Evidence", "Context", "Consent", "Reconciliation"],
+      stage: "Beta",
+      tier: "flagship",
       role: "platform",
       icon: BadgeCheck
     },
@@ -161,17 +173,6 @@ export const products: Record<Locale, Product[]> = {
       tier: "labs",
       role: "labs",
       icon: LineChart
-    },
-    {
-      name: "OneMission",
-      tagline: "Mission & Task Coordination",
-      description: "Turn goals into missions, missions into tasks, and tasks into coordinated execution.",
-      href: "https://one-mission.vercel.app/",
-      poweredBy: "Agent plans + campaign missions",
-      stage: "Preview",
-      tier: "labs",
-      role: "labs",
-      icon: Target
     }
   ],
   zh: [
@@ -201,15 +202,27 @@ export const products: Record<Locale, Product[]> = {
     },
     {
       name: "TheOne",
-      tagline: "受治理的 Agent 内核",
-      description: "OneAI Labs 的持续根智能体：一个受治理、可验证的 Agent 内核，负责规划、行动、验证与记忆，并把每一次经过验证的运行沉淀成下一次做得更好的经验。",
-      href: "https://www.the1os.io/",
-      poweredBy: "受信内核 + 验证 + 经验沉淀",
-      capabilities: ["规划", "推理", "协同"],
-      stage: "Preview",
+      tagline: "受治理的 Agent OS",
+      description: "面向目标、Authority、受治理计算机、独立验证、经验沉淀与受控进化的持续根智能。",
+      href: site.theOneUrl,
+      poweredBy: "Authority + Sentinel + 受治理计算机 + 经验",
+      capabilities: ["目标", "Authority", "验证", "进化"],
+      stage: "Beta",
       tier: "flagship",
       role: "platform",
       icon: Cpu
+    },
+    {
+      name: "OneMission",
+      tagline: "持久化使命与工作运行时",
+      description: "把受治理计划变成持久任务图、分配、租约、重试、审批，以及人类与 Agent 共同完成的可验证结果。",
+      href: site.oneMissionUrl,
+      poweredBy: "PostgreSQL 任务图 + 持久调度器 + 签名服务 API",
+      capabilities: ["任务图", "分配", "恢复", "审批"],
+      stage: "Preview",
+      tier: "flagship",
+      role: "platform",
+      icon: Target
     },
     {
       name: "OneClaw",
@@ -224,13 +237,13 @@ export const products: Record<Locale, Product[]> = {
     },
     {
       name: "OneField",
-      tagline: "贡献证明与声誉",
-      description: "记录贡献、验证工作，构建声誉档案。",
-      href: "https://onefield.vercel.app/",
-      poweredBy: "用量、身份与记录",
-      capabilities: ["证据", "记忆", "结果"],
-      stage: "Preview",
-      tier: "labs",
+      tagline: "可信共享现实层",
+      description: "用租户隔离的证据、授权、上下文与 Verifier 关联记录，为整个 One 系统建立共享且可审计的现实。",
+      href: site.oneFieldUrl,
+      poweredBy: "租户隔离 + 授权 + 上下文包 + Verifier 证据",
+      capabilities: ["证据", "上下文", "授权", "对账"],
+      stage: "Beta",
+      tier: "flagship",
       role: "platform",
       icon: BadgeCheck
     },
@@ -289,17 +302,6 @@ export const products: Record<Locale, Product[]> = {
       tier: "labs",
       role: "labs",
       icon: LineChart
-    },
-    {
-      name: "OneMission",
-      tagline: "任务与协作编排",
-      description: "把目标变成任务书，任务书变成任务，任务变成协同执行。",
-      href: "https://one-mission.vercel.app/",
-      poweredBy: "智能体计划 + 战役任务",
-      stage: "Preview",
-      tier: "labs",
-      role: "labs",
-      icon: Target
     }
   ]
 };

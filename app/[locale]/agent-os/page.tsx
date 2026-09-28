@@ -6,26 +6,26 @@ import { pageMetadata, type PageParams } from "@/lib/seo";
 
 const meta = {
   en: {
-    title: "OneAI Agent Systems · Plan, Execute and Prove",
-    description: "OneAI Agent Systems combine TheOne, OneClaw and OneField to turn Core-powered intelligence into governed, verifiable action."
+    title: "OneAI Agent Systems · Govern, Persist, Execute and Prove",
+    description: "TheOne, OneMission, OneClaw and OneField turn Core-powered intelligence into durable, governed and independently verifiable work."
   },
   zh: {
-    title: "OneAI Agent 系统 · 规划、执行与留证",
-    description: "OneAI Agent 系统组合 TheOne、OneClaw 与 OneField，把 Core 驱动的智能变成受治理、可验证的行动。"
+    title: "OneAI Agent 系统 · 治理、持久、执行与验证",
+    description: "TheOne、OneMission、OneClaw 与 OneField 把 Core 驱动的智能变成持久、受治理且可独立验证的工作。"
   }
 };
 
 const hero = {
   en: {
     eyebrow: "OneAI Agent Systems",
-    title: "The agent layer above OneAI Core: plan, execute, prove",
-    description: "OneAI Agent Systems combine TheOne, OneClaw and OneField to turn Core-powered intelligence into governed, verifiable action.",
+    title: "Governed agents that can finish real work.",
+    description: "TheOne governs the goal, OneMission preserves the work, OneClaw performs approved actions and OneField keeps the verified shared reality.",
     ctaLabel: "Explore Agent Systems"
   },
   zh: {
     eyebrow: "OneAI Agent Systems",
-    title: "OneAI Core 之上的 Agent 层：规划、执行、留证",
-    description: "OneAI Agent Systems 组合 TheOne、OneClaw 与 OneField，把 Core 驱动的智能变成受治理、可验证的行动。",
+    title: "能够完成真实工作的受治理 Agent。",
+    description: "TheOne 治理目标，OneMission 保存工作，OneClaw 执行获准动作，OneField 留下经过验证的共享现实。",
     ctaLabel: "了解 Agent 系统"
   }
 } as const;

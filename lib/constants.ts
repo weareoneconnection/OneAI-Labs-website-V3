@@ -23,6 +23,8 @@ export const site = {
   pricingUrl: `${appUrl}/pricing`,
   securityUrl: `${appUrl}/security`,
   theOneUrl: "https://www.the1os.io/",
+  oneMissionUrl: process.env.NEXT_PUBLIC_ONE_MISSION_URL || "https://one-mission.vercel.app/",
+  oneFieldUrl: "https://www.waoc.network/",
   mirrorUrl: "https://onemirror-v1.vercel.app/",
   studioUrl: "https://oneai-web-delta.vercel.app/",
   videoUrl: "https://www.onevideo.studio/",
@@ -30,7 +32,7 @@ export const site = {
   // OneAI Construction runs as its own brand and its own site. The Labs site
   // introduces it and hands off; it does not restate the product copy.
   constructionUrl: "https://www.oneaiconstruction.com",
-  waocUrl: "https://waoc.io",
+  waocUrl: "https://www.waoc.network/",
   // Engagements are led by the founder directly rather than handed to an account
   // team, which caps how many can run at once. Stated on the service pages as the
   // reason we are selective — a limit that comes from how the work is done is a

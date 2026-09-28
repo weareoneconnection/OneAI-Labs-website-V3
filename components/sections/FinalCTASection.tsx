@@ -7,7 +7,7 @@ const content = {
   en: {
     badge: "Build for production",
     heading: "Your AI should not stop at a demo.",
-    body: "Operate it with OneAI Core. Evolve it with OneForge. Orchestrate it with TheOne. Bring it into the real world with the OneAI Labs capability stack.",
+    body: "Route intelligence through Core, govern it with TheOne, persist the work in OneMission, execute through OneClaw and keep verified outcomes in OneField.",
     platform: "Explore OneAI Labs",
     forge: "Open OneForge",
     contact: "Request enterprise demo"
@@ -15,7 +15,7 @@ const content = {
   zh: {
     badge: "面向生产构建",
     heading: "你的 AI 不应该停在演示阶段。",
-    body: "用 OneAI Core 运营，用 OneForge 进化，用 TheOne 编排，并通过 OneAI Labs 能力技术栈进入真实世界。",
+    body: "用 Core 路由智能，用 TheOne 治理，用 OneMission 持久化工作，用 OneClaw 执行，再把验证结果保存到 OneField。",
     platform: "探索 OneAI Labs",
     forge: "打开 OneForge",
     contact: "预约企业演示"

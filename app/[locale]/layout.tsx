@@ -6,7 +6,7 @@ import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/lib/constants";
-import { htmlLang, isLocale, locales, type Locale } from "@/lib/i18n";
+import { htmlLang, isLocale, localePath, locales, type Locale } from "@/lib/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,21 +32,22 @@ export function generateStaticParams() {
 }
 
 const rootDescription: Record<Locale, string> = {
-  en: "ONEAI LABS SDN. BHD. builds an integrated AI operating platform spanning model access, capability development, agent coordination, governed execution, persistent memory and industry applications.",
-  zh: "ONEAI LABS SDN. BHD. 构建一体化 AI 运行平台，覆盖模型接入、能力开发、Agent 协同、受治理执行、长期记忆与行业应用。"
+  en: "ONEAI LABS SDN. BHD. builds a governed AI operating platform spanning model access, durable missions, real-world execution, independent verification and shared evidence.",
+  zh: "ONEAI LABS SDN. BHD. 构建受治理 AI 运行平台，覆盖模型接入、持久 Mission、真实执行、独立验证与共享证据。"
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : "en";
+  const socialImage = `${site.url}${localePath(locale, "/opengraph-image")}`;
 
   return {
     title: {
-      default: locale === "zh" ? "OneAI Labs | 面向真实世界的 AI 运行平台" : "OneAI Labs | AI Operating Platform for the Real World",
+      default: locale === "zh" ? "OneAI Labs | 面向真实工作的可治理 AI 运行平台" : "OneAI Labs | Governed AI Operating Platform for Real Work",
       template: "%s | OneAI Labs"
     },
     description: rootDescription[locale],
-    keywords: ["OneAI Labs", "Commercial AI", "AI SaaS", "AI Agent Systems", "OneAI Core", "OneForge", "TheOne", "Agent Kernel", "OneClaw", "OneField", "AI operating platform", "AI capability lifecycle", "enterprise AI", "AI agents", "OneVideo Studio", "Construction AI"],
+    keywords: ["OneAI Labs", "Governed AI", "AI SaaS", "AI Agent Systems", "OneAI Core", "OneForge", "TheOne", "OneMission", "OneClaw", "OneField", "AI operating platform", "durable missions", "independent verification", "enterprise AI", "AI agents", "OneVideo Studio", "Construction AI"],
     metadataBase: new URL(site.url),
     verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
       ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
@@ -57,15 +58,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     openGraph: {
       title: "OneAI Labs",
-      description: locale === "zh" ? "面向真实世界的 AI 运行平台" : "AI Operating Platform for the Real World",
+      description: locale === "zh" ? "面向真实工作的可治理 AI 运行平台" : "Governed AI Operating Platform for Real Work",
       url: locale === "zh" ? `${site.url}/zh` : site.url,
       siteName: "OneAI Labs",
-      type: "website"
+      type: "website",
+      images: [{ url: socialImage, width: 1200, height: 630, alt: site.name }]
     },
     twitter: {
       card: "summary_large_image",
       title: "OneAI Labs",
-      description: locale === "zh" ? "面向真实世界的 AI 运行平台" : "AI Operating Platform for the Real World"
+      description: locale === "zh" ? "面向真实工作的可治理 AI 运行平台" : "Governed AI Operating Platform for Real Work",
+      images: [socialImage]
     }
   };
 }
@@ -77,7 +80,7 @@ const organizationSchema = {
   legalName: site.legalName,
   url: site.url,
   email: site.email,
-  description: "Integrated AI operating platform for model access, capability development, agent coordination, governed execution, persistent memory and real-world applications.",
+  description: "Governed AI operating platform for model access, durable missions, real-world execution, independent verification and shared evidence.",
   foundingDate: "2026-05-18",
   identifier: site.registrationNo,
   address: {
@@ -90,6 +93,15 @@ const organizationSchema = {
     email: site.email,
     url: `${site.url}/contact`
   }
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.name,
+  url: site.url,
+  publisher: { "@type": "Organization", name: site.name, url: site.url },
+  inLanguage: ["en", "zh-CN"]
 };
 
 export default async function RootLayout({
@@ -111,6 +123,10 @@ export default async function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Navbar locale={locale} />
         <main>{children}</main>

@@ -2,17 +2,17 @@ import { PageHero } from "@/components/sections/PageHero";
 import { site } from "@/lib/constants";
 import { pageMetadata, type PageParams } from "@/lib/seo";
 
-const LAST_UPDATED = "17 July 2026";
-const LAST_UPDATED_ZH = "2026 年 7 月 17 日";
+const LAST_UPDATED = "28 September 2026";
+const LAST_UPDATED_ZH = "2026 年 9 月 28 日";
 
 const meta = {
   en: {
     title: "Privacy Policy",
-    description: `How ${site.legalName} collects, uses and protects personal data on oneai.network, in line with the Malaysian Personal Data Protection Act 2010.`
+    description: `How ${site.legalName} collects, uses and protects personal data on oneailabs.ai, in line with the Malaysian Personal Data Protection Act 2010.`
   },
   zh: {
     title: "隐私政策",
-    description: `${site.legalName} 如何在 oneai.network 上收集、使用和保护个人数据，遵循马来西亚《2010 年个人数据保护法》。`
+    description: `${site.legalName} 如何在 oneailabs.ai 上收集、使用和保护个人数据，遵循马来西亚《2010 年个人数据保护法》。`
   }
 };
 
@@ -29,7 +29,7 @@ const content: Record<"en" | "zh", { hero: { title: string; description: string 
       {
         heading: "1. Who we are",
         paragraphs: [
-          `This website (oneai.network) is operated by ${site.legalName} (registration no. ${site.registrationNo}), a private company limited by shares incorporated in ${site.jurisdiction}. For any privacy matter, contact us at ${site.email}.`
+          `This website (oneailabs.ai) is operated by ${site.legalName} (registration no. ${site.registrationNo}), a private company limited by shares incorporated in ${site.jurisdiction}. For any privacy matter, contact us at ${site.email}.`
         ]
       },
       {
@@ -92,7 +92,7 @@ const content: Record<"en" | "zh", { hero: { title: string; description: string 
       {
         heading: "一、我们是谁",
         paragraphs: [
-          `本网站（oneai.network）由 ${site.legalName}（注册编号 ${site.registrationNo}）运营，该公司为在${site.jurisdiction === "Malaysia" ? "马来西亚" : site.jurisdiction}注册的股份制私人有限公司。任何隐私相关事宜，请联系 ${site.email}。`
+          `本网站（oneailabs.ai）由 ${site.legalName}（注册编号 ${site.registrationNo}）运营，该公司为在${site.jurisdiction === "Malaysia" ? "马来西亚" : site.jurisdiction}注册的股份制私人有限公司。任何隐私相关事宜，请联系 ${site.email}。`
         ]
       },
       {

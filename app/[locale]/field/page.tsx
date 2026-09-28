@@ -1,127 +1,64 @@
+import { BadgeCheck, Database, FileLock2, Layers3, RefreshCcw } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { FeatureCard } from "@/components/cards/FeatureCard";
-import { BadgeCheck, Database, Fingerprint, UserRoundCheck } from "lucide-react";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { VerticalDetail, type VerticalDetailContent } from "@/components/sections/VerticalDetail";
+import { site } from "@/lib/constants";
 import { pageMetadata, type PageParams } from "@/lib/seo";
 
-const PRODUCT_URL = "https://onefield.vercel.app/";
-
 const meta = {
-  en: {
-    title: "OneField · Proof of Contribution and Reputation",
-    description: "OneField records contribution, verifies completed work and builds reputation profiles for AI-native collaboration systems."
-  },
-  zh: {
-    title: "OneField · 贡献证明与声誉体系",
-    description: "OneField 记录贡献、验证完成的工作，为 AI 原生协作系统构建声誉档案。"
-  }
+  en: { title: "OneField · Trusted Shared Reality Layer", description: "OneField provides tenant-scoped evidence, consent, context and verifier-linked records across the OneAI operating platform." },
+  zh: { title: "OneField · 可信共享现实层", description: "OneField 为 OneAI 运行平台提供租户隔离的证据、授权、上下文与 Verifier 关联记录。" }
 };
 
 const content = {
   en: {
-    hero: {
-      eyebrow: "OneField",
-      title: "Proof of Contribution and reputation",
-      description: "OneField records contribution, verifies work and builds reputation profiles for AI-native collaboration systems."
-    },
+    hero: { eyebrow: "OneField", title: "A shared reality every agent can verify.", description: "OneField preserves cross-system evidence and scoped context without confusing memory with permission or current mission state." },
     features: [
-      { title: "Contribution Records", description: "Record who contributed what across tasks and projects.", icon: Database },
-      { title: "Work Verification", description: "Verify completed work and turn outputs into contribution events.", icon: BadgeCheck },
-      { title: "Reputation Profile", description: "Build profiles based on verified contribution and completed actions.", icon: UserRoundCheck },
-      { title: "Identity Layer", description: "Connect contribution records to future identity, badge or access systems.", icon: Fingerprint }
+      { title: "Tenant Isolation", description: "Core records carry tenant identity and are constrained by database-level policy.", icon: FileLock2 },
+      { title: "Consent Receipts", description: "Purpose, principal and consent are recorded before sensitive context is reused.", icon: BadgeCheck },
+      { title: "Scoped Context", description: "Agents receive the smallest context pack needed for the current task.", icon: Layers3 },
+      { title: "Evidence Reconciliation", description: "Delivery attempts, acknowledgements and verifier links make missing facts visible.", icon: RefreshCcw }
     ],
     detail: {
-      workflow: {
-        eyebrow: "How it works",
-        heading: "From completed work to portable reputation.",
-        steps: [
-          { label: "Contribute", text: "Work happens in missions, tasks and community projects across the ecosystem." },
-          { label: "Record", text: "Each completed piece of work becomes a contribution event tied to a person." },
-          { label: "Verify", text: "Outputs are checked and confirmed, so the record reflects real completed work." },
-          { label: "Build", text: "Verified events accumulate into a reputation profile that can gate roles, badges and access." }
-        ]
-      },
-      audience: {
-        eyebrow: "Who it is for",
-        heading: "For ecosystems where trust has to be earned, not claimed.",
-        items: [
-          { title: "Community builders", description: "Reward consistent contributors with standing that is backed by verified work." },
-          { title: "DAO and network operators", description: "Base roles and access on contribution history instead of self-description." },
-          { title: "Collaboration platforms", description: "Plug a proof-of-contribution layer into task systems like OneMission." }
-        ]
-      },
-      cta: {
-        heading: "See OneField live.",
-        body: "Open the working preview and see how contribution records turn into verifiable reputation.",
-        openLabel: "Open OneField",
-        href: PRODUCT_URL,
-        demoLabel: "Request Demo"
-      }
+      workflow: { eyebrow: "Shared reality", heading: "From settled outcome to reusable context.", steps: [
+        { label: "Receive", text: "Signed, tenant-bound receipts arrive from trusted One systems through authenticated ingestion." },
+        { label: "Classify", text: "Evidence is associated with tenant, principal, purpose, consent and verification state." },
+        { label: "Review", text: "Operators can inspect evidence, delivery state and verifier relationships without exposing secrets." },
+        { label: "Return", text: "A scoped context pack gives TheOne only the facts relevant to the next decision." }
+      ]},
+      audience: { eyebrow: "Boundary", heading: "Shared evidence, not the live task scheduler.", items: [
+        { title: "OneMission owns current work", description: "Task readiness, leases, retries and completion remain operational truth in OneMission." },
+        { title: "Verifier owns the decision", description: "OneField stores and relates receipts; it does not self-certify an outcome." },
+        { title: "TheOne consumes context", description: "Memory can inform a decision, but cannot grant authority to execute it." }
+      ]},
+      cta: { heading: "Inspect the shared reality layer.", body: "Open OneField to review the current evidence and context surface.", openLabel: "Open OneField", href: site.oneFieldUrl, demoLabel: "Request Demo" }
     } satisfies VerticalDetailContent
   },
   zh: {
-    hero: {
-      eyebrow: "OneField",
-      title: "贡献证明与声誉体系",
-      description: "OneField 记录贡献、验证工作，为 AI 原生协作系统构建声誉档案。"
-    },
+    hero: { eyebrow: "OneField", title: "每个 Agent 都能验证的共享现实。", description: "OneField 保存跨系统证据与限定范围的上下文，同时保持记忆、权限和当前 Mission 状态彼此分离。" },
     features: [
-      { title: "贡献记录", description: "记录谁在哪些任务和项目中贡献了什么。", icon: Database },
-      { title: "工作验证", description: "验证完成的工作，把产出变成贡献事件。", icon: BadgeCheck },
-      { title: "声誉档案", description: "基于经过验证的贡献和已完成的行动构建档案。", icon: UserRoundCheck },
-      { title: "身份层", description: "把贡献记录接入未来的身份、徽章或权限系统。", icon: Fingerprint }
+      { title: "租户隔离", description: "核心记录携带租户身份，并由数据库级策略约束。", icon: FileLock2 },
+      { title: "授权回执", description: "敏感上下文复用前，记录用途、主体与授权。", icon: BadgeCheck },
+      { title: "限定上下文", description: "Agent 只获得当前任务所需的最小上下文包。", icon: Layers3 },
+      { title: "证据对账", description: "投递尝试、确认与 Verifier 关联让缺失事实可见。", icon: RefreshCcw }
     ],
     detail: {
-      workflow: {
-        eyebrow: "如何运作",
-        heading: "从完成的工作，到可携带的声誉。",
-        steps: [
-          { label: "贡献", text: "工作发生在生态里的任务书、任务和社区项目中。" },
-          { label: "记录", text: "每一份完成的工作都成为归属到个人的贡献事件。" },
-          { label: "验证", text: "产出经过检查和确认，让记录反映真实完成的工作。" },
-          { label: "积累", text: "验证过的事件累积成声誉档案，可用于角色、徽章和权限的门槛。" }
-        ]
-      },
-      audience: {
-        eyebrow: "适合谁",
-        heading: "为信任必须靠挣、而不是靠说的生态而建。",
-        items: [
-          { title: "社区建设者", description: "用经过验证的工作为持续贡献者背书，给他们应得的地位。" },
-          { title: "DAO 与网络运营者", description: "让角色和权限基于贡献历史，而不是自我介绍。" },
-          { title: "协作平台", description: "把贡献证明层接入 OneMission 这样的任务系统。" }
-        ]
-      },
-      cta: {
-        heading: "在线体验 OneField。",
-        body: "打开可用预览，看看贡献记录如何变成可验证的声誉。",
-        openLabel: "打开 OneField",
-        href: PRODUCT_URL,
-        demoLabel: "预约演示"
-      }
+      workflow: { eyebrow: "共享现实", heading: "从已结算结果到可复用上下文。", steps: [
+        { label: "接收", text: "经过签名并绑定租户的回执，通过认证入口从可信 One 系统进入。" },
+        { label: "分类", text: "证据关联租户、主体、用途、授权与验证状态。" },
+        { label: "审核", text: "运营者可以检查证据、投递状态和 Verifier 关系，而不暴露密钥。" },
+        { label: "返回", text: "限定范围的 context pack 只把下一次决策相关事实交给 TheOne。" }
+      ]},
+      audience: { eyebrow: "职责边界", heading: "它负责共享证据，不负责实时任务调度。", items: [
+        { title: "OneMission 拥有当前工作", description: "任务就绪、租约、重试与完成状态仍以 OneMission 为准。" },
+        { title: "Verifier 拥有验证决定", description: "OneField 保存并关联回执，但不会自行证明结果。" },
+        { title: "TheOne 消费上下文", description: "记忆可以辅助决策，但不能因此授予执行权限。" }
+      ]},
+      cta: { heading: "查看共享现实层。", body: "打开 OneField，检查当前证据与上下文界面。", openLabel: "打开 OneField", href: site.oneFieldUrl, demoLabel: "预约演示" }
     } satisfies VerticalDetailContent
   }
 } as const;
 
-export async function generateMetadata({ params }: PageParams) {
-  const { locale } = await params;
-  return pageMetadata(locale, "/field", meta);
-}
-
-export default async function FieldPage({ params }: PageParams) {
-  const { locale } = await params;
-  const t = content[locale];
-
-  return (
-    <>
-      <PageHero eyebrow={t.hero.eyebrow} title={t.hero.title} description={t.hero.description} />
-      <section className="site-shell py-16 sm:py-20">
-        <div className="m-carousel gap-4 md:grid md:grid-cols-2 lg:grid-cols-4">
-          {t.features.map((f) => <FeatureCard key={f.title} {...f} />)}
-        </div>
-      </section>
-      <VerticalDetail locale={locale} content={t.detail} />
-      <FinalCTASection locale={locale} />
-    </>
-  );
-}
+export async function generateMetadata({ params }: PageParams) { const { locale } = await params; return pageMetadata(locale, "/field", meta); }
+export default async function FieldPage({ params }: PageParams) { const { locale } = await params; const t = content[locale]; return <><PageHero {...t.hero} /><section className="site-shell py-16 sm:py-20"><div className="m-carousel gap-4 md:grid md:grid-cols-2 lg:grid-cols-4">{t.features.map((item) => <FeatureCard key={item.title} {...item} />)}</div><div className="mt-8 flex items-center gap-3 rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.04] p-5 text-sm leading-6 text-slate-300"><Database className="h-5 w-5 shrink-0 text-emerald-200" /><span>Evidence → Consent → Verification link → Context pack → Reconciliation</span></div></section><VerticalDetail locale={locale} content={t.detail} /><FinalCTASection locale={locale} /></>; }

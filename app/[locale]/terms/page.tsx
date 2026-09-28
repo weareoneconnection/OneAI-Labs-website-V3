@@ -2,17 +2,17 @@ import { PageHero } from "@/components/sections/PageHero";
 import { site } from "@/lib/constants";
 import { pageMetadata, type PageParams } from "@/lib/seo";
 
-const LAST_UPDATED = "17 July 2026";
-const LAST_UPDATED_ZH = "2026 年 7 月 17 日";
+const LAST_UPDATED = "28 September 2026";
+const LAST_UPDATED_ZH = "2026 年 9 月 28 日";
 
 const meta = {
   en: {
     title: "Terms of Use",
-    description: `Terms governing the use of oneai.network, operated by ${site.legalName}.`
+    description: `Terms governing the use of oneailabs.ai, operated by ${site.legalName}.`
   },
   zh: {
     title: "使用条款",
-    description: `由 ${site.legalName} 运营的 oneai.network 网站使用条款。`
+    description: `由 ${site.legalName} 运营的 oneailabs.ai 网站使用条款。`
   }
 };
 
@@ -29,7 +29,7 @@ const content: Record<"en" | "zh", { hero: { title: string; description: string 
       {
         heading: "1. Acceptance",
         paragraphs: [
-          `By accessing oneai.network you agree to these terms. The website is operated by ${site.legalName} (registration no. ${site.registrationNo}), incorporated in ${site.jurisdiction}.`
+          `By accessing oneailabs.ai you agree to these terms. The website is operated by ${site.legalName} (registration no. ${site.registrationNo}), incorporated in ${site.jurisdiction}.`
         ]
       },
       {
@@ -96,7 +96,7 @@ const content: Record<"en" | "zh", { hero: { title: string; description: string 
       {
         heading: "一、接受条款",
         paragraphs: [
-          `访问 oneai.network 即表示你同意本条款。本网站由 ${site.legalName}（注册编号 ${site.registrationNo}）运营，公司注册于马来西亚。`
+          `访问 oneailabs.ai 即表示你同意本条款。本网站由 ${site.legalName}（注册编号 ${site.registrationNo}）运营，公司注册于马来西亚。`
         ]
       },
       {

@@ -27,8 +27,8 @@ export function Reveal({
     // No IntersectionObserver (or a very old browser): show the content rather than
     // leaving the page permanently blank.
     if (typeof IntersectionObserver === "undefined") {
-      setShown(true);
-      return;
+      const fallback = window.setTimeout(() => setShown(true), 0);
+      return () => window.clearTimeout(fallback);
     }
     const observer = new IntersectionObserver(
       (entries) => {

@@ -40,6 +40,8 @@ const content = {
     successBody: "Thanks for reaching out. Our team will review your request and get back to you at the email you provided. For anything urgent, reach us directly at",
     sendAnother: "Send another request",
     error: "Something went wrong sending your request. Please try again, or email us directly at",
+    consent: "I have read the Privacy Policy and agree that OneAI Labs may use these details to respond to this request.",
+    privacy: "Privacy Policy",
     submit: "Submit Request",
     sending: "Sending..."
   },
@@ -77,6 +79,8 @@ const content = {
     successBody: "感谢您的联系。我们的团队会尽快审阅您的需求，并通过您填写的邮箱回复您。如有紧急事项，请直接联系",
     sendAnother: "再提交一条需求",
     error: "提交失败，请重试，或直接发送邮件至",
+    consent: "我已阅读隐私政策，并同意 OneAI Labs 使用这些信息回复本次需求。",
+    privacy: "隐私政策",
     submit: "提交需求",
     sending: "提交中..."
   }
@@ -205,6 +209,22 @@ export function ContactForm({ locale }: { locale: Locale }) {
       </div>
 
       <input type="hidden" name="_subject" value="New OneAI Labs enquiry" />
+      <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
+
+      <label className="mt-6 flex items-start gap-3 text-sm leading-6 text-slate-400">
+        <input
+          type="checkbox"
+          name="privacy_consent"
+          required
+          className="mt-1 h-4 w-4 shrink-0 accent-cyan-400"
+        />
+        <span>
+          {t.consent}{" "}
+          <a href={locale === "zh" ? "/zh/privacy" : "/privacy"} className="font-semibold text-oneai-cyan hover:text-white">
+            {t.privacy}
+          </a>
+        </span>
+      </label>
 
       <p className="mt-6 text-sm leading-6 text-slate-400">
         {t.note}{" "}

@@ -15,28 +15,28 @@ import { MissionControl } from "@/components/visuals/MissionControl";
  */
 const content = {
   en: {
-    badge: "AI infrastructure · capability systems · agent operations",
-    lines: ["FROM MODELS", "TO MISSIONS."],
-    body: "OneAI Labs brings model access, capability development, agent coordination and persistent memory into one operating platform — all of it governed, so AI moves from isolated experiments into products you can answer for.",
+    badge: "Governed intelligence · durable missions · verified outcomes",
+    lines: ["FROM INTELLIGENCE", "TO VERIFIED OUTCOMES."],
+    body: "OneAI Labs connects models, governed agents, durable missions, real-world execution and independent verification in one operating platform — so every consequential result has an owner, a record and a way back.",
     primary: "Start Building",
     secondary: "Explore Platform",
     demo: "Talk to OneAI",
     proof: [
       "Every release has a named approver",
-      "Every run leaves an append-only record",
+      "Every mission survives retries and restarts",
       "Every promotion is reversible"
     ]
   },
   zh: {
-    badge: "AI 基础设施 · 能力系统 · Agent 运营",
-    lines: ["从模型", "到使命。"],
-    body: "OneAI Labs 将模型接入、能力开发、Agent 协同与长期记忆统一到同一运行平台——并且全程受治理，让 AI 从孤立试验走向你敢于负责的产品。",
+    badge: "受治理智能 · 持久任务 · 可验证结果",
+    lines: ["从智能", "到经过验证的结果。"],
+    body: "OneAI Labs 把模型、受治理 Agent、持久 Mission、真实执行与独立验证连接成同一运行平台——让每个重要结果都有责任主体、有记录，也有回退路径。",
     primary: "开始构建",
     secondary: "探索平台",
     demo: "联系 OneAI",
     proof: [
       "每一次发布都有具名审批人",
-      "每一次运行都留下只增不改的记录",
+      "每一个 Mission 都能跨重试与重启继续",
       "每一次晋级都可回退"
     ]
   }

@@ -1,127 +1,64 @@
+import { Activity, BadgeCheck, GitBranch, RefreshCcw, ShieldCheck, Users } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { FeatureCard } from "@/components/cards/FeatureCard";
-import { GitBranch, ListTodo, Target, Users } from "lucide-react";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { VerticalDetail, type VerticalDetailContent } from "@/components/sections/VerticalDetail";
+import { site } from "@/lib/constants";
 import { pageMetadata, type PageParams } from "@/lib/seo";
 
-const PRODUCT_URL = "https://one-mission.vercel.app/";
-
 const meta = {
-  en: {
-    title: "OneMission · Mission and Task Coordination",
-    description: "OneMission turns goals into missions, missions into tasks, and tasks into coordinated execution across teams and communities."
-  },
-  zh: {
-    title: "OneMission · 任务与协作编排",
-    description: "OneMission 把目标变成任务书、任务书变成任务、任务变成跨团队与社区的协同执行。"
-  }
+  en: { title: "OneMission · Durable Mission and Work Runtime", description: "OneMission turns governed plans into durable task graphs, assignments, leases, approvals, retries and independently verifiable completion." },
+  zh: { title: "OneMission · 持久化使命与工作运行时", description: "OneMission 把受治理计划变成持久任务图、分配、租约、审批、重试与可独立验证的完成结果。" }
 };
 
 const content = {
   en: {
-    hero: {
-      eyebrow: "OneMission",
-      title: "Mission and task coordination",
-      description: "OneMission turns goals into missions, missions into tasks, and tasks into coordinated execution."
-    },
+    hero: { eyebrow: "OneMission", title: "Work that survives retries, restarts and handoffs.", description: "TheOne decides what should happen. OneMission is the operational source of truth for what is assigned, running, waiting, verified and complete." },
     features: [
-      { title: "Mission Board", description: "Create missions and organize goals into clear work streams.", icon: Target },
-      { title: "Task Breakdown", description: "Use AI to break goals into tasks, steps and execution plans.", icon: ListTodo },
-      { title: "Coordination", description: "Coordinate contributors, small teams and community workflows.", icon: Users },
-      { title: "Execution Pipeline", description: "Connect missions to OneAI Agent Systems and OneClaw execution flows.", icon: GitBranch }
+      { title: "Durable Task Graphs", description: "Dependencies and readiness live in PostgreSQL rather than in an agent's temporary context.", icon: GitBranch },
+      { title: "Leases & Recovery", description: "Assignments heartbeat, expire and recover without silently duplicating work.", icon: RefreshCcw },
+      { title: "Human Approval", description: "Risk-based approval and separation of duties pause consequential work safely.", icon: Users },
+      { title: "Verified Completion", description: "Required evidence and signed verification receipts gate completion.", icon: BadgeCheck }
     ],
     detail: {
-      workflow: {
-        eyebrow: "How it works",
-        heading: "Goal in. Coordinated execution out.",
-        steps: [
-          { label: "Declare", text: "State the goal as a mission: what done looks like, by when, and who cares." },
-          { label: "Break down", text: "AI decomposes the mission into tasks, steps and owners you can adjust." },
-          { label: "Coordinate", text: "Contributors claim tasks; progress and blockers stay visible on the board." },
-          { label: "Execute", text: "Tasks route into Agent Systems and OneClaw flows, and completions report back to the mission." }
-        ]
-      },
-      audience: {
-        eyebrow: "Who it is for",
-        heading: "For groups where work outgrows the group chat.",
-        items: [
-          { title: "Community operators", description: "Turn community energy into claimable tasks instead of scrolling announcements." },
-          { title: "Small teams", description: "Run projects as missions with AI-assisted breakdown, without heavyweight PM tooling." },
-          { title: "Campaign organizers", description: "Coordinate launches, events and growth pushes across many contributors." }
-        ]
-      },
-      cta: {
-        heading: "See OneMission live.",
-        body: "Open the working preview and walk a goal through mission, breakdown and coordinated execution.",
-        openLabel: "Open OneMission",
-        href: PRODUCT_URL,
-        demoLabel: "Request Demo"
-      }
+      workflow: { eyebrow: "Runtime contract", heading: "A plan becomes operational truth.", steps: [
+        { label: "Materialize", text: "TheOne submits a complete goal plan; OneMission creates the mission, metrics, tasks and dependencies atomically." },
+        { label: "Dispatch", text: "A durable orchestrator assigns ready work with leases, capability requirements and idempotency." },
+        { label: "Govern", text: "Approvals, authority references, retries and recovery are enforced independently of the model." },
+        { label: "Settle", text: "Only required evidence and valid verification can complete a task or mission." }
+      ]},
+      audience: { eyebrow: "Boundary", heading: "Operational truth, not another reasoning agent.", items: [
+        { title: "TheOne plans", description: "OneMission does not replace cognition, authority or goal reasoning." },
+        { title: "OneClaw acts", description: "Assignment is not authority; executors receive only scoped, approved work." },
+        { title: "OneField remembers", description: "Settled mission facts can become cross-system evidence and future context." }
+      ]},
+      cta: { heading: "Inspect the mission runtime.", body: "Open the current OneMission surface or talk to us about connecting an agent workforce.", openLabel: "Open OneMission", href: site.oneMissionUrl, demoLabel: "Request Demo" }
     } satisfies VerticalDetailContent
   },
   zh: {
-    hero: {
-      eyebrow: "OneMission",
-      title: "任务与协作编排",
-      description: "OneMission 把目标变成任务书、任务书变成任务、任务变成协同执行。"
-    },
+    hero: { eyebrow: "OneMission", title: "跨重试、重启与交接仍能继续的工作。", description: "TheOne 决定应该发生什么；OneMission 是任务已分配、运行中、等待中、已验证或已完成的运行事实来源。" },
     features: [
-      { title: "任务看板", description: "创建任务书，把目标组织成清晰的工作流。", icon: Target },
-      { title: "任务拆解", description: "用 AI 把目标拆解成任务、步骤和执行计划。", icon: ListTodo },
-      { title: "协作编排", description: "协调贡献者、小团队和社区工作流。", icon: Users },
-      { title: "执行管线", description: "把任务书接入 OneAI Agent Systems 和 OneClaw 执行流。", icon: GitBranch }
+      { title: "持久任务图", description: "依赖与就绪状态保存在 PostgreSQL，而不是 Agent 的临时上下文里。", icon: GitBranch },
+      { title: "租约与恢复", description: "分配可以心跳续租、到期和恢复，不会悄悄重复执行。", icon: RefreshCcw },
+      { title: "人工审批", description: "按风险分级的审批与职责分离，让关键工作安全暂停。", icon: Users },
+      { title: "验证后完成", description: "需要证据的任务只有在签名验证回执有效后才能完成。", icon: BadgeCheck }
     ],
     detail: {
-      workflow: {
-        eyebrow: "如何运作",
-        heading: "输入目标，输出协同执行。",
-        steps: [
-          { label: "立项", text: "把目标写成任务书：完成的标准是什么、什么时候完成、谁在乎结果。" },
-          { label: "拆解", text: "AI 把任务书分解为任务、步骤和负责人，你可以随时调整。" },
-          { label: "协同", text: "贡献者认领任务，进度和阻塞在看板上始终可见。" },
-          { label: "执行", text: "任务流入 Agent 系统和 OneClaw 执行流，完成结果回报到任务书。" }
-        ]
-      },
-      audience: {
-        eyebrow: "适合谁",
-        heading: "当工作量超出群聊承载力时。",
-        items: [
-          { title: "社区运营者", description: "把社区热情变成可认领的任务，而不是刷不完的公告。" },
-          { title: "小团队", description: "用 AI 辅助拆解把项目当任务书来跑，不需要笨重的项目管理工具。" },
-          { title: "活动组织者", description: "跨多位贡献者协调发布、活动和增长冲刺。" }
-        ]
-      },
-      cta: {
-        heading: "在线体验 OneMission。",
-        body: "打开可用预览，跟着一个目标走完立项、拆解和协同执行的全过程。",
-        openLabel: "打开 OneMission",
-        href: PRODUCT_URL,
-        demoLabel: "预约演示"
-      }
+      workflow: { eyebrow: "运行契约", heading: "计划变成运行事实。", steps: [
+        { label: "固化", text: "TheOne 提交完整目标计划；OneMission 原子化创建 Mission、指标、任务与依赖。" },
+        { label: "调度", text: "持久调度器依据租约、能力要求和幂等规则分配就绪任务。" },
+        { label: "治理", text: "审批、Authority 引用、重试与恢复独立于模型执行。" },
+        { label: "结算", text: "只有必需证据和有效验证通过后，任务或 Mission 才能完成。" }
+      ]},
+      audience: { eyebrow: "职责边界", heading: "它负责运行事实，不是另一个推理 Agent。", items: [
+        { title: "TheOne 负责规划", description: "OneMission 不替代认知、Authority 或目标推理。" },
+        { title: "OneClaw 负责行动", description: "任务分配不等于授权；执行器只接收限定范围且获准的工作。" },
+        { title: "OneField 负责记忆", description: "结算后的 Mission 事实可以成为跨系统证据和未来上下文。" }
+      ]},
+      cta: { heading: "查看 Mission 运行时。", body: "打开当前 OneMission，或联系我们接入 Agent 工作队伍。", openLabel: "打开 OneMission", href: site.oneMissionUrl, demoLabel: "预约演示" }
     } satisfies VerticalDetailContent
   }
 } as const;
 
-export async function generateMetadata({ params }: PageParams) {
-  const { locale } = await params;
-  return pageMetadata(locale, "/mission", meta);
-}
-
-export default async function MissionPage({ params }: PageParams) {
-  const { locale } = await params;
-  const t = content[locale];
-
-  return (
-    <>
-      <PageHero eyebrow={t.hero.eyebrow} title={t.hero.title} description={t.hero.description} />
-      <section className="site-shell py-16 sm:py-20">
-        <div className="m-carousel gap-4 md:grid md:grid-cols-2 lg:grid-cols-4">
-          {t.features.map((f) => <FeatureCard key={f.title} {...f} />)}
-        </div>
-      </section>
-      <VerticalDetail locale={locale} content={t.detail} />
-      <FinalCTASection locale={locale} />
-    </>
-  );
-}
+export async function generateMetadata({ params }: PageParams) { const { locale } = await params; return pageMetadata(locale, "/mission", meta); }
+export default async function MissionPage({ params }: PageParams) { const { locale } = await params; const t = content[locale]; return <><PageHero {...t.hero} /><section className="site-shell py-16 sm:py-20"><div className="m-carousel gap-4 md:grid md:grid-cols-2 lg:grid-cols-4">{t.features.map((item) => <FeatureCard key={item.title} {...item} />)}</div><div className="mt-8 flex items-center gap-3 rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.04] p-5 text-sm leading-6 text-slate-300"><Activity className="h-5 w-5 shrink-0 text-cyan-200" /><span>Mission → Task Graph → Assignment → Task Run → Evidence → Verification</span><ShieldCheck className="ml-auto hidden h-5 w-5 text-emerald-300 sm:block" /></div></section><VerticalDetail locale={locale} content={t.detail} /><FinalCTASection locale={locale} /></>; }

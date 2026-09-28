@@ -5,7 +5,7 @@ import { LogoMark } from "@/components/brand/LogoMark";
 
 const content = {
   en: {
-    blurb: "An integrated AI operating platform connecting model access, capability evolution, agent coordination, governed execution, memory and real-world applications.",
+    blurb: "A governed AI operating platform connecting model access, durable missions, real-world execution, independent verification and shared evidence.",
     incorporated: "Incorporated",
     openCore: "Open OneAI Core",
     docs: "Core Docs",
@@ -20,6 +20,8 @@ const content = {
           ["OneAI Core", "/core"],
           ["OneForge", "/forge"],
           ["TheOne", "/theone"],
+          ["OneMission", "/mission"],
+          ["OneField", "/field"],
           ["Agent Systems", "/agent-os"],
           ["Studio", "/studio"],
           ["Pricing", "/pricing"]
@@ -56,7 +58,7 @@ const content = {
     ]
   },
   zh: {
-    blurb: "连接模型接入、能力进化、Agent 协同、受治理执行、长期记忆与真实应用的一体化 AI 运行平台。",
+    blurb: "连接模型接入、持久 Mission、真实执行、独立验证与共享证据的受治理 AI 运行平台。",
     incorporated: "注册于",
     openCore: "打开 OneAI Core",
     docs: "Core 文档",
@@ -71,6 +73,8 @@ const content = {
           ["OneAI Core", "/core"],
           ["OneForge", "/forge"],
           ["TheOne", "/theone"],
+          ["OneMission", "/mission"],
+          ["OneField", "/field"],
           ["Agent 系统", "/agent-os"],
           ["Studio", "/studio"],
           ["定价", "/pricing"]

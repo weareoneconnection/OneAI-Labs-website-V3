@@ -6,7 +6,6 @@ import { SecuritySection } from "@/components/sections/SecuritySection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { site } from "@/lib/constants";
 import { pageMetadata, type PageParams } from "@/lib/seo";
-import type { Locale } from "@/lib/i18n";
 
 const meta = {
   en: {

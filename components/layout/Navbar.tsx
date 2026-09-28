@@ -144,7 +144,10 @@ export function Navbar({ locale }: { locale: Locale }) {
   const pathname = usePathname();
   const t = chrome[locale];
 
-  const basePath = pathname.startsWith("/zh") ? pathname.slice(3) || "/" : pathname;
+  // Middleware internally rewrites the unprefixed English site to /en. Strip
+  // either implementation prefix before constructing the visible language URL,
+  // otherwise switching from the homepage can incorrectly produce /zh/en.
+  const basePath = pathname.replace(/^\/(?:en|zh)(?=\/|$)/, "") || "/";
   const switchTarget = locale === "zh" ? basePath : localePath("zh", basePath);
   const switchLabel = locale === "zh" ? "EN" : "中文";
 

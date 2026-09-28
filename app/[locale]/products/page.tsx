@@ -6,24 +6,24 @@ import { pageMetadata, type PageParams } from "@/lib/seo";
 const meta = {
   en: {
     title: "Products · The OneAI Platform and Ecosystem",
-    description: "One platform of five governed systems — Core, Forge, TheOne, OneClaw and OneField. Two applied businesses built on it. Everything else runs on the same stack, listed under Labs with the stage its evidence supports."
+    description: "One platform of six governed systems — Core, Forge, TheOne, OneMission, OneClaw and OneField — plus applied businesses and Labs products built on the same stack."
   },
   zh: {
     title: "产品 · OneAI 平台与生态",
-    description: "一个由五个受治理系统组成的平台——Core、Forge、TheOne、OneClaw 与 OneField。在它之上，是两门落地生意。其余的跑在同一套技术栈上，列在 Labs 之下，并各自标注证据支持的阶段。"
+    description: "一个由六个受治理系统组成的平台——Core、Forge、TheOne、OneMission、OneClaw 与 OneField，以及建立在同一技术栈上的应用业务与 Labs 产品。"
   }
 };
 
 const hero = {
   en: {
     eyebrow: "Products",
-    title: "One platform. Two applied businesses. A lot of Labs.",
-    description: "Role and maturity are different questions. Core, Forge, TheOne, OneClaw and OneField are the five systems this company is built on — whatever stage badge each currently carries."
+    title: "One platform. Durable work. Applied businesses.",
+    description: "Core, Forge, TheOne, OneMission, OneClaw and OneField separate intelligence, capability lifecycle, cognition, work state, execution and shared evidence."
   },
   zh: {
     eyebrow: "产品",
-    title: "一个平台，两门落地生意，剩下的都在 Labs。",
-    description: "角色和成熟度是两个不同的问题。Core、Forge、TheOne、OneClaw 与 OneField 是这家公司赖以建立的五个系统——不论它们各自当前的阶段徽章是什么。"
+    title: "一个平台，持久工作，以及落地业务。",
+    description: "Core、Forge、TheOne、OneMission、OneClaw 与 OneField 分离智能、能力生命周期、认知、工作状态、执行和共享证据。"
   }
 } as const;
 

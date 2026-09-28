@@ -14,7 +14,7 @@ export function pageMetadata(
 ): Metadata {
   const { title, description } = meta[locale];
   const canonical = localePath(locale, path);
-  const socialImage = `${site.url}${localePath(locale, "/opengraph-image")}`;
+  const socialImage = `${site.url}/opengraph-image`;
 
   return {
     title,

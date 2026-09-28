@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-// Localized routes inherit the locale layout's canonical metadata base.
 export const alt = "OneAI Labs — Governed AI Operating Platform for Real Work";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

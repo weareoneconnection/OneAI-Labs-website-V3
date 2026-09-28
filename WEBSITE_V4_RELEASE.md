@@ -50,7 +50,7 @@ After deployment verify:
 2. English/Chinese switching preserves the current route.
 3. The OneMission and OneField hand-off links resolve to the intended production services.
 4. The contact form requires privacy consent and completes successfully.
-5. `/robots.txt`, `/sitemap.xml`, `/en/opengraph-image` and `/zh/opengraph-image` return 200.
+5. `/robots.txt`, `/sitemap.xml` and `/opengraph-image` return 200.
 6. Response headers include clickjacking, MIME-sniffing, referrer and browser-permission protections.
 
 Rollback to the previous deployment if navigation, contact submission, locale routing or any platform hand-off fails.

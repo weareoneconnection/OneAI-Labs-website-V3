@@ -6,7 +6,7 @@ import "../globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/lib/constants";
-import { htmlLang, isLocale, localePath, locales, type Locale } from "@/lib/i18n";
+import { htmlLang, isLocale, locales, type Locale } from "@/lib/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,7 +39,7 @@ const rootDescription: Record<Locale, string> = {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : "en";
-  const socialImage = `${site.url}${localePath(locale, "/opengraph-image")}`;
+  const socialImage = `${site.url}/opengraph-image`;
 
   return {
     title: {

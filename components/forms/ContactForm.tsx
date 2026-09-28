@@ -43,7 +43,13 @@ const content = {
     consent: "I have read the Privacy Policy and agree that OneAI Labs may use these details to respond to this request.",
     privacy: "Privacy Policy",
     submit: "Submit Request",
-    sending: "Sending..."
+    sending: "Sending...",
+    pilotTitle: "30-day pilot assessment",
+    pilotBody: "This form starts an assessment, not an automatic order. We will review feasibility, scope, authority boundaries and success criteria before proposing a pilot.",
+    timezone: "Timezone",
+    timezonePlaceholder: "e.g. Asia/Shanghai",
+    availability: "Preferred time for a scoping call",
+    availabilityPlaceholder: "Days and times that usually work for you"
   },
   zh: {
     fields: [
@@ -82,7 +88,13 @@ const content = {
     consent: "我已阅读隐私政策，并同意 OneAI Labs 使用这些信息回复本次需求。",
     privacy: "隐私政策",
     submit: "提交需求",
-    sending: "提交中..."
+    sending: "提交中...",
+    pilotTitle: "30 天试点评估",
+    pilotBody: "这张表单用于发起评估，不代表自动下单。我们会先审查可行性、范围、权限边界与成功标准，再决定是否提出试点方案。",
+    timezone: "时区",
+    timezonePlaceholder: "例如 Asia/Shanghai",
+    availability: "方案沟通的合适时间",
+    availabilityPlaceholder: "请填写通常方便的日期与时段"
   }
 } as const;
 
@@ -91,7 +103,7 @@ const inputClass =
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function ContactForm({ locale }: { locale: Locale }) {
+export function ContactForm({ locale, initialIntent = "general" }: { locale: Locale; initialIntent?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const t = content[locale];
 
@@ -160,6 +172,12 @@ export function ContactForm({ locale }: { locale: Locale }) {
       onSubmit={handleSubmit}
       className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-glow sm:p-8 md:rounded-[2rem]"
     >
+      {initialIntent === "pilot" ? (
+        <div className="mb-7 rounded-2xl border border-oneai-gold/25 bg-oneai-gold/[0.07] p-5">
+          <h2 className="font-semibold text-amber-100">{t.pilotTitle}</h2>
+          <p className="mt-2 text-sm leading-6 text-amber-100/75">{t.pilotBody}</p>
+        </div>
+      ) : null}
       <div className="grid gap-6 md:grid-cols-2">
         {t.fields.map((field) => {
           const options = "options" in field ? field.options : undefined;
@@ -208,7 +226,19 @@ export function ContactForm({ locale }: { locale: Locale }) {
         />
       </div>
 
-      <input type="hidden" name="_subject" value="New OneAI Labs enquiry" />
+      <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <div>
+          <label htmlFor="timezone" className="block text-sm font-semibold text-white">{t.timezone}</label>
+          <input id="timezone" name="timezone" type="text" placeholder={t.timezonePlaceholder} className={inputClass} />
+        </div>
+        <div>
+          <label htmlFor="availability" className="block text-sm font-semibold text-white">{t.availability}</label>
+          <input id="availability" name="availability" type="text" placeholder={t.availabilityPlaceholder} className={inputClass} />
+        </div>
+      </div>
+
+      <input type="hidden" name="intent" value={initialIntent} />
+      <input type="hidden" name="_subject" value={initialIntent === "pilot" ? "New OneAI Labs pilot assessment" : "New OneAI Labs enquiry"} />
       <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <label className="mt-6 flex items-start gap-3 text-sm leading-6 text-slate-400">

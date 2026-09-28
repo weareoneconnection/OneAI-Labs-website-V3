@@ -29,14 +29,31 @@ const hero = {
   }
 } as const;
 
+const pilotHero = {
+  en: {
+    eyebrow: "30-day pilot assessment",
+    title: "Start with one accountable workflow.",
+    description: "Tell us the workflow, owner, systems and cost of failure. We will assess feasibility before proposing a governed pilot.",
+    ctaLabel: "Email OneAI Labs"
+  },
+  zh: {
+    eyebrow: "30 天试点评估",
+    title: "从一个责任明确的流程开始。",
+    description: "告诉我们流程、负责人、涉及系统和失败成本。我们会先评估可行性，再提出受治理的试点方案。",
+    ctaLabel: "邮件联系 OneAI Labs"
+  }
+} as const;
+
 export async function generateMetadata({ params }: PageParams) {
   const { locale } = await params;
   return pageMetadata(locale, "/contact", meta);
 }
 
-export default async function ContactPage({ params }: PageParams) {
+export default async function ContactPage({ params, searchParams }: PageParams & { searchParams: Promise<{ intent?: string }> }) {
   const { locale } = await params;
-  const t = hero[locale];
+  const { intent } = await searchParams;
+  const normalizedIntent = intent === "pilot" ? "pilot" : "general";
+  const t = normalizedIntent === "pilot" ? pilotHero[locale] : hero[locale];
 
   return (
     <>
@@ -48,7 +65,7 @@ export default async function ContactPage({ params }: PageParams) {
         ctaLabel={t.ctaLabel}
       />
       <section className="site-shell-narrow py-16 sm:py-20">
-        <ContactForm locale={locale} />
+        <ContactForm locale={locale} initialIntent={normalizedIntent} />
       </section>
     </>
   );

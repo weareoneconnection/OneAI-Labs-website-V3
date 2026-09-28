@@ -10,14 +10,22 @@ const content = {
     heading: "Commercial API pricing for OneAI Core.",
     body: "Plans are built around real operating limits: monthly requests, model cost guardrails, routing modes, rate limits, debug access and model registry controls.",
     viewPricing: "View Core Pricing",
-    contactSales: "Contact Sales"
+    contactSales: "Contact Sales",
+    pilotEyebrow: "Enterprise engagement",
+    pilotHeading: "30-Day Governed Agent Pilot",
+    pilotBody: "One operational workflow, explicit authority, durable execution and an evidence-backed outcome review. Scope and pricing are set after assessment — not hidden behind a fake fixed price.",
+    pilotCta: "Explore the pilot"
   },
   zh: {
     eyebrow: "定价",
     heading: "OneAI Core 的商业 API 定价。",
     body: "套餐围绕真实的运营限额设计：月度请求量、模型成本护栏、路由模式、速率限制、调试权限和模型注册表控制。",
     viewPricing: "查看 Core 定价",
-    contactSales: "联系销售"
+    contactSales: "联系销售",
+    pilotEyebrow: "企业合作",
+    pilotHeading: "30 天受治理 Agent 试点",
+    pilotBody: "围绕一个真实业务流程，明确权限、持久执行，并以证据复盘结果。范围与价格在评估后确定，不用虚假的固定价格掩盖差异。",
+    pilotCta: "查看试点方案"
   }
 } as const;
 
@@ -37,6 +45,16 @@ export function PricingSection({ locale }: { locale: Locale }) {
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a href={site.pricingUrl} className="inline-flex w-full justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-oneai-bg transition hover:bg-oneai-gold sm:w-auto">{t.viewPricing}</a>
         <Link href={localePath(locale, "/contact")} className="inline-flex w-full justify-center rounded-full border border-oneai-gold/30 px-6 py-3 text-sm font-semibold text-oneai-gold transition hover:bg-oneai-gold/10 sm:w-auto">{t.contactSales}</Link>
+      </div>
+      <div className="mt-14 grid gap-6 rounded-3xl border border-oneai-gold/25 bg-oneai-gold/[0.06] p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="max-w-3xl">
+          <p className="font-mono-accent text-xs font-semibold uppercase tracking-[0.18em] text-oneai-gold">{t.pilotEyebrow}</p>
+          <h3 className="mt-3 text-2xl font-semibold text-white">{t.pilotHeading}</h3>
+          <p className="mt-3 text-sm leading-6 text-slate-300">{t.pilotBody}</p>
+        </div>
+        <Link href={localePath(locale, "/pilot")} className="inline-flex justify-center rounded-full bg-oneai-gold px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-200">
+          {t.pilotCta}
+        </Link>
       </div>
     </section>
   );

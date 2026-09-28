@@ -23,7 +23,8 @@ export const site = {
   pricingUrl: `${appUrl}/pricing`,
   securityUrl: `${appUrl}/security`,
   theOneUrl: "https://www.the1os.io/",
-  oneMissionUrl: process.env.NEXT_PUBLIC_ONE_MISSION_URL || "https://one-mission.vercel.app/",
+  oneMissionUrl: process.env.NEXT_PUBLIC_ONE_MISSION_URL || "https://onemission-agent-production.up.railway.app/",
+  oneClawUrl: process.env.NEXT_PUBLIC_ONE_CLAW_URL || "https://oneclaw-production.up.railway.app/",
   oneFieldUrl: "https://www.waoc.network/",
   mirrorUrl: "https://onemirror-v1.vercel.app/",
   studioUrl: "https://oneai-web-delta.vercel.app/",
@@ -38,7 +39,7 @@ export const site = {
   // reason we are selective — a limit that comes from how the work is done is a
   // promise, while the same limit unexplained reads as an apology.
   concurrentEngagements: 2,
-  email: "hello@oneailabs.ai",
+  email: "info@oneailabs.ai",
   contactFormEndpoint: "https://formspree.io/f/xojrozjo"
 };
 

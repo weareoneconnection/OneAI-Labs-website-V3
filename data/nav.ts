@@ -131,6 +131,12 @@ export const navEntries: NavEntry[] = [
       },
       {
         section: { en: "By need", zh: "按需求" },
+        label: { en: "30-Day Agent Pilot", zh: "30 天 Agent 试点" },
+        href: "/pilot",
+        hint: { en: "One workflow, governed execution, verified outcome", zh: "一个流程、受治理执行、经验证结果" }
+      },
+      {
+        section: { en: "By need", zh: "按需求" },
         label: { en: "Enterprise AI training", zh: "企业 AI 训练" },
         href: "/solutions/training",
         hint: { en: "Assessment first — baseline before GPU", zh: "评估先行——先有基线，再上 GPU" }

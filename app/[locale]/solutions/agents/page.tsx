@@ -169,7 +169,7 @@ export default async function AgentsSolutionPage({ params }: PageParams) {
         eyebrow={h.eyebrow}
         title={h.title}
         description={h.description}
-        ctaHref={localePath(locale, "/contact")}
+        ctaHref={localePath(locale, "/pilot")}
         ctaLabel={h.ctaLabel}
       />
       <SolutionDetail locale={locale} content={content[locale]} sample={<MissionGraph locale={locale} />} />

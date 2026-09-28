@@ -44,7 +44,7 @@ const content = {
     buildHeading: "One platform, and the businesses that test it.",
     buildBody: "We do not build the platform and then look for something to run on it. The applied businesses come first as a source of pressure, and what they need is what the platform grows.",
     build: [
-      { name: "The OneAI platform", text: "Model access, capability releases, governed intelligence, durable missions, execution and shared evidence — six systems in one operating loop.", href: "/products", external: false },
+      { name: "The OneAI platform", text: "Model access, capability releases, governed intelligence, durable missions, execution, shared evidence and independent verification — seven systems in one operating loop.", href: "/products", external: false },
       { name: "OneAI Construction", text: "Intelligence for the built world: BIM, schedules, documents, field evidence and agents in one project state. Its own brand, on its own domain.", href: "/construction", external: false },
       { name: "OneVideo Studio", text: "Creative intelligence: script, shot structure, native voice and a finished episode, produced as a governed pipeline rather than a prompt.", href: "/video", external: false }
     ],
@@ -74,7 +74,7 @@ const content = {
     buildHeading: "一个平台，以及检验它的业务。",
     buildBody: "我们不是先造平台再找东西跑在上面。应用业务先行，作为压力来源；它们需要什么，平台就长出什么。",
     build: [
-      { name: "OneAI 平台", text: "模型接入、能力发布、受治理智能、持久 Mission、执行与共享证据——同一运行闭环里的六个系统。", href: "/products", external: false },
+      { name: "OneAI 平台", text: "模型接入、能力发布、受治理智能、持久 Mission、执行、共享证据与独立验证——同一运行闭环里的七个系统。", href: "/products", external: false },
       { name: "OneAI Construction", text: "面向建成环境的智能：BIM、进度、文档、现场证据与 Agent 收进同一份项目状态。独立品牌，独立域名。", href: "/construction", external: false },
       { name: "OneVideo Studio", text: "创意智能：剧本、分镜结构、原生配音，直到一集成片——按受治理的流水线产出，而不是靠一句提示词。", href: "/video", external: false }
     ],

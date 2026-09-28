@@ -1,4 +1,4 @@
-import { Anvil, BadgeCheck, Bot, Boxes, Clapperboard, Cpu, Eye, LineChart, Network, ShieldCheck, Target, Zap, type LucideIcon } from "lucide-react";
+import { Anvil, Bot, Boxes, Clapperboard, Cpu, Database, Eye, LineChart, Network, ScanSearch, ShieldCheck, Target, Zap, type LucideIcon } from "lucide-react";
 import { site } from "@/lib/constants";
 import type { Locale } from "@/lib/i18n";
 
@@ -17,7 +17,7 @@ export type ProductTier = "flagship" | "labs";
 
 // Role is architectural, not editorial: which part of the company this product is.
 // It answers a different question than tier or stage —
-//   platform — one of the six systems the whole company runs on
+//   platform — one of the seven systems the whole company runs on
 //   applied  — a business built on top of the platform, in one industry
 //   labs     — a smaller surface or early exploration
 // A product's role does not change with its maturity: TheOne is "platform" whether
@@ -97,10 +97,11 @@ export const products: Record<Locale, Product[]> = {
       name: "OneClaw",
       tagline: "Action & Execution Layer",
       description: "Turn AI outputs into workflows, reports, actions and API calls.",
+      href: site.oneClawUrl,
       poweredBy: "Task output + execution flow",
       capabilities: ["Tools", "Actions", "Execution"],
       stage: "Preview",
-      tier: "labs",
+      tier: "flagship",
       role: "platform",
       icon: Zap
     },
@@ -114,7 +115,19 @@ export const products: Record<Locale, Product[]> = {
       stage: "Beta",
       tier: "flagship",
       role: "platform",
-      icon: BadgeCheck
+      icon: Database
+    },
+    {
+      name: "Independent Verifier",
+      tagline: "Cryptographic Outcome Verification",
+      description: "An independently deployed service that verifies execution outcomes and signs evidence before results can be trusted, promoted or learned from.",
+      href: "/evidence",
+      poweredBy: "Independent service boundary + signed verification evidence",
+      capabilities: ["Verify", "Sign", "Attest", "Audit"],
+      stage: "Preview",
+      tier: "flagship",
+      role: "platform",
+      icon: ScanSearch
     },
     {
       // One business on one domain. Splitting it into two cards made the largest
@@ -228,10 +241,11 @@ export const products: Record<Locale, Product[]> = {
       name: "OneClaw",
       tagline: "动作与执行层",
       description: "把 AI 输出变成工作流、报告、动作和 API 调用。",
+      href: site.oneClawUrl,
       poweredBy: "任务输出 + 执行流",
       capabilities: ["工具", "动作", "执行"],
       stage: "Preview",
-      tier: "labs",
+      tier: "flagship",
       role: "platform",
       icon: Zap
     },
@@ -245,7 +259,19 @@ export const products: Record<Locale, Product[]> = {
       stage: "Beta",
       tier: "flagship",
       role: "platform",
-      icon: BadgeCheck
+      icon: Database
+    },
+    {
+      name: "Independent Verifier",
+      tagline: "结果的密码学独立验证",
+      description: "以独立部署边界验证执行结果并签署证据；结果在被信任、晋级或沉淀为经验之前，必须先经过验证。",
+      href: "/evidence",
+      poweredBy: "独立服务边界 + 签名验证证据",
+      capabilities: ["验证", "签名", "证明", "审计"],
+      stage: "Preview",
+      tier: "flagship",
+      role: "platform",
+      icon: ScanSearch
     },
     {
       name: "OneAI Construction",

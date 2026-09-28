@@ -66,7 +66,7 @@ const content = {
     fit: {
       eyebrow: "Where it fits",
       heading: "Studio is a workspace on the platform, not a layer of it.",
-      body: "The platform architecture has five layers — Core, OneForge, TheOne, OneClaw and OneField — and Studio is not one of them. It is where a person shapes and validates an output before any of that machinery is asked to carry it.",
+      body: "The platform has seven operating systems — Core, OneForge, TheOne, OneMission, OneClaw, OneField and the Independent Verifier — and Studio is not an eighth. It is where a person shapes and validates an output before that machinery is asked to carry it.",
       coreLabel: "Below it",
       coreText: "OneAI Core routes the request, applies policy and records the cost.",
       studioLabel: "Studio itself",
@@ -115,7 +115,7 @@ const content = {
     fit: {
       eyebrow: "所处位置",
       heading: "Studio 是平台之上的工作台，不是平台的一层。",
-      body: "平台架构只有五层——Core、OneForge、TheOne、OneClaw、OneField——Studio 不在其中。它是人在把输出交给这套机器之前，塑形和校验的地方。",
+      body: "平台由七个运行系统组成——Core、OneForge、TheOne、OneMission、OneClaw、OneField 与 Independent Verifier——Studio 不是第八个系统。它是人在把输出交给这套机器之前进行塑形和校验的工作台。",
       coreLabel: "它下面",
       coreText: "OneAI Core 负责路由请求、施加策略并记录成本。",
       studioLabel: "Studio 本身",

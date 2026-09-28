@@ -10,7 +10,7 @@ const content = {
     body: "Route intelligence through Core, govern it with TheOne, persist the work in OneMission, execute through OneClaw and keep verified outcomes in OneField.",
     platform: "Explore OneAI Labs",
     forge: "Open OneForge",
-    contact: "Request enterprise demo"
+    contact: "Start a 30-day pilot"
   },
   zh: {
     badge: "面向生产构建",
@@ -18,7 +18,7 @@ const content = {
     body: "用 Core 路由智能，用 TheOne 治理，用 OneMission 持久化工作，用 OneClaw 执行，再把验证结果保存到 OneField。",
     platform: "探索 OneAI Labs",
     forge: "打开 OneForge",
-    contact: "预约企业演示"
+    contact: "申请 30 天试点"
   }
 } as const;
 
@@ -35,7 +35,7 @@ export function FinalCTASection({ locale }: { locale: Locale }) {
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
           <Link href={localePath(locale, "/products")} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100">{t.platform}<ArrowRight className="h-4 w-4" /></Link>
           <a href={site.forgeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-cyan-300/25 px-6 py-3.5 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/10">{t.forge}</a>
-          <Link href={localePath(locale, "/contact")} className="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/[0.04]">{t.contact}</Link>
+          <Link href={localePath(locale, "/pilot")} className="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/[0.04]">{t.contact}</Link>
         </div>
       </div>
     </section>

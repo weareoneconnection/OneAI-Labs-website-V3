@@ -17,12 +17,12 @@ import { pageMetadata, type PageParams } from "@/lib/seo";
 
 const meta = {
   en: {
-    title: "TheOne · Governed Agent Kernel",
-    description: "TheOne is OneAI Labs' persistent root intelligence — a governed, verifiable agent kernel built on a strict run state machine, run-bound approvals and provable outcomes."
+    title: "TheOne · Governed Agent OS",
+    description: "TheOne is OneAI Labs' governed Agent OS: durable runtime, authority, memory, independent verification, experience and a controlled evolution foundation."
   },
   zh: {
-    title: "TheOne · 受治理的 Agent 内核",
-    description: "TheOne 是 OneAI Labs 的持续根智能体——一个受治理、可验证的 Agent 内核，建立在严格的运行状态机、与运行绑定的审批和可证明的结果之上。"
+    title: "TheOne · 受治理的 Agent OS",
+    description: "TheOne 是 OneAI Labs 的受治理 Agent OS：具备持久运行时、权限、记忆、独立验证、经验与受控进化基础。"
   }
 };
 
@@ -38,7 +38,7 @@ const content = {
       eyebrow: "Not another chatbot",
       heading: "TheOne is not a demo shell. It is a kernel.",
       body: "TheOne does not aim to be another chatbot, workflow builder or automation tool — those are capabilities it can use, not what it is. Its identity is a persistent root intelligence: it keeps its own state, memory, goals and responsibility chain across sessions, so closing the window does not reset what it was doing or what it has learned.",
-      quote: "A governed, verifiable, persistent and self-evolving intelligence that understands human intent, acts across the digital and physical world, learns from every verified outcome, and continuously improves its ability to accomplish human goals."
+      quote: "A governed, verifiable and persistent intelligence that understands human intent, acts across digital and physical systems, learns from verified outcomes, and improves only through controlled release gates."
     },
     loop: {
       eyebrow: "The permanent core loop",
@@ -68,29 +68,31 @@ const content = {
     },
     roadmap: {
       eyebrow: "Where it stands today",
-      heading: "TheOne is at L3, moving into L4 — not further.",
-      body: "Maturity is stated as a level TheOne has evidence for, not a level it is aiming at. L4 through L6 are the long-term direction, not a claim about what ships today.",
+      heading: "The L4 foundation is wired — with explicit boundaries.",
+      body: "TheOne now connects durable execution, governed authority, memory, experience, a self model and independent verification. That is an L4 learning foundation, not a claim of autonomous self-evolution or unsupervised production promotion.",
       levels: [
         { level: "L1", title: "Assistant", text: "Conversation and model calls.", done: true, current: false },
         { level: "L2", title: "Agent", text: "Tool use and an agent loop.", done: true, current: false },
-        { level: "L3", title: "Agent OS", text: "Durable runtime, memory, policy and verification.", done: true, current: true },
-        { level: "L4", title: "Learning Intelligence", text: "Experience, failure intelligence, adaptive routing.", done: false, current: true },
+        { level: "L3", title: "Agent OS", text: "Durable runtime, memory, policy and verification.", done: true, current: false },
+        { level: "L4", title: "Learning Agent OS", text: "Governed experience, self model, failure intelligence, adaptive routing and independent verification.", done: true, current: true },
         { level: "L5", title: "Self-Evolving Intelligence", text: "Governed evolution of skills, strategy, prompts and model candidates.", done: false, current: false },
         { level: "L6", title: "Intelligence Organization", text: "Dynamic multi-agent, long-horizon goals, enterprise-scale operation.", done: false, current: false }
       ],
-      disclaimer: "This describes long-term direction and architecture, not a commitment about the current shipped version. Specific capabilities are defined by the repository, test results, release notes and production status."
+      disclaimer: "Verified today: the L4 foundation and its governed boundaries. Not claimed: autonomous self-evolution, unsupervised production promotion, or an independently proven L5 system. Repository evidence, tests, releases and production status remain the source of truth."
     },
     kernel: {
       eyebrow: "Current engineering focus",
-      heading: "Kernel V2.1 — before Experience, before self-evolution.",
-      body: "Before TheOne earns Experience, Adaptive Routing or any self-evolution, every entry point — chat, automation, event, API, coding, multi-agent — must resolve into the same governed run.",
+      heading: "A governed learning foundation — not an autonomous one.",
+      body: "Every entry point — chat, automation, event, API, coding and multi-agent — resolves into the same governed run. Verified outcomes may become experience; candidate improvements still pass evaluation, approval, canary and rollback gates.",
       principle: "One Run. One State Machine. One Trust Model. One Recovery Model.",
       items: [
         "Strict run state machine — illegal transitions like completed → executing are rejected by default.",
         "Immutable run events — the full, tamper-evident history behind every run, not a mutable log field.",
         "Run-bound approval — a grant is checked against tenant, user, run, action and policy version, and cannot be reused by another task.",
         "Full checkpoint contract — state, plan, tool state, budget, pending approvals and artifacts, so a run survives a restart or a deploy.",
-        "Unified entry points — automation, webhook, API and chat all create the same run and hand it to the same kernel."
+        "Unified entry points — automation, webhook, API and chat all create the same run and hand it to the same kernel.",
+        "Governed experience — only verified outcomes can become reusable experience, linked back to their evidence.",
+        "Controlled evolution — candidates are evaluated against a baseline, approved, canaried, monitored and reversible."
       ]
     }
   },
@@ -105,7 +107,7 @@ const content = {
       eyebrow: "不是另一个聊天机器人",
       heading: "TheOne 不是演示壳层，它是一个内核。",
       body: "TheOne 不以成为另一个聊天机器人、工作流构建器或自动化工具为终点——这些是它可以调用的能力，而不是它的定位。它的身份是一个持续存在的根智能体：跨会话维护自己的状态、记忆、目标与责任链，关闭界面不会重置正在推进的工作，也不会抹去已经学到的东西。",
-      quote: "一个受治理、可验证、持续存在并能够自我进化的数字智能体。它理解人的目标，在数字与物理世界中行动，从每一次经过验证的结果中学习，并持续提升完成目标的能力。"
+      quote: "一个受治理、可验证、持续存在的数字智能体。它理解人的目标，在数字与物理系统中行动，从经过验证的结果中学习，并且只通过受控发布门禁持续改进。"
     },
     loop: {
       eyebrow: "永久不变的核心闭环",
@@ -135,29 +137,31 @@ const content = {
     },
     roadmap: {
       eyebrow: "当前所处阶段",
-      heading: "TheOne 处于 L3，正在进入 L4——不早于此。",
-      body: "成熟度只陈述 TheOne 已有证据支撑的等级，而不是它想达到的等级。L4 到 L6 是长期方向，不是对当前交付能力的承诺。",
+      heading: "L4 基础已经打通，但边界必须说清楚。",
+      body: "TheOne 已把持久执行、受治理权限、记忆、经验、自我模型与独立验证接入同一链路。这是 L4 学习型 Agent OS 的基础，不代表已经具备自主自我进化或无人监督的生产晋级。",
       levels: [
         { level: "L1", title: "Assistant", text: "对话与模型调用。", done: true, current: false },
         { level: "L2", title: "Agent", text: "Tool Use 与 Agent Loop。", done: true, current: false },
-        { level: "L3", title: "Agent OS", text: "Durable Runtime、Memory、Policy、Verification。", done: true, current: true },
-        { level: "L4", title: "Learning Intelligence", text: "Experience、Failure Intelligence、Adaptive Routing。", done: false, current: true },
+        { level: "L3", title: "Agent OS", text: "Durable Runtime、Memory、Policy、Verification。", done: true, current: false },
+        { level: "L4", title: "Learning Agent OS", text: "受治理经验、自我模型、失败智能、自适应路由与独立验证。", done: true, current: true },
         { level: "L5", title: "Self-Evolving Intelligence", text: "Skill、Strategy、Prompt 与 Model Candidate 的受控进化。", done: false, current: false },
         { level: "L6", title: "Intelligence Organization", text: "动态多 Agent、长期目标与企业级持续运行。", done: false, current: false }
       ],
-      disclaimer: "本页描述长期方向与架构，不是对当前发布版本的承诺。具体能力以仓库实现、测试结果、发布说明和生产状态为准。"
+      disclaimer: "当前已验证的是 L4 基础及其治理边界。尚未宣称：自主自我进化、无人监督的生产晋级，或经独立证明的 L5 系统。仓库实现、测试、发布记录和生产状态仍是事实来源。"
     },
     kernel: {
       eyebrow: "当前工程焦点",
-      heading: "Kernel V2.1——先于 Experience，先于自我进化。",
-      body: "在 TheOne 获得 Experience、Adaptive Routing 或任何自我进化能力之前，所有入口——Chat、Automation、Event、API、Coding、Multi-Agent——都必须先收敛进同一个受治理的 Run。",
+      heading: "受治理的学习基础，而不是自主进化。",
+      body: "所有入口——Chat、Automation、Event、API、Coding、Multi-Agent——都收敛进同一个受治理的 Run。验证通过的结果可以沉淀为经验；候选改进仍必须经过评测、审批、Canary 与回滚门禁。",
       principle: "One Run. One State Machine. One Trust Model. One Recovery Model.",
       items: [
         "严格的 Run 状态机——像 completed → executing 这样的非法回退，默认被拒绝。",
         "不可变的 Run 事件——每一次运行完整、不可篡改的历史，而不是一段可覆写的日志字段。",
         "与 Run 绑定的审批——授权同时校验租户、用户、Run、动作与策略版本，不能被另一个任务复用。",
         "完整的 Checkpoint 契约——状态、计划、工具状态、预算、待处理审批与产物，让运行能扛住重启或一次部署。",
-        "统一入口——Automation、Webhook、API 与 Chat 都创建同一种 Run，交给同一个内核。"
+        "统一入口——Automation、Webhook、API 与 Chat 都创建同一种 Run，交给同一个内核。",
+        "受治理经验——只有经过验证的结果才能成为可复用经验，并且必须能追溯到证据。",
+        "受控进化——候选改进先与基线评测，再审批、Canary、监控，并保持可回滚。"
       ]
     }
   }

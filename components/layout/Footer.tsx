@@ -35,6 +35,7 @@ const content = {
           ["OneVideo Studio", "/video"],
           ["Industries", "/industries"],
           ["AI agent development", "/solutions/agents"],
+          ["30-Day Agent Pilot", "/pilot"],
           ["Enterprise AI training", "/solutions/training"]
         ]
       },
@@ -88,6 +89,7 @@ const content = {
           ["OneVideo Studio", "/video"],
           ["行业", "/industries"],
           ["AI 智能体开发", "/solutions/agents"],
+          ["30 天 Agent 试点", "/pilot"],
           ["企业 AI 训练", "/solutions/training"]
         ]
       },

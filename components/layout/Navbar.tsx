@@ -10,8 +10,8 @@ import { localePath, type Locale } from "@/lib/i18n";
 import { LogoMark } from "@/components/brand/LogoMark";
 
 const chrome = {
-  en: { requestDemo: "Request Demo", openCore: "Open Core", tagline: "AI Operating Platform" },
-  zh: { requestDemo: "预约演示", openCore: "打开 Core", tagline: "AI 运行平台" }
+  en: { requestDemo: "Start a Pilot", openCore: "Open Core", tagline: "AI Operating Platform" },
+  zh: { requestDemo: "申请试点", openCore: "打开 Core", tagline: "AI 运行平台" }
 } as const;
 
 /** Panel links, grouped under their section heading in the order they were declared. */
@@ -176,7 +176,7 @@ export function Navbar({ locale }: { locale: Locale }) {
           >
             {switchLabel}
           </Link>
-          <Link href={localePath(locale, "/contact")} className="hidden rounded-full border border-white/10 px-4 py-2 text-sm text-slate-200 transition hover:border-oneai-cyan/50 hover:text-white sm:inline-flex">{t.requestDemo}</Link>
+          <Link href={localePath(locale, "/pilot")} className="hidden rounded-full border border-white/10 px-4 py-2 text-sm text-slate-200 transition hover:border-oneai-cyan/50 hover:text-white sm:inline-flex">{t.requestDemo}</Link>
           <a href={site.appUrl} className="hidden rounded-full bg-white px-4 py-2 text-sm font-medium text-oneai-bg transition hover:bg-oneai-gold min-[500px]:inline-flex">{t.openCore}</a>
           <button
             type="button"
@@ -197,7 +197,7 @@ export function Navbar({ locale }: { locale: Locale }) {
               <MobileEntry key={entry.label.en} entry={entry} locale={locale} onNavigate={() => setOpen(false)} />
             ))}
             <div className="mt-2 grid gap-2 min-[420px]:grid-cols-2">
-              <Link href={localePath(locale, "/contact")} className="rounded-full border border-oneai-gold/30 px-4 py-3 text-center text-sm font-semibold text-oneai-gold" onClick={() => setOpen(false)}>
+              <Link href={localePath(locale, "/pilot")} className="rounded-full border border-oneai-gold/30 px-4 py-3 text-center text-sm font-semibold text-oneai-gold" onClick={() => setOpen(false)}>
                 {t.requestDemo}
               </Link>
               <a href={site.appUrl} className="rounded-full bg-white px-4 py-3 text-center text-sm font-semibold text-oneai-bg" onClick={() => setOpen(false)}>

@@ -16,6 +16,7 @@ const routes = [
   "/trust",
   "/industries",
   "/solutions/agents",
+  "/pilot",
   "/solutions/training",
   "/developers",
   "/pricing",

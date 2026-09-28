@@ -7,9 +7,9 @@ A production-ready Next.js + TypeScript + Tailwind CSS website for OneAI Labs.
 OneAI Labs is a commercial website focused on:
 
 - OneAI Core: AI SaaS Operating Layer
-- OneAI Agent OS: OneAI + OneAI Bot + OneClaw
-- Product matrix: Bot, OneClaw, Trading OS, Construction OS, OneMission, OneField
-- Conversion: Launch App, Request Demo, API access
+- Seven-system platform: Core, Forge, TheOne, OneMission, OneClaw, OneField and Independent Verifier
+- Applied businesses: OneAI Construction and OneVideo Studio
+- Conversion: product access, assessment and a bounded 30-day governed agent pilot
 
 ## Quick Start
 
@@ -58,8 +58,10 @@ Edit `lib/constants.ts`:
 export const site = {
   appUrl: "https://oneai-saas-web-production.up.railway.app",
   apiUrl: "https://api.oneai.network",
-  waocUrl: "https://waoc.io",
-  email: "info@weareoneconnection.com"
+  oneMissionUrl: "https://onemission-agent-production.up.railway.app/",
+  oneClawUrl: "https://oneclaw-production.up.railway.app/",
+  oneFieldUrl: "https://www.waoc.network/",
+  email: "info@oneailabs.ai"
 };
 ```
 
@@ -80,6 +82,7 @@ appUrl: "https://app.oneai.network"
 - `/use-cases` - Use cases
 - `/developers` - API / developer page
 - `/pricing` - Early access pricing
+- `/pilot` - 30-day governed agent pilot
 - `/company` - Company page
 - `/contact` - Contact / demo request
 - `/trading` - OneAI Trading OS
@@ -102,6 +105,8 @@ All optional — each falls back to a sensible default when unset.
 ```bash
 NEXT_PUBLIC_APP_URL=   # OneAI Core app URL
 NEXT_PUBLIC_API_URL=   # OneAI API URL
+NEXT_PUBLIC_ONE_MISSION_URL= # OneMission public URL
+NEXT_PUBLIC_ONE_CLAW_URL=    # OneClaw public URL
 NEXT_PUBLIC_GA_ID=     # Google Analytics measurement ID (G-XXXXXXXXXX)
 ```
 

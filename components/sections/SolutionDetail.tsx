@@ -158,7 +158,7 @@ export function SolutionDetail({ locale, content, sample }: { locale: Locale; co
           <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.ctaBody}</p>
         </div>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <Link href={localePath(locale, "/contact")} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-oneai-bg transition hover:bg-oneai-gold">
+          <Link href={localePath(locale, "/pilot")} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-oneai-bg transition hover:bg-oneai-gold">
             {t.ctaPrimary} <ArrowRight className="h-4 w-4" />
           </Link>
           <Link href={localePath(locale, t.ctaSecondaryHref)} className="inline-flex items-center justify-center rounded-full border border-white/12 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white/30">

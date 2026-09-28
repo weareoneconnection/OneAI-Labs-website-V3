@@ -9,9 +9,9 @@ import { localePath, type Locale } from "@/lib/i18n";
  *
  * "Four flagships, then everything else" conflated two different questions: how much
  * editorial weight does this get, and what kind of thing is this. That put OneClaw and
- * OneField — two of the six systems the whole company runs on — in the same bucket as
+ * OneField — two of the seven systems the whole company runs on — in the same bucket as
  * a Telegram bot, because their stage badge still reads Preview. Role fixes that: the
- * six platform systems are grouped together regardless of maturity, each carrying its
+ * seven platform systems are grouped together regardless of maturity, each carrying its
  * own honest stage badge so nothing is quietly promoted. Applied Businesses and Labs
  * keep the previous visual treatment — this only changes what "flagship" used to hide.
  */
@@ -19,8 +19,8 @@ import { localePath, type Locale } from "@/lib/i18n";
 const content = {
   en: {
     platformEyebrow: "The operating architecture",
-    platformHeading: "Six systems. One governed platform.",
-    platformBody: "Role and maturity are independent on purpose. All six below are core platform systems — including OneMission's durable work runtime — regardless of which stage badge they currently carry.",
+    platformHeading: "Seven systems. One governed platform.",
+    platformBody: "Role and maturity are independent on purpose. All seven below are core platform systems — from model access and durable work through execution, shared evidence and independent verification — regardless of which stage badge they currently carry.",
     platformLink: "See the full architecture",
     roleLabel: "Role",
     roleValue: "Core platform system",
@@ -39,8 +39,8 @@ const content = {
   },
   zh: {
     platformEyebrow: "运行架构",
-    platformHeading: "六个系统，一个受治理的平台。",
-    platformBody: "角色和成熟度是两个独立的维度。下面六个都是核心平台系统，其中包括 OneMission 的持久工作运行时——不论它们当前的阶段徽章是什么。",
+    platformHeading: "七个系统，一个受治理的平台。",
+    platformBody: "角色和成熟度是两个独立维度。下面七个都是核心平台系统——覆盖模型接入、持久任务、真实执行、共享证据与独立验证——不论它们当前的阶段徽章是什么。",
     platformLink: "查看完整架构",
     roleLabel: "角色",
     roleValue: "核心平台系统",
@@ -108,14 +108,15 @@ export function ProductHierarchy({ locale }: { locale: Locale }) {
                 <p className="mt-5 text-sm leading-6 text-slate-400">{product.description}</p>
 
                 {product.href ? (
-                  <a
-                    href={product.href}
-                    target={product.href.startsWith("http") ? "_blank" : undefined}
-                    rel={product.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-oneai-cyan transition hover:text-cyan-200"
-                  >
-                    {product.name} <ArrowUpRight className="h-3.5 w-3.5" />
-                  </a>
+                  product.href.startsWith("http") ? (
+                    <a href={product.href} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-oneai-cyan transition hover:text-cyan-200">
+                      {product.name} <ArrowUpRight className="h-3.5 w-3.5" />
+                    </a>
+                  ) : (
+                    <Link href={localePath(locale, product.href)} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-oneai-cyan transition hover:text-cyan-200">
+                      {product.name} <ArrowUpRight className="h-3.5 w-3.5" />
+                    </Link>
+                  )
                 ) : null}
               </div>
             );

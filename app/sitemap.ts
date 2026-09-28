@@ -21,6 +21,7 @@ const routes = [
   "/developers",
   "/pricing",
   "/company",
+  "/careers",
   "/contact",
   "/trading",
   "/construction",

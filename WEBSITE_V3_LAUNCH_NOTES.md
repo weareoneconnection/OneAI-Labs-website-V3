@@ -1,4 +1,8 @@
-# OneAI Labs Website V3 — Launch Candidate
+# OneAI Labs Website V3 — historical launch candidate
+
+> Historical document. It describes the V3 launch candidate and is not a current
+> source of company architecture, product maturity, routes or deployment settings.
+> Use `docs/COMPANY_REFERENCE.md` and `docs/WEBSITE_OPERATIONS.md` instead.
 
 ## Strategic decision
 V3 is rebuilt from V2 rather than the earlier V3 experiment. It removes the founder-vision section and keeps the company message product-led, enterprise-ready and verifiable.

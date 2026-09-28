@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, GitBranch, RotateCcw, ScrollText, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, GitBranch, RotateCcw, ScrollText, ShieldCheck } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { CompanyProfileSection } from "@/components/sections/CompanyProfileSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
@@ -59,6 +59,21 @@ const content = {
     ],
     proofNote: "The figures behind these are on the homepage, taken from OneForge's control plane.",
     proofLink: "See the measured figures",
+    commercialEyebrow: "How to work with us",
+    commercialHeading: "Use the product today, or prove one workflow with us.",
+    commercialBody: "The route depends on what you need. Product access does not require an enterprise engagement. Governed agent work starts with an assessment and is allowed to end with a no.",
+    commercial: [
+      { title: "Use the platform", text: "Open OneAI Core for model access, routing, usage and cost controls. Product plans remain separate from custom delivery.", href: site.appUrl, external: true, label: "Open OneAI Core" },
+      { title: "Assess an agent workflow", text: "Bring one accountable task. We review data, authority, integrations and failure cost before proposing any build.", href: "/solutions/agents", external: false, label: "See the assessment" },
+      { title: "Run a 30-day pilot", text: "One workflow, written success criteria, governed execution and an evidence-backed scale, revise or stop decision.", href: "/pilot", external: false, label: "Explore the pilot" }
+    ],
+    boundariesTitle: "What this company page does not claim",
+    boundaries: [
+      "No customer case studies are presented until they can be published with permission and evidence.",
+      "Beta and Preview systems are not described as GA or as carrying a production SLA.",
+      "TheOne is not presented as autonomously self-evolving or able to promote itself into production without governance.",
+      "A pilot is not an automatic production contract, and an assessment may conclude that an agent is the wrong tool."
+    ],
     whereEyebrow: "Where we are",
     whereHeading: "Incorporated in Malaysia. Built for a global stack.",
     whereBody: "OneAI Labs is a Malaysian company operating on infrastructure and standards that are not region-specific — OpenAI-compatible interfaces, portable model routing and governance that an enterprise review can read anywhere."
@@ -89,6 +104,21 @@ const content = {
     ],
     proofNote: "支撑这些原则的数字在首页，取自 OneForge 的控制平面。",
     proofLink: "查看实测数字",
+    commercialEyebrow: "如何与我们合作",
+    commercialHeading: "今天就使用产品，或与我们共同验证一个流程。",
+    commercialBody: "不同需求对应不同入口。使用产品不需要先购买企业项目；受治理 Agent 合作从评估开始，也允许以“不值得做”结束。",
+    commercial: [
+      { title: "使用平台", text: "打开 OneAI Core，使用模型接入、路由、用量和成本控制。产品套餐与定制交付彼此独立。", href: site.appUrl, external: true, label: "打开 OneAI Core" },
+      { title: "评估一个 Agent 流程", text: "带来一个责任明确的任务。提出任何建设方案前，我们先审查数据、权限、集成和失败成本。", href: "/solutions/agents", external: false, label: "了解评估方式" },
+      { title: "开展 30 天试点", text: "一个流程、书面成功标准、受治理执行，以及有证据支撑的扩展、调整或停止决策。", href: "/pilot", external: false, label: "查看试点方案" }
+    ],
+    boundariesTitle: "本页没有宣称什么",
+    boundaries: [
+      "在获得发布许可和证据前，不展示客户案例。",
+      "Beta 和 Preview 系统不会被描述为 GA，也不会暗示已经具备生产 SLA。",
+      "TheOne 不会被描述成可以自主自我进化，或绕过治理自行晋级生产。",
+      "试点不自动等于生产合同；评估也可能得出 Agent 并不是正确工具的结论。"
+    ],
     whereEyebrow: "我们在哪",
     whereHeading: "注册于马来西亚，面向全球技术栈构建。",
     whereBody: "OneAI Labs 是一家马来西亚公司，但所依托的基础设施与标准不绑定地区——OpenAI 兼容接口、可迁移的模型路由，以及在任何地方的企业审查中都读得懂的治理机制。"
@@ -139,6 +169,46 @@ export default async function CompanyPage({ params }: PageParams) {
       </section>
 
       <section className="border-y border-white/10 bg-white/[0.025]">
+        <div className="site-shell-wide section-y">
+          <div className="max-w-3xl">
+            <p className="section-eyebrow">{t.commercialEyebrow}</p>
+            <h2 className="section-title mt-4">{t.commercialHeading}</h2>
+            <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.commercialBody}</p>
+          </div>
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {t.commercial.map((item) => {
+              const inner = (
+                <>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-400">{item.text}</p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-oneai-cyan">
+                    {item.label} <ArrowRight className="h-4 w-4" />
+                  </span>
+                </>
+              );
+              const className = "group flex min-w-0 flex-col rounded-3xl border border-white/10 bg-white/[0.035] p-6 transition hover:border-oneai-cyan/40";
+
+              return item.external ? (
+                <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className={className}>{inner}</a>
+              ) : (
+                <Link key={item.title} href={localePath(locale, item.href)} className={className}>{inner}</Link>
+              );
+            })}
+          </div>
+          <div className="mt-10 rounded-3xl border border-oneai-gold/20 bg-oneai-gold/[0.06] p-6 sm:p-8">
+            <h3 className="text-lg font-semibold text-amber-100">{t.boundariesTitle}</h3>
+            <ul className="mt-5 grid gap-3 md:grid-cols-2">
+              {t.boundaries.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm leading-6 text-amber-100/80">
+                  <ShieldCheck className="mt-1 h-4 w-4 shrink-0 text-oneai-gold" /> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10 bg-white/[0.025]">
         <div className="site-shell-wide section-y">
           <div className="max-w-3xl">
             <p className="section-eyebrow">{t.principlesEyebrow}</p>

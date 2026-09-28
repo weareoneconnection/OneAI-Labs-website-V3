@@ -5,7 +5,7 @@
  * added in OneTrainer-v4.0 (apps/api/app/api/routes/public.py) and covered by
  * apps/api/tests/test_public_evidence.py — but it still needs to be deployed, and a
  * service token still needs to be issued and set here. Until ONEFORGE_API_URL and
- * ONEFORGE_SERVICE_TOKEN are set (see WEBSITE_V3_LAUNCH_NOTES.md), this silently
+ * ONEFORGE_SERVICE_TOKEN are set (see docs/WEBSITE_OPERATIONS.md), this silently
  * returns the same hand-checked snapshot already on the homepage. No network call is
  * attempted without both values, and any failure — timeout, non-200, malformed body —
  * falls back the same way. A stale "live" badge would be a worse lie than an honest

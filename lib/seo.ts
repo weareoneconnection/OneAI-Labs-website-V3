@@ -19,6 +19,7 @@ export function pageMetadata(
   return {
     title,
     description,
+    metadataBase: new URL(site.url),
     alternates: {
       canonical,
       languages: {

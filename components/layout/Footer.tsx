@@ -51,6 +51,7 @@ const content = {
         heading: "Company",
         links: [
           ["About", "/company"],
+          ["Careers", "/careers"],
           ["Contact", "/contact"],
           ["Privacy", "/privacy"],
           ["Terms", "/terms"]
@@ -105,6 +106,7 @@ const content = {
         heading: "公司",
         links: [
           ["关于我们", "/company"],
+          ["加入我们", "/careers"],
           ["联系我们", "/contact"],
           ["隐私政策", "/privacy"],
           ["使用条款", "/terms"]

@@ -156,6 +156,11 @@ export const navEntries: NavEntry[] = [
         label: { en: "Contact", zh: "联系我们" },
         href: "/contact",
         hint: { en: "Enterprise demos and partnerships", zh: "企业演示与合作" }
+      },
+      {
+        label: { en: "Careers", zh: "加入我们" },
+        href: "/careers",
+        hint: { en: "Current hiring status", zh: "当前招聘状态" }
       }
     ]
   }

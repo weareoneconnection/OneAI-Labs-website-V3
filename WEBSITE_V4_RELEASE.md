@@ -1,5 +1,9 @@
 # OneAI Labs Website V4 release
 
+Current company facts and operating instructions are maintained in
+`docs/COMPANY_REFERENCE.md` and `docs/WEBSITE_OPERATIONS.md`. This file records the
+V4 release change and should not become a second source of truth.
+
 This release changes the corporate site from a product catalogue into the public map of the One operating platform.
 
 ## The public operating model

@@ -1,6 +1,11 @@
 # OneAI Labs Website
 
-A production-ready Next.js + TypeScript + Tailwind CSS website for OneAI Labs.
+A production Next.js + TypeScript + Tailwind CSS website for OneAI Labs.
+
+The site is the public map of the OneAI operating platform, its applied businesses,
+evidence standard and enterprise engagement path. Company facts live in
+[`docs/COMPANY_REFERENCE.md`](docs/COMPANY_REFERENCE.md); routes, deployment and
+release validation live in [`docs/WEBSITE_OPERATIONS.md`](docs/WEBSITE_OPERATIONS.md).
 
 ## Positioning
 
@@ -50,13 +55,28 @@ that happens, drop `--webpack` from both scripts — Turbopack is meaningfully
 faster, and `npm run dev:turbopack` is kept so the panic can be re-checked without
 editing the scripts.
 
-## Configure Links
+## Source-of-truth map
+
+| Concern | Canonical source |
+| --- | --- |
+| Legal identity and official email | `lib/constants.ts` |
+| Company position and claims boundaries | `docs/COMPANY_REFERENCE.md` |
+| Product ownership, maturity and public links | `data/products.ts` |
+| Navigation | `data/nav.ts` |
+| Canonical routes | `app/sitemap.ts` |
+| Compatibility redirects and security headers | `next.config.ts` |
+| Release process | `docs/WEBSITE_OPERATIONS.md` |
+
+V2 and V3 notes are historical release records. Do not use them as current product
+or company documentation.
+
+## Configure public links
 
 Edit `lib/constants.ts`:
 
 ```ts
 export const site = {
-  appUrl: "https://oneai-saas-web-production.up.railway.app",
+  appUrl: "https://app.oneai.network",
   apiUrl: "https://api.oneai.network",
   oneMissionUrl: "https://onemission-agent-production.up.railway.app/",
   oneClawUrl: "https://oneclaw-production.up.railway.app/",
@@ -65,30 +85,29 @@ export const site = {
 };
 ```
 
-When your custom domain is ready, change:
-
-```ts
-appUrl: "https://app.oneai.network"
-```
-
 ## Route Structure
 
 - `/` - OneAI Labs commercial homepage
 - `/core` - OneAI Core details
-- `/agent-os` - OneAI Agent OS details
+- `/forge` - OneForge capability control plane
+- `/agent-os` - Agent systems overview
+- `/theone` - TheOne governed Agent OS
+- `/mission` - OneMission durable work runtime
+- `/field` - OneField shared reality layer
+- `/evidence` - Independent evidence and verification
 - `/studio` - OneAI Studio
 - `/video` - OneVideo Studio (AI short-drama OS)
 - `/products` - Product matrix
-- `/use-cases` - Use cases
 - `/developers` - API / developer page
-- `/pricing` - Early access pricing
+- `/pricing` - Core plans and enterprise pilot entry
 - `/pilot` - 30-day governed agent pilot
 - `/company` - Company page
-- `/contact` - Contact / demo request
+- `/careers` - Current hiring status
+- `/contact` - Contact and pilot assessment
 - `/trading` - OneAI Trading OS
 - `/construction` - OneAI Construction OS
-- `/mission` - OneMission
-- `/field` - OneField
+- `/privacy` - Privacy policy
+- `/terms` - Terms of use
 
 ## Design Direction
 
@@ -119,10 +138,14 @@ builds stay clean.
 - Favicon and OG image are generated at build time from `app/icon.tsx` and `app/opengraph-image.tsx` — no binary assets to maintain.
 - `Organization` JSON-LD ships from `app/layout.tsx` using the real registration details in `lib/constants.ts`.
 
-## Next Steps
+## Release
 
-1. Replace mockup placeholders with real screenshots.
-2. Bind the app URL to `app.oneai.network`.
-3. Set `NEXT_PUBLIC_GA_ID` in the production environment.
-4. Add real pricing when ready.
-5. Deepen the vertical pages (`/trading`, `/construction`, `/mission`, `/field`) with real scenarios and screenshots.
+```bash
+npm ci
+npm run check
+npm audit --omit=dev
+git diff --check
+```
+
+After deployment, follow the exact route, redirect, hand-off and header checks in
+`docs/WEBSITE_OPERATIONS.md`.

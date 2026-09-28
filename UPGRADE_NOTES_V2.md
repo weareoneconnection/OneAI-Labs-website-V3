@@ -1,4 +1,8 @@
-# OneAI Labs Website V2
+# OneAI Labs Website V2 — historical release note
+
+> Historical document. It describes the V2 website and is not a current source of
+> company architecture, product maturity, routes or deployment configuration. Use
+> `docs/COMPANY_REFERENCE.md` and `docs/WEBSITE_OPERATIONS.md` instead.
 
 ## What changed
 

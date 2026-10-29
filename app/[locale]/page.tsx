@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { EntryLanes } from "@/components/sections/EntryLanes";
 import { ProofStripSection } from "@/components/sections/ProofStripSection";
+import { TheOneSection } from "@/components/sections/TheOneSection";
 import { PlatformStackSection } from "@/components/sections/PlatformStackSection";
 import { ConstructionSection } from "@/components/sections/ConstructionSection";
 import { DeveloperSection } from "@/components/sections/DeveloperSection";
@@ -16,11 +17,12 @@ export default async function HomePage({ params }: PageParams) {
     <>
       <HeroSection locale={locale} />
       <EntryLanes locale={locale} />
-      <PlatformStackSection locale={locale} index={1} />
-      <ProofStripSection locale={locale} index={2} />
-      <ConstructionSection locale={locale} index={3} />
-      <DeveloperSection locale={locale} index={4} />
-      <SecuritySection locale={locale} index={5} />
+      <TheOneSection locale={locale} index={1} />
+      <PlatformStackSection locale={locale} index={2} />
+      <ProofStripSection locale={locale} index={3} />
+      <ConstructionSection locale={locale} index={4} />
+      <DeveloperSection locale={locale} index={5} />
+      <SecuritySection locale={locale} index={6} />
       <FinalCTASection locale={locale} />
     </>
   );

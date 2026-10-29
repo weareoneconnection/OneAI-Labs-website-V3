@@ -55,7 +55,7 @@ export const navEntries: NavEntry[] = [
         section: { en: "Agent runtime", zh: "Agent 运行时" },
         label: { en: "TheOne", zh: "TheOne" },
         href: "/theone",
-        hint: { en: "Goals, authority and governed decisions", zh: "目标、权限与受治理决策" }
+        hint: { en: "The governed AI operating system that learns how you work", zh: "越用越懂你的受治理 AI 操作系统" }
       },
       {
         section: { en: "Agent runtime", zh: "Agent 运行时" },

@@ -1,6 +1,7 @@
 // The product surfaces live on our own domains. Sub-paths are derived from appUrl so
 // they cannot drift apart from it the way five hand-written URLs previously did.
 const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://app.oneai.network";
+const theOneWebsiteUrl = "https://www.the1os.io";
 
 export const site = {
   name: "OneAI Labs",
@@ -22,7 +23,9 @@ export const site = {
   docsUrl: `${appUrl}/docs`,
   pricingUrl: `${appUrl}/pricing`,
   securityUrl: `${appUrl}/security`,
-  theOneUrl: "https://www.the1os.io/",
+  theOneWebsiteUrl,
+  theOneAppUrl: `${theOneWebsiteUrl}/os`,
+  theOneDownloadUrl: `${theOneWebsiteUrl}/download`,
   oneMissionUrl: process.env.NEXT_PUBLIC_ONE_MISSION_URL || "https://onemission-agent-production.up.railway.app/",
   oneClawUrl: process.env.NEXT_PUBLIC_ONE_CLAW_URL || "https://oneclaw-production.up.railway.app/",
   oneFieldUrl: "https://www.waoc.network/",

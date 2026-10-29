@@ -4,7 +4,7 @@ This is the canonical source for company facts and public positioning used by th
 corporate website. Product pages may explain a system in more detail, but they must
 not contradict this document.
 
-Last reviewed: 28 September 2026.
+Last reviewed: 29 October 2026.
 
 ## Legal identity
 
@@ -35,7 +35,8 @@ The platform consists of seven systems with separate production responsibilities
 
 1. **OneAI Core** — model access, routing, usage, cost and commercial control.
 2. **OneForge** — capability evaluation, release, promotion and rollback.
-3. **TheOne** — goals, authority, governed decisions, memory and learning foundation.
+3. **TheOne** — the governed AI operating system for coding, research, documents,
+   voice, goals and automations; it coordinates authority, proof, memory and learning.
 4. **OneMission** — durable mission and task state, assignment, leases and recovery.
 5. **OneClaw** — approved tools, actions, integrations and execution.
 6. **OneField** — tenant-scoped context, consent, receipts and shared evidence.
@@ -70,11 +71,15 @@ Public maturity labels have specific meanings:
 - **Beta** — own domain and usable today, without an SLA commitment.
 - **Preview** — no public surface yet or still running on a platform-default domain.
 
-Architecture direction is not production evidence. TheOne may be described as an
-L4 learning Agent OS foundation because durable execution, governed authority,
-memory, experience, a self model and independent verification are connected. Do not
-claim autonomous self-evolution, unsupervised production promotion or an independently
-proven L5 system.
+Architecture direction is not production evidence. TheOne's public product line is
+"Beyond answers. Into action." / "不止回答，开始行动。" It may be described as a
+governed AI operating system that gets to know how a person works, and as an L4
+learning Agent OS foundation because durable execution, governed authority, memory,
+experience, a self model and independent verification are connected. "Learns" and
+"evolves" always mean verified experience and controlled improvement through
+evaluation, approval, canary and rollback gates. Do not claim autonomous
+self-evolution, unsupervised production promotion or an independently proven L5
+system.
 
 Metrics must come from a queryable operating system. If live evidence is unavailable,
 the website must say so or show a clearly dated snapshot.

@@ -47,6 +47,12 @@ const content = {
     capabilityEyebrow: "What it does",
     capabilityHeading: "One workspace for the work you hand off.",
     capabilityBody: "The product website goes deeper on every area. This company page keeps the map short and sends you to the source.",
+    what: {
+      eyebrow: "Not another chatbot",
+      heading: "TheOne is not a demo shell. It is a kernel.",
+      body: "TheOne does not aim to be another chatbot, workflow builder or automation tool — those are capabilities it can use, not what it is. Its identity is a persistent root intelligence: it keeps its own state, memory, goals and responsibility chain across sessions, so closing the window does not reset what it was doing or what it has learned.",
+      quote: "A governed, verifiable and persistent intelligence that understands human intent, acts across digital and physical systems, learns from verified outcomes, and improves only through controlled release gates."
+    },
     loopEyebrow: "How it works",
     loopHeading: "Understand. Act. Verify. Learn. Improve.",
     loopBody: "TheOne can carry work forward, but action, accepted evidence and product improvement remain separate decisions.",
@@ -83,6 +89,21 @@ const content = {
       ["L6", "Intelligence organization", "Dynamic multi-agent, long-horizon enterprise operation.", false]
     ],
     maturityNote: "Claimed today: the connected L4 learning foundation and its governance boundaries. Not claimed: autonomous self-evolution, unsupervised production promotion, or an independently proven L5 system.",
+    kernel: {
+      eyebrow: "Current engineering focus",
+      heading: "A governed learning foundation — not an autonomous one.",
+      body: "Every entry point — chat, automation, event, API, coding and multi-agent — resolves into the same governed run. Verified outcomes may become experience; candidate improvements still pass evaluation, approval, canary and rollback gates.",
+      principle: "One Run. One State Machine. One Trust Model. One Recovery Model.",
+      items: [
+        "Strict run state machine — illegal transitions like completed → executing are rejected by default.",
+        "Immutable run events — the full, tamper-evident history behind every run, not a mutable log field.",
+        "Run-bound approval — a grant is checked against tenant, user, run, action and policy version, and cannot be reused by another task.",
+        "Full checkpoint contract — state, plan, tool state, budget, pending approvals and artifacts, so a run survives a restart or a deploy.",
+        "Unified entry points — automation, webhook, API and chat all create the same run and hand it to the same kernel.",
+        "Governed experience — only verified outcomes can become reusable experience, linked back to their evidence.",
+        "Controlled evolution — candidates are evaluated against a baseline, approved, canaried, monitored and reversible."
+      ]
+    },
     finalEyebrow: "The product now has its own home",
     finalHeading: "Explore TheOne where the product stays current.",
     finalBody: "Use OneAI Labs for the company and platform context. Use the1os.io for product capabilities, downloads and the app."
@@ -96,6 +117,12 @@ const content = {
     capabilityEyebrow: "能做什么",
     capabilityHeading: "一个工作空间，承接你交出去的工作。",
     capabilityBody: "每项能力的具体介绍都由 TheOne 官网维护。公司官网只保留清晰的产品地图，并把你送到真正的产品来源。",
+    what: {
+      eyebrow: "不是另一个聊天机器人",
+      heading: "TheOne 不是演示壳层，它是一个内核。",
+      body: "TheOne 不以成为另一个聊天机器人、工作流构建器或自动化工具为终点——这些是它可以调用的能力，而不是它的定位。它的身份是一个持续存在的根智能体：跨会话维护自己的状态、记忆、目标与责任链，关闭界面不会重置正在推进的工作，也不会抹去已经学到的东西。",
+      quote: "一个受治理、可验证、持续存在的数字智能体。它理解人的目标，在数字与物理系统中行动，从经过验证的结果中学习，并且只通过受控发布门禁持续改进。"
+    },
     loopEyebrow: "如何运作",
     loopHeading: "理解、行动、验证、学习、改进。",
     loopBody: "TheOne 可以持续推进工作，但执行动作、接受证据和改进产品始终是相互分离的决策。",
@@ -132,6 +159,21 @@ const content = {
       ["L6", "智能组织", "动态多 Agent、长期目标与企业级持续运行。", false]
     ],
     maturityNote: "当前可宣称的是已连接的 L4 学习基础及其治理边界。尚未宣称：自主自我进化、无人监督的生产晋级，或经独立证明的 L5 系统。",
+    kernel: {
+      eyebrow: "当前工程焦点",
+      heading: "受治理的学习基础，而不是自主进化。",
+      body: "所有入口——Chat、Automation、Event、API、Coding、Multi-Agent——都收敛进同一个受治理的 Run。验证通过的结果可以沉淀为经验；候选改进仍必须经过评测、审批、Canary 与回滚门禁。",
+      principle: "One Run. One State Machine. One Trust Model. One Recovery Model.",
+      items: [
+        "严格的 Run 状态机——像 completed → executing 这样的非法回退，默认被拒绝。",
+        "不可变的 Run 事件——每一次运行完整、不可篡改的历史，而不是一段可覆写的日志字段。",
+        "与 Run 绑定的审批——授权同时校验租户、用户、Run、动作与策略版本，不能被另一个任务复用。",
+        "完整的 Checkpoint 契约——状态、计划、工具状态、预算、待处理审批与产物，让运行能扛住重启或一次部署。",
+        "统一入口——Automation、Webhook、API 与 Chat 都创建同一种 Run，交给同一个内核。",
+        "受治理经验——只有经过验证的结果才能成为可复用经验，并且必须能追溯到证据。",
+        "受控进化——候选改进先与基线评测，再审批、Canary、监控，并保持可回滚。"
+      ]
+    },
     finalEyebrow: "产品现在有了自己的官网",
     finalHeading: "在持续更新的产品官网里认识 TheOne。",
     finalBody: "OneAI Labs 官网负责公司与平台背景；the1os.io 负责产品能力、下载与网页版入口。"
@@ -246,6 +288,22 @@ export default async function TheOnePage({ params }: PageParams) {
 
       <section className="border-b border-white/10">
         <div className="site-shell-wide section-y">
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+            <div>
+              <p className="section-eyebrow">{t.what.eyebrow}</p>
+              <h2 className="section-title mt-4">{t.what.heading}</h2>
+              <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.what.body}</p>
+            </div>
+            <div className="rounded-3xl border border-oneai-gold/20 bg-oneai-gold/[0.06] p-6 sm:p-7">
+              <Sparkles className="h-5 w-5 text-oneai-gold" />
+              <p className="mt-4 text-base italic leading-7 text-amber-100/90">&ldquo;{t.what.quote}&rdquo;</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10">
+        <div className="site-shell-wide section-y">
           <div className="max-w-3xl">
             <p className="section-eyebrow">{t.loopEyebrow}</p>
             <h2 className="section-title mt-4">{t.loopHeading}</h2>
@@ -314,6 +372,31 @@ export default async function TheOnePage({ params }: PageParams) {
               </div>
               <p className="mt-6 max-w-4xl text-xs leading-5 text-slate-500">{t.maturityNote}</p>
             </details>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10">
+        <div className="site-shell-wide section-y">
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div>
+              <p className="section-eyebrow">{t.kernel.eyebrow}</p>
+              <h2 className="section-title mt-4">{t.kernel.heading}</h2>
+              <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">{t.kernel.body}</p>
+              <div className="mt-6 flex items-start gap-3 rounded-2xl border border-cyan-300/15 bg-cyan-300/[0.05] p-4 text-sm leading-6 text-cyan-100/90">
+                <Layers3 className="mt-0.5 h-5 w-5 shrink-0 text-cyan-300" /> {t.kernel.principle}
+              </div>
+            </div>
+            <div className="min-w-0 rounded-3xl border border-white/10 bg-slate-950/60 p-5 sm:p-6">
+              <div className="space-y-3">
+                {t.kernel.items.map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                    <FileCheck2 className="mt-0.5 h-4 w-4 shrink-0 text-oneai-gold" />
+                    <p className="text-sm leading-6 text-slate-300">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

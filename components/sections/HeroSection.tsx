@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { ArrowRight, PlayCircle, ShieldCheck } from "lucide-react";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { site } from "@/lib/constants";
 import { localePath, type Locale } from "@/lib/i18n";
 import { MissionControl } from "@/components/visuals/MissionControl";
@@ -79,15 +79,15 @@ export function HeroSection({ locale }: { locale: Locale }) {
             <p className="text-sm leading-7 text-slate-400 sm:text-base">{t.body}</p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a href={site.appUrl} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-100">
+              <TrackedLink href={site.appUrl} event="api_signup_click" eventParams={{ locale, source: "home_hero" }} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-100">
                 {t.primary} <ArrowRight className="h-4 w-4" />
-              </a>
-              <Link href={localePath(locale, "/platform")} className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/[0.07] px-6 py-3.5 text-sm font-semibold text-cyan-100 transition hover:-translate-y-0.5 hover:border-cyan-200/60 hover:bg-cyan-300/10">
+              </TrackedLink>
+              <TrackedLink href={localePath(locale, "/platform")} event="cta_click" eventParams={{ locale, source: "home_hero" }} className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/[0.07] px-6 py-3.5 text-sm font-semibold text-cyan-100 transition hover:-translate-y-0.5 hover:border-cyan-200/60 hover:bg-cyan-300/10">
                 {t.secondary} <PlayCircle className="h-4 w-4" />
-              </Link>
-              <Link href={localePath(locale, "/contact")} className="inline-flex items-center justify-center rounded-full border border-white/12 px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.04]">
+              </TrackedLink>
+              <TrackedLink href={localePath(locale, "/contact")} event="cta_click" eventParams={{ locale, source: "home_hero" }} className="inline-flex items-center justify-center rounded-full border border-white/12 px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.04]">
                 {t.demo}
-              </Link>
+              </TrackedLink>
             </div>
 
             <div className="mt-6 grid gap-3 text-xs text-slate-400 sm:grid-cols-3">

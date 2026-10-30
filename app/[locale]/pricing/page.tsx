@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/sections/PageHero";
 import { PricingSection } from "@/components/sections/PricingSection";
+import { PricingViewTracker } from "@/components/analytics/PricingViewTracker";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { site } from "@/lib/constants";
 import { pageMetadata, type PageParams } from "@/lib/seo";
@@ -41,6 +42,7 @@ export default async function PricingPage({ params }: PageParams) {
 
   return (
     <>
+      <PricingViewTracker locale={locale} />
       <PageHero eyebrow={t.eyebrow} title={t.title} description={t.description} ctaHref={site.pricingUrl} ctaLabel={t.ctaLabel} />
       <PricingSection locale={locale} />
       <FinalCTASection locale={locale} />

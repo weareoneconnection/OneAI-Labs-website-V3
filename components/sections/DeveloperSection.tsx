@@ -1,4 +1,5 @@
 import { Code2, TerminalSquare } from "lucide-react";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { site } from "@/lib/constants";
 import type { Locale } from "@/lib/i18n";
 import { SectionIndex } from "@/components/sections/SectionIndex";
@@ -77,8 +78,8 @@ export function DeveloperSection({ locale, index }: { locale: Locale; index?: nu
             <ApiBadge title={t.gatewayBadge} text="/v1/chat/completions" />
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href={site.docsUrl} className="inline-flex w-full justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-oneai-bg transition hover:bg-oneai-gold sm:w-auto">{t.readDocs}</a>
-            <a href={site.appUrl} className="inline-flex w-full justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-oneai-cyan/60 sm:w-auto">{t.createKey}</a>
+            <TrackedLink href={site.docsUrl} event="cta_click" eventParams={{ locale, source: "developers" }} className="inline-flex w-full justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-oneai-bg transition hover:bg-oneai-gold sm:w-auto">{t.readDocs}</TrackedLink>
+            <TrackedLink href={site.appUrl} event="api_signup_click" eventParams={{ locale, source: "developers" }} className="inline-flex w-full justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-oneai-cyan/60 sm:w-auto">{t.createKey}</TrackedLink>
           </div>
         </div>
         <div className="min-w-0 rounded-3xl border border-white/10 bg-slate-950 p-4 shadow-glow sm:p-5 md:rounded-[2rem]">

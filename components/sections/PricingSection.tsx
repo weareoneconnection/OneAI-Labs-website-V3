@@ -1,8 +1,10 @@
+import { Info } from "lucide-react";
 import Link from "next/link";
 import { pricingPlans } from "@/data/pricing";
 import { PricingCard } from "@/components/cards/PricingCard";
 import { site } from "@/lib/constants";
 import { localePath, type Locale } from "@/lib/i18n";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 
 const content = {
   en: {
@@ -11,6 +13,13 @@ const content = {
     body: "Plans are built around real operating limits: monthly requests, model cost guardrails, routing modes, rate limits, debug access and model registry controls.",
     viewPricing: "View Core Pricing",
     contactSales: "Contact Sales",
+    rulesTitle: "How to read these limits",
+    rules: [
+      "Subscription: Free is $0; Pro is $29/month; Team is $99/month; Enterprise is custom after assessment.",
+      "Included usage: the requests/month figure is the plan allowance shown here. It is not a promise of unlimited model tokens or external actions.",
+      "Cost Guard: the dollar figure is the model-cost ceiling shown for the plan. It is a control boundary, not a prepaid balance or performance guarantee.",
+      "Overage: this website does not promise automatic overage billing. When an allowance or guard is reached, Core's actual plan enforcement and in-app billing terms are the source of truth; confirm them before production use."
+    ],
     pilotEyebrow: "Enterprise engagement",
     pilotHeading: "30-Day Governed Agent Pilot",
     pilotBody: "One operational workflow, explicit authority, durable execution and an evidence-backed outcome review. Scope and pricing are set after assessment — not hidden behind a fake fixed price.",
@@ -22,6 +31,13 @@ const content = {
     body: "套餐围绕真实的运营限额设计：月度请求量、模型成本护栏、路由模式、速率限制、调试权限和模型注册表控制。",
     viewPricing: "查看 Core 定价",
     contactSales: "联系销售",
+    rulesTitle: "这些限额应该怎么读",
+    rules: [
+      "订阅费：Free 为 $0；Pro 为 $29/月；Team 为 $99/月；Enterprise 在评估后定制。",
+      "包含用量：每月请求量是这里展示的套餐额度，不代表无限模型 token 或外部动作。",
+      "Cost Guard：美元数字是该套餐展示的模型成本上限，是控制边界，不是预付余额，也不是性能保证。",
+      "超额：本网站不承诺自动超额计费。达到请求额度或成本护栏后，以 Core 后台实际限制和应用内计费条款为准；用于生产前请先确认。"
+    ],
     pilotEyebrow: "企业合作",
     pilotHeading: "30 天受治理 Agent 试点",
     pilotBody: "围绕一个真实业务流程，明确权限、持久执行，并以证据复盘结果。范围与价格在评估后确定，不用虚假的固定价格掩盖差异。",
@@ -42,9 +58,20 @@ export function PricingSection({ locale }: { locale: Locale }) {
       <div className="mt-12 m-carousel gap-4 md:grid md:grid-cols-2 lg:grid-cols-4">
         {pricingPlans[locale].map((plan, index) => <PricingCard key={plan.name} {...plan} highlighted={index === 2} />)}
       </div>
+      <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.025] p-5 sm:p-6">
+        <div className="flex items-start gap-3">
+          <Info className="mt-0.5 h-5 w-5 shrink-0 text-oneai-cyan" />
+          <div>
+            <h3 className="font-semibold text-white">{t.rulesTitle}</h3>
+            <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-400">
+              {t.rules.map((rule) => <li key={rule}>{rule}</li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <a href={site.pricingUrl} className="inline-flex w-full justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-oneai-bg transition hover:bg-oneai-gold sm:w-auto">{t.viewPricing}</a>
-        <Link href={localePath(locale, "/contact")} className="inline-flex w-full justify-center rounded-full border border-oneai-gold/30 px-6 py-3 text-sm font-semibold text-oneai-gold transition hover:bg-oneai-gold/10 sm:w-auto">{t.contactSales}</Link>
+        <TrackedLink href={site.pricingUrl} event="cta_click" eventParams={{ locale, source: "pricing" }} className="inline-flex w-full justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-oneai-bg transition hover:bg-oneai-gold sm:w-auto">{t.viewPricing}</TrackedLink>
+        <TrackedLink href={localePath(locale, "/contact")} event="cta_click" eventParams={{ locale, source: "pricing" }} className="inline-flex w-full justify-center rounded-full border border-oneai-gold/30 px-6 py-3 text-sm font-semibold text-oneai-gold transition hover:bg-oneai-gold/10 sm:w-auto">{t.contactSales}</TrackedLink>
       </div>
       <div className="mt-14 grid gap-6 rounded-3xl border border-oneai-gold/25 bg-oneai-gold/[0.06] p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
         <div className="max-w-3xl">

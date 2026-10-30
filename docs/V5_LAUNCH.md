@@ -1,6 +1,6 @@
 # OneAI Labs V5 commercial launch record
 
-Last reviewed: 29 October 2026
+Last reviewed: 30 October 2026
 
 ## 1. Repository and production audit
 
@@ -108,7 +108,11 @@ git diff --check
 
 The repository currently has no configured unit-test or Playwright package script, and no
 Lighthouse CI configuration. Those checks must be run in the deployment environment or added
-as a separately approved test harness; this release does not claim they passed locally.
+as a separately approved test harness. The local release gate passed after the rebase:
+`npm ci`, `npm run check`, `npm audit --omit=dev` and `git diff --check` all passed.
+Local production smoke checks also covered the listed routes, compatibility redirects, security
+headers, privacy-consent markup, static Demo content and the no-GA fallback. Browser keyboard,
+touch, mobile-width and reduced-motion checks remain Preview acceptance work.
 
 Manual acceptance before Preview:
 
@@ -126,8 +130,9 @@ Manual acceptance before Preview:
 ## 7. Release, Preview and rollback
 
 This branch has not been pushed and no Pull Request or Vercel Preview URL is claimed here.
-The project identity is known, but this checkout does not have a committed deployment token
-or local Vercel link. A release owner should:
+The target project is linked locally through ignored `.vercel` metadata, but no deployment token
+is committed. Production and Preview public variables are configured; OneForge secrets remain
+server-side in Production only. A release owner should:
 
 1. Review this branch and create the Pull Request in GitHub.
 2. Connect the PR to Vercel project `one-ai-labs-website-v3` and create a Preview from the PR commit; verify the configured production branch in the Vercel Git settings.

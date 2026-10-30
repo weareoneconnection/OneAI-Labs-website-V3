@@ -82,7 +82,7 @@ export const navEntries: NavEntry[] = [
     ]
   },
   {
-    label: { en: "Products", zh: "产品" },
+    label: { en: "Industry Products", zh: "行业产品" },
     items: [
       {
         section: { en: "Built world", zh: "建成环境" },
@@ -105,11 +105,10 @@ export const navEntries: NavEntry[] = [
     ]
   },
   {
-    // Solutions answers "what do you need"; Platform answers "what do we have".
-    // Both routes into the business live here — the two industries where a product
-    // already exists, and the two engagements that start as an assessment — so a
-    // reader picks by their own problem rather than by our internal taxonomy.
-    label: { en: "Solutions", zh: "解决方案" },
+    // Enterprise answers "what should we prove together"; Platform answers "what do we have".
+    // The bounded pilot and assessment paths live here, while industry products stay
+    // in their own top-level lane so buyers can self-select quickly.
+    label: { en: "Enterprise", zh: "企业" },
     items: [
       {
         section: { en: "By industry", zh: "按行业" },

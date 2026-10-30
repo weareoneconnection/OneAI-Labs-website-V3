@@ -7,15 +7,15 @@ import { SectionIndex } from "@/components/sections/SectionIndex";
 /**
  * Figures, not adjectives.
  *
- * These come from OneForge's own control plane and the strip says so. They are proof
- * that the governance chain is exercised rather than theoretical — they are NOT
- * customer-scale metrics, and presenting them as such would be the exact dishonesty
- * the product is built to prevent.
+ * These are the same hand-checked fallback figures used by the Evidence page. The
+ * strip says where and when they came from. They are not a live feed or customer-scale
+ * metrics, and presenting them as such would be the exact dishonesty the product is
+ * built to prevent.
  */
 const content = {
   en: {
     eyebrow: "Measured, not claimed",
-    source: "From OneForge's own control plane — every figure below is a query away.",
+    source: "Hand-checked OneForge control-plane snapshot · as of 2026-09-24 · not a live API feed.",
     stats: [
       { value: 368, label: "Audit records", note: "Append-only. Nothing edited, nothing deleted." },
       { value: 9, suffix: " / 0", label: "Approved / rejected", note: "A gate that never rejects is not a gate." },
@@ -24,7 +24,7 @@ const content = {
   },
   zh: {
     eyebrow: "实测，而非声称",
-    source: "数据来自 OneForge 自身控制平面——下面每一个数字都可以当场查询验证。",
+    source: "OneForge 控制平面手工核验快照 · 截至 2026-09-24 · 不是实时 API 数据流。",
     stats: [
       { value: 368, label: "条审计记录", note: "只增不改。没有编辑，没有删除。" },
       { value: 9, suffix: " / 0", label: "次审批通过 / 驳回", note: "从不驳回的门禁不是门禁。" },

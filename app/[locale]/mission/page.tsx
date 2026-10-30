@@ -1,6 +1,7 @@
 import { Activity, BadgeCheck, GitBranch, RefreshCcw, ShieldCheck, Users } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { FeatureCard } from "@/components/cards/FeatureCard";
+import { AgentMissionDemo } from "@/components/sections/AgentMissionDemo";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { VerticalDetail, type VerticalDetailContent } from "@/components/sections/VerticalDetail";
 import { site } from "@/lib/constants";
@@ -60,5 +61,31 @@ const content = {
   }
 } as const;
 
-export async function generateMetadata({ params }: PageParams) { const { locale } = await params; return pageMetadata(locale, "/mission", meta); }
-export default async function MissionPage({ params }: PageParams) { const { locale } = await params; const t = content[locale]; return <><PageHero {...t.hero} /><section className="site-shell py-16 sm:py-20"><div className="m-carousel gap-4 md:grid md:grid-cols-2 lg:grid-cols-4">{t.features.map((item) => <FeatureCard key={item.title} {...item} />)}</div><div className="mt-8 flex items-center gap-3 rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.04] p-5 text-sm leading-6 text-slate-300"><Activity className="h-5 w-5 shrink-0 text-cyan-200" /><span>Mission → Task Graph → Assignment → Task Run → Evidence → Verification</span><ShieldCheck className="ml-auto hidden h-5 w-5 text-emerald-300 sm:block" /></div></section><VerticalDetail locale={locale} content={t.detail} /><FinalCTASection locale={locale} /></>; }
+export async function generateMetadata({ params }: PageParams) {
+  const { locale } = await params;
+  return pageMetadata(locale, "/mission", meta);
+}
+
+export default async function MissionPage({ params }: PageParams) {
+  const { locale } = await params;
+  const t = content[locale];
+
+  return (
+    <>
+      <PageHero {...t.hero} />
+      <section className="site-shell py-16 sm:py-20">
+        <div className="m-carousel gap-4 md:grid md:grid-cols-2 lg:grid-cols-4">
+          {t.features.map((item) => <FeatureCard key={item.title} {...item} />)}
+        </div>
+        <div className="mt-8 flex items-center gap-3 rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.04] p-5 text-sm leading-6 text-slate-300">
+          <Activity className="h-5 w-5 shrink-0 text-cyan-200" />
+          <span>Mission → Task Graph → Assignment → Task Run → Evidence → Verification</span>
+          <ShieldCheck className="ml-auto hidden h-5 w-5 text-emerald-300 sm:block" />
+        </div>
+      </section>
+      <AgentMissionDemo locale={locale} />
+      <VerticalDetail locale={locale} content={t.detail} />
+      <FinalCTASection locale={locale} />
+    </>
+  );
+}

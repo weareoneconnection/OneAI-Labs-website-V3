@@ -1,9 +1,10 @@
 "use client";
 
 import { CheckCircle2, Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { site } from "@/lib/constants";
 import type { Locale } from "@/lib/i18n";
+import { analyticsEvents, trackEvent } from "@/lib/analytics";
 
 const content = {
   en: {
@@ -105,11 +106,13 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 export function ContactForm({ locale, initialIntent = "general" }: { locale: Locale; initialIntent?: string }) {
   const [status, setStatus] = useState<Status>("idle");
+  const started = useRef(false);
   const t = content[locale];
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("submitting");
+    trackEvent(analyticsEvents.leadFormSubmit, { locale, intent: initialIntent });
 
     const form = event.currentTarget;
 
@@ -121,13 +124,16 @@ export function ContactForm({ locale, initialIntent = "general" }: { locale: Loc
       });
 
       if (!response.ok) {
+        trackEvent(analyticsEvents.contactFormError, { locale, intent: initialIntent, status: response.status });
         setStatus("error");
         return;
       }
 
       form.reset();
+      trackEvent(analyticsEvents.contactFormSuccess, { locale, intent: initialIntent });
       setStatus("success");
     } catch {
+      trackEvent(analyticsEvents.contactFormError, { locale, intent: initialIntent });
       setStatus("error");
     }
   }
@@ -171,6 +177,11 @@ export function ContactForm({ locale, initialIntent = "general" }: { locale: Loc
     <form
       onSubmit={handleSubmit}
       className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-glow sm:p-8 md:rounded-[2rem]"
+      onFocus={() => {
+        if (started.current) return;
+        started.current = true;
+        trackEvent(analyticsEvents.pilotFormStart, { locale, intent: initialIntent });
+      }}
     >
       {initialIntent === "pilot" ? (
         <div className="mb-7 rounded-2xl border border-oneai-gold/25 bg-oneai-gold/[0.07] p-5">
